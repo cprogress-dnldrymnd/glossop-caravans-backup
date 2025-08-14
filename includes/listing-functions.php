@@ -296,9 +296,17 @@ function listing__key_information($id)
     $warranty = get__post_meta_by_id($id, 'warranty');
     $weight = get__post_meta_by_id($id, 'weight');
     $awning_size = get__post_meta_by_id($id, 'awning_size');
+    $internal_length = get__post_meta_by_id($id, 'internal_length');
+    $external_length = get__post_meta_by_id($id, 'external_length');
+    $width = get__post_meta_by_id($id, 'width');
+    $internal_stock_number = get__post_meta_by_id($id, 'internal_stock_number');
+    $chassis_no = get__post_meta_by_id($id, 'chassis_no');
 ?>
     <ul
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
+        <?php if ($internal_stock_number) { ?>
+            <li><?= get__theme_icons('year.svg') ?> <?= $internal_stock_number ?>Stock Number</li>
+        <?php } ?>
         <?php if ($berths) { ?>
             <li> <?= get__theme_icons('berths.svg') ?> <?= $berths ?> Berth</li>
         <?php } ?>
@@ -308,6 +316,20 @@ function listing__key_information($id)
         <?php if ($year) { ?>
             <li><?= get__theme_icons('year.svg') ?> Year <?= $year ?></li>
         <?php } ?>
+
+
+        <?php if ($internal_length) { ?>
+            <li><?= get__theme_icons('year.svg') ?> <?= $internal_length ?>m Internal Length</li>
+        <?php } ?>
+        <?php if ($internal_length) { ?>
+            <li><?= get__theme_icons('year.svg') ?> <?= $external_length ?>m External Length</li>
+        <?php } ?>
+        <?php if ($width) { ?>
+            <li><?= get__theme_icons('year.svg') ?> <?= $width ?>m Width</li>
+        <?php } ?>
+
+
+
         <?php if ($axle) { ?>
             <li>
                 <span class="icons">
