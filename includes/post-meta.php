@@ -21,17 +21,18 @@ Container::make('post_meta', __('Listing Images'))
             ->set_layout('tabbed-horizontal'),
     ));
 
-
 Container::make('post_meta', __('Internal Stock Number'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
         Field::make('text', 'internal_stock_number', __('')),
     ));
+
 Container::make('post_meta', __('Chassis No'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
         Field::make('text', 'chassis_no', __('')),
     ));
+
 Container::make('post_meta', __('Finance Available'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
@@ -50,38 +51,119 @@ Container::make('post_meta', __('Our Price (£)'))
         Field::make('text', 'our_price', __(''))->set_attribute('type', 'number')->set_attribute('step', '1'),
     ));
 
-Container::make('post_meta', __('Listing Properties'))
+Container::make('post_meta', __('Berths'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
-        'value'    => 'caravans', // or the category ID
+        'value'    => 'static-caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        'compare' => '!=', // optional, to exclude this term
+    ))
+    ->add_fields(array(
+        Field::make('text', 'berths', __(''))
+    ));
+Container::make('post_meta', __('Bedrooms'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'static-caravans', // or the category ID
         'taxonomy' => 'listing_category', // or a custom taxonomy slug
     ))
     ->add_fields(array(
-        Field::make('select', 'berths', __('Berths'))->set_width(25)
-            ->set_options(array(
-                'all' => 'All',
-                '2' => '2',
-                '3' => '3',
-                '4' => '4',
-                '5' => '5',
-                '6' => '6',
-            )),
-        Field::make('select', 'axle', __('Axle'))->set_width(25)
-            ->set_options(array(
-                '' => 'None',
-                'Single Axle' => 'Single Axle',
-                'Twin Axle' => 'Twin Axle',
-            )),
-        Field::make('text', 'year', __('Year'))->set_width(25),
-        Field::make('text', 'warranty', __('Warranty'))->set_width(25),
-        Field::make('text', 'weight', __('Unladen Weight(k)'))->set_attribute('type', 'number')->set_width(25),
-        Field::make('text', 'awning_size', __('Awning Size(m)'))->set_attribute('type', 'number')->set_width(25),
-        Field::make('text', 'internal_length', __('Internal Length'))->set_attribute('type', 'number')->set_width(25),
-        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number')->set_width(25),
-        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number')->set_width(25),
+        Field::make('text', 'bedrooms', __(''))
+    ));
 
-        Field::make('checkbox', 'now_on_display', __('Now On Display')),
+Container::make('post_meta', __('Axle'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'axle', __(''))
+    ));
+
+Container::make('post_meta', __('Year'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'year', __('')),
+    ));
+
+Container::make('post_meta', __('Warranty'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'warranty', __(''))
+    ));
+
+Container::make('post_meta', __('Unladen Weight(k)'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'unladen_weight', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Unladen Weight(k)'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'weight', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Awning Size(m)'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'awning_size', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Internal Length'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'internal_length', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('External Length'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'external_length', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Width'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Width'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Chassis'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'chassis', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Gearbox'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'gearbox', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Gearbox'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'gearbox', __(''))->set_attribute('type', 'number'),
     ));
 
 /*
