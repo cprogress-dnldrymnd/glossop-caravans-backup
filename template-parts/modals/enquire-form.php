@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="EnquireModal" tabindex="-1" aria-labelledby="EnquireModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header p-0">
                 <h1 class="modal-title fs-5" id="EnquireModalLabel">Enquire Now</h1>
