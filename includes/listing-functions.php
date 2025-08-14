@@ -232,13 +232,14 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
                             Finance available: 7.9% APR
                         </div>
                     </div>
+                    <!--
                     <div class="listing-grid__feature-item col-auto">
                         <div
                             class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
                             <span class="fs-7 fw-medium">Per month</span>
                             £565.50
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <?php
                 echo listing__action(false);
