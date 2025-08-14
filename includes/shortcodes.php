@@ -37,13 +37,11 @@ function listing_grid_full_details($atts)
     extract(
         shortcode_atts(
             array(
-                'style' => 'style-1',
                 'id'    => 'id'
             ),
             $atts
         )
     );
-    $args['style'] = $style;
     $args['id'] = $id;
     get_template_part('template-parts/shortcodes/listing-grid-full-details', NULL, $args);
     return ob_get_clean();

@@ -12,8 +12,6 @@ $term_ids = [];
 foreach ($category as $cat) {
     $term_ids[] = $cat['id'];
 }
-
-var_dump($term_ids);
 ?>
 <div class="site-content listings background-lightgray">
     <div class="container md-padding-top md-padding-bottom">
@@ -262,24 +260,7 @@ var_dump($term_ids);
                         <div class="listing-item" id="swiper-gallery-1">
                             <?= do_shortcode('[listing_grid_full_details id="gallery-1"]') ?>
                         </div>
-                        <div class="listing-item" id="swiper-gallery-2">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-2" style="style-2"]') ?>
-                        </div>
-                        <div class="listing-item" id="swiper-gallery-3">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-3" style="style-3"]') ?>
-                        </div>
-                        <div class="listing-item" id="swiper-gallery-4">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
-                        </div>
-                        <div class="listing-item" id="swiper-gallery-5">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
-                        </div>
-                        <div class="listing-item" id="swiper-gallery-6">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
-                        </div>
-                        <div class="listing-item" id="swiper-gallery-7">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
-                        </div>
+                       
                     </div>
                     <div class="banner mt-20">
                         <?= wp_get_attachment_image(191, 'full') ?>
