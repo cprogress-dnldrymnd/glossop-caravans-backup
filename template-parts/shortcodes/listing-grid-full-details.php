@@ -74,7 +74,7 @@
               </div>
               <div class="col-lg-6 d-none d-lg-block">
                 <div class="listing-grid-item__button h-100">
-                  <a href="#" class="btn btn-outline-dark w-100 btn-lg fw-semibold h-100 d-inline-flex align-items-center justify-content-center">
+                  <a href="#" class="btn btn-outline-dark w-100 btn-lg fw-semibold h-100 d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#EnquireModal">
                     Enquire now
                   </a>
                 </div>
