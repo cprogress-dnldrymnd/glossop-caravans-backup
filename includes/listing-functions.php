@@ -337,6 +337,22 @@ function listing__key_information_v2()
             </span>
         </li>
     </ul>
+    <?php
+    return ob_get_clean();
+}
+
+
+function listing_manufacturer_logo()
+{
+    ob_start();
+    $manufacturer = get_the_terms(get_the_ID(), 'manufacturer');
+    $logo = get__term_meta($manufacturer[0]->term_id, 'main_logo');
+    if ($logo) {
+    ?>
+        <div class="image-box brand">
+            <?= wp_get_attachment_image($logo, 'medium') ?>
+        </div>
 <?php
+    }
     return ob_get_clean();
 }

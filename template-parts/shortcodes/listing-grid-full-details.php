@@ -3,7 +3,7 @@
     <div class="row g-3 justify-content-between mb-1">
       <div class="col-md-6">
         <div class="image-box brand">
-          <?= wp_get_attachment_image(190, 'medium') ?>
+          <?= listing_manufacturer_logo() ?>
         </div>
       </div>
       <div class="col-md-6">
