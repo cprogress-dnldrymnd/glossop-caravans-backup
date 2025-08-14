@@ -290,59 +290,95 @@ function listing__key_information_simple($berths = 4, $year = 2024, $axle = fals
 function listing__key_information($id)
 {
     ob_start();
-    $berths = get__post_meta_by_id($id, 'berths');
-    $axle = get__post_meta_by_id($id, 'axle');
-    $year = get__post_meta_by_id($id, 'year');
-    $warranty = get__post_meta_by_id($id, 'warranty');
-    $weight = get__post_meta_by_id($id, 'weight');
-    $awning_size = get__post_meta_by_id($id, 'awning_size');
-    $internal_length = get__post_meta_by_id($id, 'internal_length');
-    $external_length = get__post_meta_by_id($id, 'external_length');
-    $width = get__post_meta_by_id($id, 'width');
-    $internal_stock_number = get__post_meta_by_id($id, 'internal_stock_number');
+    $key_information[] = array(
+        'id' => 'year',
+        'label' => 'Year',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'width',
+        'label' => 'Width',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => array(
+            'caravans' => 'caravan_width.svg',
+            'static-caravans' => 'static_caravan_width.svg'
+        )
+    );
+    $key_information[] = array(
+        'id' => 'internal_length',
+        'label' => 'Internal Length',
+        'show_on_listing_page' => true,
+        'after' => 'm',
+        'icon' => false
+
+    );
+    $key_information[] = array(
+        'id' => 'external_length',
+        'label' => 'External Length',
+        'show_on_listing_page' => true,
+        'after' => 'm',
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'internal_stock_number',
+        'label' => 'Stock Number',
+        'show_on_listing_page' => true,
+        'after' => 'm',
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'berths',
+        'label' => 'Berths',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'awning_size',
+        'label' => 'Awning Size',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'unladen_weight',
+        'label' => 'Unladen Weight',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'axle',
+        'label' => 'Axle',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'warranty',
+        'label' => 'Warranty',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
 ?>
     <ul
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
-        <?php if ($internal_stock_number) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $internal_stock_number ?> Stock Number</li>
-        <?php } ?>
-        <?php if ($berths) { ?>
-            <li> <?= get__theme_icons('berths.svg') ?> <?= $berths ?> Berth</li>
-        <?php } ?>
-        <?php if ($warranty) { ?>
-            <li><?= get__theme_icons('warranty.svg') ?> <?= $warranty ?></li>
-        <?php } ?>
-        <?php if ($year) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $year ?> Year</li>
-        <?php } ?>
-
-        <?php if ($internal_length) { ?>
-            <li><?= get__theme_icons('Caravan-Internal-Length.svg') ?> <?= $internal_length ?>m Internal Length</li>
-        <?php } ?>
-        <?php if ($internal_length) { ?>
-            <li><?= get__theme_icons('Caravan-External-Length.svg') ?> <?= $external_length ?>m External Length</li>
-        <?php } ?>
-        <?php if ($width) { ?>
-            <li><?= get__theme_icons('Caravan-External-Width.svg') ?> <?= $width ?>m Width</li>
-        <?php } ?>
-
-        <?php if ($axle) { ?>
-            <li>
-                <span class="icons">
-                    <?php if ($axle == 'Twin Axle') { ?>
-                        <?= get__theme_icons('tire.svg') ?>
-                    <?php } ?>
-                    <?= get__theme_icons('tire.svg') ?>
-                </span>
-                <?= $axle ?>
-            </li>
-        <?php } ?>
-        <?php if ($weight) { ?>
-            <li><?= get__theme_icons('kg.svg') ?> MTPLM <?= $weight ?>kg</li>
-        <?php } ?>
-        <?php if ($awning_size) { ?>
-            <li><?= get__theme_icons('awning-size.svg') ?> <?= $awning_size ?> Awning Size</li>
-        <?php } ?>
+        <?php
+        foreach ($key_information as $key_info) {
+            $icon = get__theme_icons($key_info['id'] . '.svg');
+            $value = get__post_meta_by_id($id, $key_info['id']);
+            echo '<li>';
+            echo $icon;
+            echo $key_info['label'];
+            echo $value;
+            echo '</li>';
+        }
+        ?>
     </ul>
 <?php
     return ob_get_clean();
