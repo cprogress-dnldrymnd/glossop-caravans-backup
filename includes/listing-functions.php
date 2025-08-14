@@ -319,13 +319,13 @@ function listing__key_information($id)
 
 
         <?php if ($internal_length) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $internal_length ?>m Internal Length</li>
+            <li><?= get__theme_icons('Caravan-Internal-Length.svg') ?> <?= $internal_length ?>m Internal Length</li>
         <?php } ?>
         <?php if ($internal_length) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $external_length ?>m External Length</li>
+            <li><?= get__theme_icons('Caravan-External-Length.svg') ?> <?= $external_length ?>m External Length</li>
         <?php } ?>
         <?php if ($width) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $width ?>m Width</li>
+            <li><?= get__theme_icons('Caravans-Internal-Width.svg') ?> <?= $width ?>m Width</li>
         <?php } ?>
 
 
