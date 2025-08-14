@@ -14,8 +14,13 @@ Container::make('term_meta', __('Manufacturer Properties'))
 Container::make('post_meta', __('Caravan Properties'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('media_gallery', 'gallery', __('Gallery')),
-        Field::make('image', 'floor_plan', __('Floor Plan')),
+        Field::make('complex', 'images', __('Images'))
+            ->add_fields(array(
+                Field::make('text', 'image_url', __('Image URL')),
+            ))
+            ->set_layout('tabbed-horizontal')
+            ->set_header_template('<%- image_url %>'),
+
         Field::make('text', 'listing_url', __('Listing URL'))->set_attribute('type', 'url'),
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
