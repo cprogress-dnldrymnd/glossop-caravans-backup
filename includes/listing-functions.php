@@ -201,9 +201,9 @@ function listing__action($share = true, $save = true)
 function listing__gallery($id, $is_thumbnail = false, $images = 'default', $class = 'h-100')
 {
     ob_start();
-    if ($images == 'default') {
-        $images = [53, 53, 53, 53, 53, 53];
-    }
+  
+    $images = carbon_get_post_meta($id, 'images');
+    var_dump($images);
 ?>
     <div class="listing-grid--gallery <?= $class ?>">
         <div class="zoom d-none d-lg-flex">
