@@ -1,4 +1,4 @@
-<div class="listing-grid-full-details bg-white rounded overflow-hidden position-relative <?= $args['style'] ?>">
+<div class="listing-grid-full-details bg-white rounded overflow-hidden position-relative style-1">
   <div class="listing-grid--top d-none d-lg-block">
     <div class="row g-3 justify-content-between mb-1">
       <div class="col-md-6">
@@ -18,10 +18,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <?php
-        if ($args['style'] == 'style-2') {
-          echo listing__price();
-        }
+
         ?>
       </div>
     </div>
@@ -32,16 +29,13 @@
         <div class="listing-grid--left-inner position-relative h-100">
           <?php echo $args['id'];
           echo listing__gallery($args['id']);
-          if ($args['style'] == 'style-1') {
           ?>
-            <div class="d-none d-lg-block">
-              <?php
-              echo listing__price();
-              ?>
-            </div>
-          <?php
-          }
-          ?>
+          <div class="d-none d-lg-block">
+            <?php
+            echo listing__price();
+            ?>
+          </div>
+
         </div>
       </div>
       <div class="col-xl-5">
@@ -70,11 +64,7 @@
           </div>
           <div class="listing-grid-right-item d-none d-lg-block">
             <?php
-            if ($args['style'] != 'style-3') {
-              echo listing__features(true);
-            } else {
-              echo listing__price();
-            }
+            echo listing__features(true);
             ?>
           </div>
           <div class="listing-grid-right-item">
