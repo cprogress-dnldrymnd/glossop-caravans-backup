@@ -129,14 +129,20 @@ Container::make('post_meta', __('External Length'))
 
 Container::make('post_meta', __('Width'))
     ->where('post_type', '=', 'caravan')
+    ->where(function ($condition) {
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'static-caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+    })
     ->add_fields(array(
-        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
-    ));
-
-Container::make('post_meta', __('Width'))
-    ->where('post_type', '=', 'caravan')
-    ->add_fields(array(
-        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
+        Field::make('text', 'width', __(''))->set_attribute('type', 'number'),
     ));
 
 Container::make('post_meta', __('Chassis'))
