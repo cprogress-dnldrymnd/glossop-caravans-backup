@@ -28,6 +28,9 @@ Container::make('post_meta', __('Listing Properties'))
             ->add_fields('axle', array(
                 Field::make('text', 'listing_feature', __('')),
             ))
+            ->add_fields('year', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
             ->add_fields('unladen_weight', array(
                 Field::make('text', 'listing_feature', __('')),
             ))
