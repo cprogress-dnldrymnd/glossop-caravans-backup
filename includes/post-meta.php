@@ -224,7 +224,7 @@ Container::make('post_meta', __('BHP'))
     ->add_fields(array(
         Field::make('text', 'bhp', __(''))->set_attribute('type', 'number'),
     ));
-Container::make('post_meta', __('Length'))
+Container::make('post_meta', __('Length(m)'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
