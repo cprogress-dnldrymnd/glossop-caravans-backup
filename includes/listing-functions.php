@@ -296,13 +296,19 @@ function listing__key_information($id)
             <li> <?= get__theme_icons('berths.svg') ?> <?= $berths ?> Berth</li>
         <?php } ?>
         <?php if ($warranty) { ?>
-            <li><?= get__theme_icons('warranty.svg') ?> <?= $warranty ?> year warranty</li>
+            <li><?= get__theme_icons('warranty.svg') ?> <?= $warranty ?></li>
         <?php } ?>
         <?php if ($year) { ?>
             <li><?= get__theme_icons('year.svg') ?> Year <?= $year ?></li>
         <?php } ?>
         <?php if ($axle) { ?>
-            <li><span class="icons"><?= get__theme_icons('tire.svg') ?><?= get__theme_icons('tire.svg') ?></span>
+            <li>
+                <span class="icons">
+                    <?php if ($axle == 'Twin Axle') { ?>
+                        <?= get__theme_icons('twin-axle.svg') ?>
+                    <?php } ?>
+                    <?= get__theme_icons('tire.svg') ?>
+                </span>
                 <?= $axle ?>
             </li>
         <?php } ?>
