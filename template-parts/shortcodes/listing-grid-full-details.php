@@ -60,7 +60,7 @@
           </div>
           <div class="listing-grid-right-item d-none d-lg-block">
             <?php
-            echo listing__features(true);
+            echo listing__features($id, true);
             ?>
           </div>
           <div class="listing-grid-right-item">
