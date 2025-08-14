@@ -13,8 +13,11 @@ Container::make('term_meta', __('Manufacturer Properties'))
 
 Container::make('post_meta', __('Listing Properties'))
     ->where('post_type', '=', 'caravan')
-    ->where('post_term', '=', 'caravans')
-    ->where('post_taxonomy', '=', 'listing_category')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('complex', 'images', __('Images'))
             ->add_fields(array(
