@@ -20,6 +20,13 @@ $args = array(
             'field' => 'term_id',
             'terms' => $term_ids,
         ),
+        'meta_query' => array(
+            array(
+                'key' => 'listing_features:berths/listing_feature',
+                'value' => '4',
+            ),
+        ),
+
     ),
 );
 $listings = new WP_Query($args);
