@@ -109,7 +109,7 @@ function listing__features($id, $hide_per_month = false)
 {
     ob_start();
     $finance_available = get__post_meta_by_id($id, 'finance_available');
-    if ($finance_available != '' || $hide_per_month != false) {
+    if ($finance_available != '' &&| $hide_per_month != false) {
 ?>
         <div class="listing-grid__feature-holder">
             <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
