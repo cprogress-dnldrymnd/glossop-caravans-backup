@@ -48,7 +48,8 @@ Container::make('post_meta', __('Listing Properties'))
             ))
             ->add_fields('width', array(
                 Field::make('text', 'listing_feature', __('')),
-            )),
+            ))
+            ->set_duplicate_groups_allowed(false),
 
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
