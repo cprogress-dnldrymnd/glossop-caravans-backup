@@ -14,7 +14,7 @@ foreach ($category as $cat) {
 }
 
 $args = array(
-    'post_type' => 'caravans',
+    'post_type' => 'caravan',
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
