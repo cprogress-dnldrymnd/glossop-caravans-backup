@@ -149,7 +149,7 @@ Container::make('post_meta', __('Width'))
         ));
     })
     ->add_fields(array(
-        Field::make('text', 'caravan_width', __(''))->set_attribute('type', 'number'),
+        Field::make('text', 'width', __(''))->set_attribute('type', 'number'),
     ));
 
 Container::make('post_meta', __('Unladen Weight(k)'))
