@@ -9,9 +9,7 @@ global $listing_fields;
 $category = carbon_get_the_post_meta('select_category');
 $term_ids = [];
 
-foreach ($category as $cat) {
-    $term_ids[] = $cat['id'];
-}
+$term_ids[] = $category['0']['id'];
 
 $args = array(
     'post_type' => 'caravan',
