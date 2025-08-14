@@ -13,96 +13,17 @@ Container::make('term_meta', __('Manufacturer Properties'))
 
 Container::make('post_meta', __('Listing Properties'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', 'caravans')
+    ->where('post_taxonomy', '=', 'listing_category')
     ->add_fields(array(
-
         Field::make('complex', 'images', __('Images'))
             ->add_fields(array(
                 Field::make('text', 'image_url', __('Image URL')),
             ))
             ->set_layout('tabbed-horizontal'),
-
-        Field::make('complex', 'listing_features', __('Features/Specifications'))
-            ->add_fields('berths', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Berths: <%- listing_feature %>')
-            ->add_fields('axle', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Axle: <%- listing_feature %>')
-            ->add_fields('year', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Year: <%- listing_feature %>')
-            ->add_fields('unladen_weight', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Unladen Weight: <%- listing_feature %>')
-            ->add_fields('warranty', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Warranty: <%- listing_feature %>')
-            ->add_fields('awning_size', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Awning Size: <%- listing_feature %>')
-            ->add_fields('internal_length', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Internal Length: <%- listing_feature %>')
-            ->add_fields('external_length', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('External Length: <%- listing_feature %>')
-            ->add_fields('width', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Width: <%- listing_feature %>')
-            ->add_fields('chassis', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Chassis: <%- listing_feature %>')
-            ->add_fields('bhp', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('BHP: <%- listing_feature %>')
-            ->add_fields('mileage', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Mileage: <%- listing_feature %>')
-            ->add_fields('engine', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Engine: <%- listing_feature %>')
-            ->add_fields('registered_keepers', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Registered Keepers: <%- listing_feature %>')
-            ->add_fields('motorhome_length', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Motorhome Length: <%- listing_feature %>')
-            ->add_fields('gearbox', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Gearbox: <%- listing_feature %>')
-
-            ->add_fields('gearbox', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Gearbox: <%- listing_feature %>')
-
-            ->add_fields('mtplm', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('MTPLM: <%- listing_feature %>')
-
-            ->add_fields('fuel_type', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Fuel Type: <%- listing_feature %>')
-
-            ->add_fields('country_of_origin', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Country of Origin: <%- listing_feature %>')
-
-            ->add_fields('driver_side', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Driver Side: <%- listing_feature %>')
-
-            ->add_fields('power_steering', array(
-                Field::make('text', 'listing_feature', __('')),
-            ))->set_header_template('Power Steering: <%- listing_feature %>')
-
-            
-            ->set_duplicate_groups_allowed(false)
-            ->set_layout('tabbed-horizontal'),
-
-
-        Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
         Field::make('text', 'chassis_no', __('Chassis No.')),
+        Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'savings', __('Savings (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
