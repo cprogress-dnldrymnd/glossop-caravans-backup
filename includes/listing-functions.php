@@ -376,7 +376,10 @@ function listing__key_information($id, $category = 'caravans')
         'label' => 'Length',
         'show_on_listing_page' => true,
         'after' => false,
-        'icon' => false
+        'icon' => array(
+            'motorhomes' => 'motorhomes_length.svg',
+            'static-caravans' => 'static_caravan_length.svg'
+        )
     );
 
     $key_information[] = array(
@@ -389,7 +392,7 @@ function listing__key_information($id, $category = 'caravans')
 
 
     $key_information[] = array(
-        'id' => 'registered_keepers',
+        'id' => 'Registered_Keepers',
         'label' => 'Registered Keepers',
         'show_on_listing_page' => true,
         'after' => false,
