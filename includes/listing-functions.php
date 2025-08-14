@@ -305,7 +305,7 @@ function listing__key_information($id)
             <li>
                 <span class="icons">
                     <?php if ($axle == 'Twin Axle') { ?>
-                        <?= get__theme_icons('twin-axle.svg') ?>
+                        <?= get__theme_icons('tire.svg') ?>
                     <?php } ?>
                     <?= get__theme_icons('tire.svg') ?>
                 </span>
