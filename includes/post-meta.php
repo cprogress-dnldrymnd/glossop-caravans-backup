@@ -20,6 +20,14 @@ Container::make('post_meta', __('Listing Properties'))
                 Field::make('text', 'image_url', __('Image URL')),
             ))
             ->set_layout('tabbed-horizontal'),
+
+        Field::make('complex', 'listing_features', __('Features/Specifications'))
+            ->add_fields('berths', array(
+                Field::make('text', 'berths', __('Berths')),
+            ))
+            ->add_fields('axle', array(
+                Field::make('text', 'axle', __('Axle')),
+            )),
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
         Field::make('text', 'chassis_no', __('Chassis No.')),
