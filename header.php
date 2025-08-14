@@ -36,5 +36,4 @@
         </header>
         <?php
         echo do_shortcode('[template template_id=1735]');
-      // echo do_shortcode('[search_stock]');
-		echo do_shortcode('[caravan_filter]'); 
+        echo do_shortcode('[search_stock]');
