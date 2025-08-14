@@ -36,35 +36,37 @@
       </div>
       <div class="col-xl-5">
         <div class="listing-grid--right-inner h-100 d-flex flex-column justify-content-between">
-          <div class="listing-grid-right-item">
-            <!--<div class="image-box image-style mb-20 d-none d-lg-block" style="--fit: contain; --padding: 18%">
+          <div class="listing-grid-right-item--top">
+            <div class="listing-grid-right-item">
+              <!--<div class="image-box image-style mb-20 d-none d-lg-block" style="--fit: contain; --padding: 18%">
               <?= wp_get_attachment_image(189, 'large') ?>
             </div>-->
-            <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
-            <div class="listing-inner--key-info d-none d-lg-block">
-              <?php
-              echo listing__key_information(get_the_ID());
-              ?>
-            </div>
-            <div class="d-block d-lg-none mt-3">
-              <div class="listing-inner--key-info mb-3">
+              <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
+              <div class="listing-inner--key-info d-none d-lg-block">
                 <?php
-                echo listing__key_information_simple();
+                echo listing__key_information(get_the_ID());
                 ?>
               </div>
-              <?php
-              echo listing__price();;
-              ?>
-            </div>
+              <div class="d-block d-lg-none mt-3">
+                <div class="listing-inner--key-info mb-3">
+                  <?php
+                  echo listing__key_information_simple();
+                  ?>
+                </div>
+                <?php
+                echo listing__price();;
+                ?>
+              </div>
 
-          </div>
-          <?php if (listing__features($id, true) != false) { ?>
-            <div class="listing-grid-right-item d-none d-lg-block">
-              <?php
-              echo listing__features($id, true);
-              ?>
             </div>
-          <?php } ?>
+            <?php if (listing__features($id, true) != false) { ?>
+              <div class="listing-grid-right-item d-none d-lg-block">
+                <?php
+                echo listing__features($id, true);
+                ?>
+              </div>
+            <?php } ?>
+          </div>
           <div class="listing-grid-right-item">
             <div class="row g-xxs">
               <div class="col-lg-6">
