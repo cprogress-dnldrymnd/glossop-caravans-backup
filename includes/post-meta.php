@@ -81,6 +81,11 @@ Container::make('post_meta', __('Bedrooms'))
 
 Container::make('post_meta', __('Axle'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('text', 'axle', __(''))
     ));
@@ -99,30 +104,46 @@ Container::make('post_meta', __('Warranty'))
 
 Container::make('post_meta', __('Unladen Weight(k)'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('text', 'unladen_weight', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('Unladen Weight(k)'))
-    ->where('post_type', '=', 'caravan')
-    ->add_fields(array(
-        Field::make('text', 'weight', __(''))->set_attribute('type', 'number'),
-    ));
+
 
 Container::make('post_meta', __('Awning Size(m)'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('text', 'awning_size', __(''))->set_attribute('type', 'number'),
     ));
 
 Container::make('post_meta', __('Internal Length'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('text', 'internal_length', __(''))->set_attribute('type', 'number'),
     ));
 
 Container::make('post_meta', __('External Length'))
     ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'caravans', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
     ->add_fields(array(
         Field::make('text', 'external_length', __(''))->set_attribute('type', 'number'),
     ));
@@ -143,6 +164,24 @@ Container::make('post_meta', __('Width'))
     })
     ->add_fields(array(
         Field::make('text', 'width', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('MTPLM'))
+    ->where('post_type', '=', 'caravan')
+    ->where(function ($condition) {
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'motorhomes', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+    })
+    ->add_fields(array(
+        Field::make('text', 'mtplm', __(''))->set_attribute('type', 'number'),
     ));
 
 Container::make('post_meta', __('Chassis'))
@@ -167,7 +206,7 @@ Container::make('post_meta', __('Gearbox'))
         Field::make('text', 'gearbox', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('Gearbox'))
+Container::make('post_meta', __('Engine'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
@@ -175,7 +214,62 @@ Container::make('post_meta', __('Gearbox'))
         'taxonomy' => 'listing_category', // or a custom taxonomy slug
     ))
     ->add_fields(array(
-        Field::make('text', 'gearbox', __(''))->set_attribute('type', 'number'),
+        Field::make('text', 'engine', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Engine'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'engine', __(''))->set_attribute('type', 'number'),
+    ));
+
+
+Container::make('post_meta', __('Mileage'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'mileage', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('BHP'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'bhp', __(''))->set_attribute('type', 'number'),
+    ));
+Container::make('post_meta', __('Length'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'length', __(''))->set_attribute('type', 'number'),
+    ));
+
+Container::make('post_meta', __('Registered Keepers'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'registered_keepers', __(''))->set_attribute('type', 'number'),
     ));
 
 /*
