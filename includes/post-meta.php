@@ -241,7 +241,7 @@ Container::make('post_meta', __('Length(m)'))
     ->where(function ($condition) {
         $condition->or_where('post_term', '=', array(
             'field'    => 'slug', // or 'id'
-            'value'    => 'caravans', // or the category ID
+            'value'    => 'motorhomes', // or the category ID
             'taxonomy' => 'listing_category', // or a custom taxonomy slug
         ));
         $condition->or_where('post_term', '=', array(
