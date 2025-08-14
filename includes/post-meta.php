@@ -16,14 +16,12 @@ Container::make('post_meta', __('Caravan Properties'))
     ->add_fields(array(
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
         Field::make('text', 'chassis_no', __('Chassis No.')),
-        
+
         Field::make('complex', 'images', __('Images'))
             ->add_fields(array(
                 Field::make('text', 'image_url', __('Image URL')),
             ))
             ->set_layout('tabbed-horizontal'),
-
-        Field::make('text', 'listing_url', __('Listing URL'))->set_attribute('type', 'url'),
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
