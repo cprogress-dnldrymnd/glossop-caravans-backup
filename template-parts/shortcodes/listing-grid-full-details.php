@@ -24,11 +24,11 @@
       <div class="col-xl-7">
         <div class="listing-grid--left-inner position-relative h-100">
           <?php
-          echo listing__gallery(get_the_ID());
+          echo listing__gallery($id);
           ?>
           <div class="d-none d-lg-block">
             <?php
-            echo listing__price();
+            echo listing__price($id);
             ?>
           </div>
 
@@ -44,7 +44,7 @@
               <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
               <div class="listing-inner--key-info d-none d-lg-block">
                 <?php
-                echo listing__key_information(get_the_ID(), $args['category']);
+                echo listing__key_information($id, $args['category']);
                 ?>
               </div>
               <div class="d-block d-lg-none mt-3">
@@ -54,7 +54,7 @@
                   ?>
                 </div>
                 <?php
-                echo listing__price($id);;
+                echo listing__price($id);
                 ?>
               </div>
 
