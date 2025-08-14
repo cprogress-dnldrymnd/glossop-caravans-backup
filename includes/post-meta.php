@@ -55,7 +55,7 @@ Container::make('post_meta', __('Berths'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
-        'value'    => array('caravans', 'motorhomes'), // or the category ID
+        'value'    => 'caravans', // or the category ID
         'taxonomy' => 'listing_category', // or a custom taxonomy slug
     ))
     ->add_fields(array(
