@@ -89,7 +89,11 @@ Container::make('post_meta', __('Axle'))
     ->add_fields(array(
         Field::make('text', 'axle', __(''))
     ));
-
+Container::make('post_meta', __('Condition'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'condition', __('')),
+    ));
 Container::make('post_meta', __('Year'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
