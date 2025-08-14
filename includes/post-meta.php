@@ -53,11 +53,18 @@ Container::make('post_meta', __('Our Price (£)'))
 
 Container::make('post_meta', __('Berths'))
     ->where('post_type', '=', 'caravan')
-    ->where('post_term', '=', array(
-        'field'    => 'slug', // or 'id'
-        'value'    => 'caravans', // or the category ID
-        'taxonomy' => 'listing_category', // or a custom taxonomy slug
-    ))
+    ->where(function ($condition) {
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'motorhomes', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+    })
     ->add_fields(array(
         Field::make('text', 'berths', __(''))
     ));
