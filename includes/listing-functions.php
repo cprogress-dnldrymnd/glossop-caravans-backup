@@ -105,17 +105,21 @@ function listings_fields()
 }
 add_action('after_setup_theme', 'listings_fields');
 
-function listing__features($hide_per_month = false)
+function listing__features($id, $hide_per_month = false)
 {
     ob_start();
+    $finance_available = get__post_meta_by_id($id, 'finance_available');
+
 ?>
     <div class="listing-grid__feature-holder">
         <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
-            <div class="listing-grid__feature-item col-auto listing-grid__feature-finance">
-                <div class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
-                    Finance available: 7.9% APR
+            <?php if ($finance_available) { ?>
+                <div class="listing-grid__feature-item col-auto listing-grid__feature-finance">
+                    <div class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
+                        Finance available: <?= $finance_available ?>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
             <?php if (!$hide_per_month) { ?>
                 <div class="listing-grid__feature-item listing-grid__feature-per-month col-auto">
                     <div
