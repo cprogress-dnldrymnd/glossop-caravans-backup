@@ -24,35 +24,37 @@ Container::make('post_meta', __('Listing Properties'))
         Field::make('complex', 'listing_features', __('Features/Specifications'))
             ->add_fields('berths', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('B <%- listing_feature %>')
             ->add_fields('axle', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Axle <%- listing_feature %>')
             ->add_fields('year', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Year <%- listing_feature %>')
             ->add_fields('unladen_weight', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Unladen Weight <%- listing_feature %>')
             ->add_fields('warranty', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Warranty <%- listing_feature %>')
             ->add_fields('awning_size', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Awning Size <%- listing_feature %>')
             ->add_fields('internal_length', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Internal Length <%- listing_feature %>')
             ->add_fields('external_length', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('External Length <%- listing_feature %>')
             ->add_fields('width', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
+            ))->set_header_template('Width <%- listing_feature %>')
             ->add_fields('chassis', array(
                 Field::make('text', 'listing_feature', __('')),
-            ))
-            ->set_duplicate_groups_allowed(false),
+            ))->set_header_template('Chassis <%- listing_feature %>')
+            ->set_duplicate_groups_allowed(false)
+            ->set_layout('tabbed-horizontal'),
+
 
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
