@@ -49,7 +49,6 @@ Container::make('post_meta', __('Caravan Properties'))
         Field::make('text', 'awning_size', __('Awning Size(m)'))->set_attribute('type', 'number'),
         Field::make('text', 'internal_length', __('Internal Length'))->set_attribute('type', 'number'),
         Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number'),
-        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number'),
         Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
 
         Field::make('checkbox', 'now_on_display', __('Now On Display')),
