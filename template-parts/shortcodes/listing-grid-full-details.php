@@ -23,8 +23,8 @@
     <div class="row g-0">
       <div class="col-xl-7">
         <div class="listing-grid--left-inner position-relative h-100">
-          <?php echo $args['id'];
-          echo listing__gallery($args['id']);
+          <?php
+          echo listing__gallery(get_the_ID());
           ?>
           <div class="d-none d-lg-block">
             <?php
