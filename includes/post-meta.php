@@ -14,6 +14,9 @@ Container::make('term_meta', __('Manufacturer Properties'))
 Container::make('post_meta', __('Caravan Properties'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
+        Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
+        Field::make('text', 'chassis_no', __('Chassis No.')),
+        
         Field::make('complex', 'images', __('Images'))
             ->add_fields(array(
                 Field::make('text', 'image_url', __('Image URL')),
@@ -44,8 +47,13 @@ Container::make('post_meta', __('Caravan Properties'))
             )),
         Field::make('text', 'year', __('Year')),
         Field::make('text', 'warranty', __('Warranty')),
-        Field::make('text', 'weight', __('Weight')),
-        Field::make('text', 'awning_size', __('Awning Size')),
+        Field::make('text', 'weight', __('Weight(k)'))->set_attribute('type', 'number'),
+        Field::make('text', 'awning_size', __('Awning Size(m)'))->set_attribute('type', 'number'),
+        Field::make('text', 'internal_length', __('Internal Length'))->set_attribute('type', 'number'),
+        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number'),
+        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number'),
+        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
+
         Field::make('checkbox', 'now_on_display', __('Now On Display')),
     ));
 
