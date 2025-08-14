@@ -231,7 +231,7 @@ Container::make('post_meta', __('BHP'))
     ));
 Container::make('post_meta', __('Length(m)'))
     ->where('post_type', '=', 'caravan')
-    > where(function ($condition) {
+    ->where(function ($condition) {
         $condition->or_where('post_term', '=', array(
             'field'    => 'slug', // or 'id'
             'value'    => 'caravans', // or the category ID

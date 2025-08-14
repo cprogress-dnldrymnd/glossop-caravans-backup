@@ -399,8 +399,6 @@ function listing__key_information($id, $category = 'caravans')
         'icon' => false
     );
 
-
-
     $key_information[] = array(
         'id' => 'internal_stock_number',
         'label' => 'Stock Number',
