@@ -11,6 +11,27 @@ Container::make('term_meta', __('Manufacturer Properties'))
         Field::make('image', 'main_logo', __('Logo')),
     ));
 
+Container::make('post_meta', __('Listing Images'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('complex', 'images', __(''))
+            ->add_fields(array(
+                Field::make('text', 'image_url', __('Image URL')),
+            ))
+            ->set_layout('tabbed-horizontal'),
+    ));
+
+
+Container::make('post_meta', __('Listing Properties'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
+        Field::make('text', 'chassis_no', __('Chassis No.')),
+        Field::make('text', 'finance_available', __('Finance Available')),
+        Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
+        Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
+    ));
+
 Container::make('post_meta', __('Listing Properties'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
@@ -19,18 +40,8 @@ Container::make('post_meta', __('Listing Properties'))
         'taxonomy' => 'listing_category', // or a custom taxonomy slug
     ))
     ->add_fields(array(
-        Field::make('complex', 'images', __('Images'))
-            ->add_fields(array(
-                Field::make('text', 'image_url', __('Image URL')),
-            ))
-            ->set_layout('tabbed-horizontal'),
-        Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
-        Field::make('text', 'chassis_no', __('Chassis No.')),
-        Field::make('text', 'finance_available', __('Finance Available')),
-        Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
-        Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
-        Field::make('text', 'savings', __('Savings (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
-        Field::make('text', 'per_month', __('Per Month (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
+
+
 
         Field::make('select', 'berths', __('Berths'))->set_width(25)
             ->set_options(array(
