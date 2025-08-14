@@ -271,15 +271,18 @@ $listings = new WP_Query($args);
                         <?= wp_get_attachment_image(188, 'full') ?>
                     </div>
                     <div class="listings d-flex flex-column" style="--padding: 37%">
-                        <div class="listing-item" id="swiper-gallery-1">
-                            <?php
-                            while ($listings->have_posts()) {
-                                $listings->the_post();
+                        <?php
+                        while ($listings->have_posts()) {
+                            $listings->the_post();
+                        ?>
+                            <div class="listing-item" id="swiper-gallery-1">
+                                <?php
                                 echo do_shortcode('[listing_grid_full_details]');
-                            }
-                            wp_reset_postdata();
-                            ?>
-                        </div>
+                                ?>
+                            </div>
+                        <?php } ?>
+
+                        <?php wp_reset_postdata(); ?>
 
                     </div>
                     <div class="banner mt-20">
