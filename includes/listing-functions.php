@@ -280,19 +280,38 @@ function listing__key_information_simple($berths = 4, $year = 2024, $axle = fals
     return ob_get_clean();
 }
 
-function listing__key_information()
+function listing__key_information($id)
 {
     ob_start();
+    $berths = get__post_meta_by_id($id, 'berths');
+    $axle = get__post_meta_by_id($id, 'axle');
+    $year = get__post_meta_by_id($id, 'year');
+    $warranty = get__post_meta_by_id($id, 'warranty');
+    $weight = get__post_meta_by_id($id, 'weight');
+    $awning_size = get__post_meta_by_id($id, 'awning_size');
 ?>
     <ul
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
-        <li> <?= get__theme_icons('berths.svg') ?> 6 Berth</li>
-        <li><?= get__theme_icons('warranty.svg') ?> 3 year warranty</li>
-        <li><?= get__theme_icons('year.svg') ?> Year 2024</li>
-        <li><span class="icons"><?= get__theme_icons('tire.svg') ?><?= get__theme_icons('tire.svg') ?></span>
-            Twin axle</li>
-        <li><?= get__theme_icons('kg.svg') ?> MTPLM 1630kg</li>
-        <li><?= get__theme_icons('awning-size.svg') ?> 10.52m Awning Size</li>
+        <?php if ($berths) { ?>
+            <li> <?= get__theme_icons('berths.svg') ?> <?= $berths ?> Berth</li>
+        <?php } ?>
+        <?php if ($warranty) { ?>
+            <li><?= get__theme_icons('warranty.svg') ?> <?= $warranty ?> year warranty</li>
+        <?php } ?>
+        <?php if ($year) { ?>
+            <li><?= get__theme_icons('year.svg') ?> Year <?= $year ?></li>
+        <?php } ?>
+        <?php if ($axle) { ?>
+            <li><span class="icons"><?= get__theme_icons('tire.svg') ?><?= get__theme_icons('tire.svg') ?></span>
+                <?= $axle ?>
+            </li>
+        <?php } ?>
+        <?php if ($weight) { ?>
+            <li><?= get__theme_icons('kg.svg') ?> MTPLM <?= $weight ?>kg</li>
+        <?php } ?>
+        <?php if ($awning_size) { ?>
+            <li><?= get__theme_icons('awning-size.svg') ?> <?= $awning_size ?> Awning Size</li>
+        <?php } ?>
     </ul>
 <?php
     return ob_get_clean();
