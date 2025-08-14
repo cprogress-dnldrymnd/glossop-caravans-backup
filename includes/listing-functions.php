@@ -381,12 +381,10 @@ function listing__key_information($id, $category = 'caravans')
             echo $icon;
             echo $key_info['label'];
             echo ' ';
-            echo '<span class="fw-medium">';
             echo $value;
             if ($key_info['after']) {
                 echo $key_info['after'];
             }
-            echo '</span>';
 
             echo '</li>';
         }
