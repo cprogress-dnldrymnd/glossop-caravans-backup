@@ -373,9 +373,10 @@ function listing__key_information($id, $category = 'caravans')
             if ($key_info['icon'] == false) {
                 $icon = get__theme_icons($key_info['id'] . '.svg');
             } else {
-                echo $key_info['icon'][$category];
+                $term = get_term_by('term_id', $category);
+                echo $key_info['icon'][$term->slug];
                 echo $category;
-                $icon = get__theme_icons($key_info['icon'][$category] . '.svg');
+                $icon = get__theme_icons($key_info['icon'][$term->slug] . '.svg');
             }
             $value = get__post_meta_by_id($id, $key_info['id']);
             echo '<li>';
