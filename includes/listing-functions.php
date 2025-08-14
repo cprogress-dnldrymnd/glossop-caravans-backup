@@ -203,6 +203,11 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
     ob_start();
 
     $images = carbon_get_post_meta($id, 'images');
+    if (!$images || empty($images)) {
+        $images = array(
+            array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
+        );
+    }
 ?>
     <div class="listing-grid--gallery <?= $class ?>">
         <div class="zoom d-none d-lg-flex">
