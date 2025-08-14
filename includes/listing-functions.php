@@ -375,6 +375,7 @@ function listing__key_information($id)
             echo '<li>';
             echo $icon;
             echo $key_info['label'];
+            echo ' ';
             echo $value;
             echo '</li>';
         }
