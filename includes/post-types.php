@@ -197,6 +197,9 @@ $Caravans->exclude_from_search = true;
 $Caravans->publicly_queryable = true;
 $Caravans->show_in_admin_bar = false;
 $Caravans->has_archive = false;
+$Caravans->rewrite = array(
+    'slug'         => 'listing',
+);
 
 
 
