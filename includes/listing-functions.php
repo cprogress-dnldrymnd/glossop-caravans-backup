@@ -325,7 +325,7 @@ function listing__key_information($id)
             <li><?= get__theme_icons('Caravan-External-Length.svg') ?> <?= $external_length ?>m External Length</li>
         <?php } ?>
         <?php if ($width) { ?>
-            <li><?= get__theme_icons('Caravans-Internal-Width.svg') ?> <?= $width ?>m Width</li>
+            <li><?= get__theme_icons('Caravan-External-Width.svg') ?> <?= $width ?>m Width</li>
         <?php } ?>
 
 
