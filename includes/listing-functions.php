@@ -383,23 +383,25 @@ function listing__key_information($id, $category = 'caravans')
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
         <?php
         foreach ($key_information as $key_info) {
-            if ($key_info['icon'] == false) {
-                $icon = get__theme_icons($key_info['id'] . '.svg');
-            } else {
-                $term = get_term_by('term_id', $category, 'listing_category');
-                $icon = get__theme_icons($key_info['icon'][$term->slug]);
-            }
             $value = get__post_meta_by_id($id, $key_info['id']);
-            echo '<li>';
-            echo $icon;
-            echo $key_info['label'];
-            echo ' ';
-            echo $value;
-            if ($key_info['after']) {
-                echo $key_info['after'];
-            }
+            if ($value) {
+                if ($key_info['icon'] == false) {
+                    $icon = get__theme_icons($key_info['id'] . '.svg');
+                } else {
+                    $term = get_term_by('term_id', $category, 'listing_category');
+                    $icon = get__theme_icons($key_info['icon'][$term->slug]);
+                }
+                echo '<li>';
+                echo $icon;
+                echo $key_info['label'];
+                echo ' ';
+                echo $value;
+                if ($key_info['after']) {
+                    echo $key_info['after'];
+                }
 
-            echo '</li>';
+                echo '</li>';
+            }
         }
         ?>
     </ul>
