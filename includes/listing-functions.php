@@ -138,9 +138,12 @@ function listing__features($id, $hide_per_month = false)
     return ob_get_clean();
 }
 
-function listing__price($rrp = '33795', $our_price = '42200', $savings = '1955', $per_month = false)
+function listing__price($id, $per_month = false)
 {
     ob_start();
+    $rrp = get__post_meta_by_id($id, 'rrp');
+    $our_price = get__post_meta_by_id($id, 'our_price');
+    $savings =  $rrp - $our_price;
     ?>
     <div class="listing-grid-item__prices-holder">
         <div class="listing-grid-item__prices row g-xxs text-center">
@@ -154,7 +157,6 @@ function listing__price($rrp = '33795', $our_price = '42200', $savings = '1955',
             <?php } ?>
 
             <?php if ($our_price) { ?>
-
                 <div class="listing-grid-item__price col">
                     <div class="grid-item__price-inner rounded h-100">
                         <span class="fs-14">Our price</span>

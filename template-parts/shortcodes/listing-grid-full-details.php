@@ -54,7 +54,7 @@
                   ?>
                 </div>
                 <?php
-                echo listing__price();;
+                echo listing__price($id);;
                 ?>
               </div>
 
