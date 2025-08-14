@@ -35,18 +35,19 @@ Container::make('post_meta', __('Chassis No'))
 Container::make('post_meta', __('Finance Available'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'finance_available', __('Finance Available')),
+        Field::make('text', 'finance_available', __('')),
     ));
-Container::make('post_meta', __('Finance Available'))
+
+Container::make('post_meta', __('RRP (£)'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'finance_available', __('Finance Available')),
+        Field::make('text', 'rrp', __(''))->set_attribute('type', 'number')->set_attribute('step', '1'),
     ));
-Container::make('post_meta', __('Prices'))
+
+Container::make('post_meta', __('Our Price (£)'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
-        Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
+        Field::make('text', 'our_price', __(''))->set_attribute('type', 'number')->set_attribute('step', '1'),
     ));
 
 Container::make('post_meta', __('Listing Properties'))
