@@ -351,6 +351,13 @@ function listing__key_information($id, $category = 'caravans')
         'icon' => false
     );
     $key_information[] = array(
+        'id' => 'mtplm',
+        'label' => 'MTPLM',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
         'id' => 'axle',
         'label' => '',
         'show_on_listing_page' => true,
