@@ -27,7 +27,26 @@ Container::make('post_meta', __('Listing Properties'))
             ))
             ->add_fields('axle', array(
                 Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('unladen_weight', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('warranty', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('awning_size', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('internal_length', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('external_length', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
+            ->add_fields('width', array(
+                Field::make('text', 'listing_feature', __('')),
             )),
+
         Field::make('text', 'finance_available', __('Finance Available')),
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
         Field::make('text', 'chassis_no', __('Chassis No.')),
