@@ -188,8 +188,8 @@ $Testimonials->has_archive = false;
 
 $Caravans = new newPostType();
 $Caravans->key = 'caravan';
-$Caravans->name = 'Caravans & Motorhomes';
-$Caravans->singular_name = 'Caravans & Motorhomes';
+$Caravans->name = 'Listings';
+$Caravans->singular_name = 'Listing';
 $Caravans->icon = 'dashicons-video-alt3';
 $Caravans->show_in_rest = true;
 $Caravans->supports = array('title', 'editor', 'revisions', 'thumbnail', 'excerpt');
