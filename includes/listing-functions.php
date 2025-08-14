@@ -297,6 +297,13 @@ function listing__key_information($id, $category = 'caravans')
 {
     ob_start();
     $key_information[] = array(
+        'id' => 'berths',
+        'label' => 'Berths',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
         'id' => 'year',
         'label' => 'Year',
         'show_on_listing_page' => true,
@@ -406,13 +413,7 @@ function listing__key_information($id, $category = 'caravans')
         'after' => false,
         'icon' => false
     );
-    $key_information[] = array(
-        'id' => 'berths',
-        'label' => 'Berths',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
+
     $key_information[] = array(
         'id' => 'awning_size',
         'label' => 'Awning Size',
