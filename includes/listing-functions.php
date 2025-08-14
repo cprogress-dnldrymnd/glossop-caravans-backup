@@ -109,36 +109,37 @@ function listing__features($id, $hide_per_month = false)
 {
     ob_start();
     $finance_available = get__post_meta_by_id($id, 'finance_available');
-
+    if ($finance_available || $hide_per_month != false) {
 ?>
-    <div class="listing-grid__feature-holder">
-        <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
-            <?php if ($finance_available) { ?>
-                <div class="listing-grid__feature-item col-auto listing-grid__feature-finance">
-                    <div class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
-                        Finance available: <?= $finance_available ?>
+        <div class="listing-grid__feature-holder">
+            <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
+                <?php if ($finance_available) { ?>
+                    <div class="listing-grid__feature-item col-auto listing-grid__feature-finance">
+                        <div class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
+                            Finance available: <?= $finance_available ?>
+                        </div>
                     </div>
-                </div>
-            <?php } ?>
-            <?php if (!$hide_per_month) { ?>
-                <div class="listing-grid__feature-item listing-grid__feature-per-month col-auto">
-                    <div
-                        class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
-                        <span class="fs-7 fw-medium">Per month</span>
-                        £565.50
+                <?php } ?>
+                <?php if (!$hide_per_month) { ?>
+                    <div class="listing-grid__feature-item listing-grid__feature-per-month col-auto">
+                        <div
+                            class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
+                            <span class="fs-7 fw-medium">Per month</span>
+                            £565.50
+                        </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-<?php
+    <?php
+    }
     return ob_get_clean();
 }
 
 function listing__price($rrp = '33795', $our_price = '42200', $savings = '1955', $per_month = false)
 {
     ob_start();
-?>
+    ?>
     <div class="listing-grid-item__prices-holder">
         <div class="listing-grid-item__prices row g-xxs text-center">
             <?php if ($rrp) { ?>
