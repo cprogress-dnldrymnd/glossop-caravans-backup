@@ -188,7 +188,7 @@ Container::make('post_meta', __('Gearbox'))
         'taxonomy' => 'listing_category', // or a custom taxonomy slug
     ))
     ->add_fields(array(
-        Field::make('text', 'gearbox', __(''))->set_attribute('type', 'number'),
+        Field::make('text', 'gearbox', __('')),
     ));
 
 Container::make('post_meta', __('Engine'))

@@ -300,7 +300,6 @@ function listing__key_information($id)
     $external_length = get__post_meta_by_id($id, 'external_length');
     $width = get__post_meta_by_id($id, 'width');
     $internal_stock_number = get__post_meta_by_id($id, 'internal_stock_number');
-    $chassis_no = get__post_meta_by_id($id, 'chassis_no');
 ?>
     <ul
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
@@ -317,7 +316,6 @@ function listing__key_information($id)
             <li><?= get__theme_icons('year.svg') ?> <?= $year ?> Year</li>
         <?php } ?>
 
-
         <?php if ($internal_length) { ?>
             <li><?= get__theme_icons('Caravan-Internal-Length.svg') ?> <?= $internal_length ?>m Internal Length</li>
         <?php } ?>
@@ -327,8 +325,6 @@ function listing__key_information($id)
         <?php if ($width) { ?>
             <li><?= get__theme_icons('Caravan-External-Width.svg') ?> <?= $width ?>m Width</li>
         <?php } ?>
-
-
 
         <?php if ($axle) { ?>
             <li>
