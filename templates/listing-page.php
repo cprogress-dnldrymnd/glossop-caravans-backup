@@ -6,6 +6,14 @@
 <?php get_header() ?>
 <?php
 global $listing_fields;
+$category = carbon_get_the_post_meta('select_category');
+$term_ids = [];
+
+foreach ($category as $cat) {
+    $term_ids[] = $cat['id'];
+}
+
+var_dump($term_ids);
 ?>
 <div class="site-content listings background-lightgray">
     <div class="container md-padding-top md-padding-bottom">
@@ -266,10 +274,10 @@ global $listing_fields;
                         <div class="listing-item" id="swiper-gallery-5">
                             <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
                         </div>
-						 <div class="listing-item" id="swiper-gallery-6">
+                        <div class="listing-item" id="swiper-gallery-6">
                             <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
                         </div>
-						 <div class="listing-item" id="swiper-gallery-7">
+                        <div class="listing-item" id="swiper-gallery-7">
                             <?= do_shortcode('[listing_grid_full_details id="gallery-4"]') ?>
                         </div>
                     </div>
