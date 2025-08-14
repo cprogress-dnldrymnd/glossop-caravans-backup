@@ -287,7 +287,7 @@ function listing__key_information_simple($berths = 4, $year = 2024, $axle = fals
     return ob_get_clean();
 }
 
-function listing__key_information($id)
+function listing__key_information($id, $category = 'caravans')
 {
     ob_start();
     $key_information[] = array(
@@ -359,7 +359,7 @@ function listing__key_information($id)
     );
     $key_information[] = array(
         'id' => 'warranty',
-        'label' => 'Warranty',
+        'label' => '',
         'show_on_listing_page' => true,
         'after' => false,
         'icon' => false
@@ -370,13 +370,19 @@ function listing__key_information($id)
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
         <?php
         foreach ($key_information as $key_info) {
-            $icon = get__theme_icons($key_info['id'] . '.svg');
+            if ($key_info['icon'] == false) {
+                $icon = get__theme_icons($key_info['id'] . '.svg');
+            } else {
+            }
             $value = get__post_meta_by_id($id, $key_info['id']);
             echo '<li>';
             echo $icon;
             echo $key_info['label'];
             echo ' ';
             echo $value;
+            if ($key_info['after']) {
+                echo $key_info['after'];
+            }
             echo '</li>';
         }
         ?>

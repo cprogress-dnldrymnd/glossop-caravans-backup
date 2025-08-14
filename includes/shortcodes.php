@@ -31,10 +31,21 @@ function listing_grid($atts)
 add_shortcode('listing_grid', 'listing_grid');
 
 
-function listing_grid_full_details()
+function listing_grid_full_details($atts)
 {
     ob_start();
-    get_template_part('template-parts/shortcodes/listing-grid-full-details');
+    extract(
+        shortcode_atts(
+            array(
+                'id'    => 'id',
+                'category' => 'caravans'
+            ),
+            $atts
+        )
+    );
+    $args['id'] = $id;
+    $args['category'] = $category;
+    get_template_part('template-parts/shortcodes/listing-grid-full-details', NULL, $args);
     return ob_get_clean();
 }
 

@@ -281,7 +281,7 @@ $listings = new WP_Query($args);
                         ?>
                             <div class="listing-item" id="swiper-gallery-1">
                                 <?php
-                                echo do_shortcode('[listing_grid_full_details]');
+                                echo do_shortcode('[listing_grid_full_details id="' . get_the_ID() . '" category="' . $category['0']['id'] . '"]');
                                 ?>
                             </div>
                         <?php } ?>
