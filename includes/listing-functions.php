@@ -399,7 +399,7 @@ function listing__key_information($id, $category = 'caravans')
 
 
     $key_information[] = array(
-        'id' => 'Registered_Keepers',
+        'id' => 'registered_keepers',
         'label' => 'Registered Keepers',
         'show_on_listing_page' => true,
         'after' => false,
