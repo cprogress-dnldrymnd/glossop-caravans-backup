@@ -112,7 +112,7 @@ Container::make('post_meta', __('Awning Size(m)'))
         Field::make('text', 'awning_size', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('Internal Length'))
+Container::make('post_meta', __('Internal Length(m)'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
@@ -123,7 +123,7 @@ Container::make('post_meta', __('Internal Length'))
         Field::make('text', 'internal_length', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('External Length'))
+Container::make('post_meta', __('External Length(m)'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
         'field'    => 'slug', // or 'id'
