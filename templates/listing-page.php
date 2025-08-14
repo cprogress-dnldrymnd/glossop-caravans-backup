@@ -17,7 +17,7 @@ $args = array(
     'meta_query' => array(
         array(
             'key' => 'listing_features:berths/listing_feature',
-            'value' => '5',
+            'value' => '4',
         ),
     ),
     'tax_query' => array(
