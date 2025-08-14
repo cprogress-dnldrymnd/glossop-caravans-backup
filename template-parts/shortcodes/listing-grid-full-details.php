@@ -36,7 +36,7 @@
       </div>
       <div class="col-xl-5">
         <div class="listing-grid--right-inner h-100 d-flex flex-column justify-content-between">
-          <div class="listing-grid-right-item--top listing-grid--right-inner">
+          <div class="listing-grid-right-item--top listing-grid--right-inner d-flex flex-column">
             <div class="listing-grid-right-item">
               <!--<div class="image-box image-style mb-20 d-none d-lg-block" style="--fit: contain; --padding: 18%">
               <?= wp_get_attachment_image(189, 'large') ?>
@@ -60,7 +60,7 @@
 
             </div>
             <?php if (listing__features($id, true) != false) { ?>
-              <div class="listing-grid-right-item d-none d-lg-block">
+              <div class="listing-grid-right-item listing-grid-top--last-item d-none d-lg-flex align-items-center">
                 <?php
                 echo listing__features($id, true);
                 ?>

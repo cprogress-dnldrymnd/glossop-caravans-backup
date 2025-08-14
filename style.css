@@ -12897,6 +12897,10 @@ h5, .h5 {
   z-index: 1; }
 .listing-grid-full-details .listing-grid-item__prices .grid-item__price-inner {
   padding: 13px; }
+.listing-grid-full-details .listing-grid-right-item--top {
+  flex-grow: 1; }
+  .listing-grid-full-details .listing-grid-right-item--top .listing-grid-right-item {
+    flex-grow: 1; }
 .listing-grid-full-details .listing-grid-right-item--bottom {
   border-top: 1px solid var(--bs-border-color); }
 .listing-grid-full-details .listing-grid--right-inner > .listing-grid-right-item {
