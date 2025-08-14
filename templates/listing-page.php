@@ -290,5 +290,7 @@ $listings = new WP_Query($args);
         </div>
     </div>
 </div>
-
+<?php
+get_template_part('template-parts/modals/enquire-form');
+?>
 <?php get_footer() ?>
