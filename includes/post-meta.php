@@ -11,7 +11,7 @@ Container::make('term_meta', __('Manufacturer Properties'))
         Field::make('image', 'main_logo', __('Logo')),
     ));
 
-Container::make('post_meta', __('Caravan Properties'))
+Container::make('post_meta', __('Listing Properties'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
         Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
