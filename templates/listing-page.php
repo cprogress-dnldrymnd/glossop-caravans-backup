@@ -14,19 +14,18 @@ $term_ids[] = $category['0']['id'];
 $args = array(
     'post_type' => 'caravan',
     'posts_per_page' => 10,
+    'meta_query' => array(
+        array(
+            'key' => 'listing_features:berths/listing_feature',
+            'value' => '5',
+        ),
+    ),
     'tax_query' => array(
         array(
             'taxonomy' => 'listing_category',
             'field' => 'term_id',
             'terms' => $term_ids,
         ),
-        'meta_query' => array(
-            array(
-                'key' => 'listing_features:berths/listing_feature',
-                'value' => '5',
-            ),
-        ),
-
     ),
 );
 $listings = new WP_Query($args);
