@@ -19,7 +19,6 @@ Container::make('post_meta', __('Caravan Properties'))
                 Field::make('text', 'image_url', __('Image URL')),
             ))
             ->set_layout('tabbed-vertical')
-            ->set_header_template('<%- image_url %>'),
 
         Field::make('text', 'listing_url', __('Listing URL'))->set_attribute('type', 'url'),
         Field::make('text', 'finance_available', __('Finance Available')),
