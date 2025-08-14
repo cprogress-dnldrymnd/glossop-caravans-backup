@@ -49,6 +49,9 @@ Container::make('post_meta', __('Listing Properties'))
             ->add_fields('width', array(
                 Field::make('text', 'listing_feature', __('')),
             ))
+            ->add_fields('chassis', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))
             ->set_duplicate_groups_allowed(false),
 
         Field::make('text', 'finance_available', __('Finance Available')),
