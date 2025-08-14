@@ -188,7 +188,7 @@ function price__format($value)
 {
     return "£" . number_format($value, 2);
 }
-function listing__action($share = true, $save = true)
+function listing__action($share = true, $save = false)
 {
     ob_start();
 ?>
