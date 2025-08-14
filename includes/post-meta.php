@@ -202,17 +202,6 @@ Container::make('post_meta', __('Engine'))
         Field::make('text', 'engine', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('Engine'))
-    ->where('post_type', '=', 'caravan')
-    ->where('post_term', '=', array(
-        'field'    => 'slug', // or 'id'
-        'value'    => 'motorhomes', // or the category ID
-        'taxonomy' => 'listing_category', // or a custom taxonomy slug
-    ))
-    ->add_fields(array(
-        Field::make('text', 'engine', __(''))->set_attribute('type', 'number'),
-    ));
-
 
 Container::make('post_meta', __('Mileage'))
     ->where('post_type', '=', 'caravan')
