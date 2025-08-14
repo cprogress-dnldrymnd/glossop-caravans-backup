@@ -305,7 +305,7 @@ function listing__key_information($id)
     <ul
         class="icon-list mb-0 icon-list-v2 d-flex list-inline align-items-center justify-content-end fw-semibold flex-wrap fs-18">
         <?php if ($internal_stock_number) { ?>
-            <li><?= get__theme_icons('year.svg') ?> <?= $internal_stock_number ?>Stock Number</li>
+            <li><?= get__theme_icons('year.svg') ?> <?= $internal_stock_number ?> Stock Number</li>
         <?php } ?>
         <?php if ($berths) { ?>
             <li> <?= get__theme_icons('berths.svg') ?> <?= $berths ?> Berth</li>
