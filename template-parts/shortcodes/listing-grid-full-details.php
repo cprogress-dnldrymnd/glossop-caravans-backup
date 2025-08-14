@@ -58,11 +58,13 @@
             </div>
 
           </div>
-          <div class="listing-grid-right-item d-none d-lg-block">
-            <?php
-            echo listing__features($id, true);
-            ?>
-          </div>
+          <?php if ($listing__features != false) { ?>
+            <div class="listing-grid-right-item d-none d-lg-block">
+              <?php
+              echo listing__features($id, true);
+              ?>
+            </div>
+          <?php } ?>
           <div class="listing-grid-right-item">
             <div class="row g-xxs">
               <div class="col-lg-6">
