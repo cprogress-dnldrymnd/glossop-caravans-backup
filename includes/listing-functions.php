@@ -314,7 +314,7 @@ function listing__key_information($id)
             <li><?= get__theme_icons('warranty.svg') ?> <?= $warranty ?></li>
         <?php } ?>
         <?php if ($year) { ?>
-            <li><?= get__theme_icons('year.svg') ?> Year <?= $year ?></li>
+            <li><?= get__theme_icons('year.svg') ?> <?= $year ?> Year</li>
         <?php } ?>
 
 
