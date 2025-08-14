@@ -144,7 +144,7 @@ Container::make('post_meta', __('Width'))
     ->add_fields(array(
         Field::make('text', 'caravan_width', __(''))->set_attribute('type', 'number'),
     ));
-    
+
 Container::make('post_meta', __('Unladen Weight(k)'))
     ->where('post_type', '=', 'caravan')
     ->where('post_term', '=', array(
@@ -231,11 +231,18 @@ Container::make('post_meta', __('BHP'))
     ));
 Container::make('post_meta', __('Length(m)'))
     ->where('post_type', '=', 'caravan')
-    ->where('post_term', '=', array(
-        'field'    => 'slug', // or 'id'
-        'value'    => 'motorhomes', // or the category ID
-        'taxonomy' => 'listing_category', // or a custom taxonomy slug
-    ))
+    > where(function ($condition) {
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+        $condition->or_where('post_term', '=', array(
+            'field'    => 'slug', // or 'id'
+            'value'    => 'static-caravans', // or the category ID
+            'taxonomy' => 'listing_category', // or a custom taxonomy slug
+        ));
+    })
     ->add_fields(array(
         Field::make('text', 'length', __(''))->set_attribute('type', 'number'),
     ));
