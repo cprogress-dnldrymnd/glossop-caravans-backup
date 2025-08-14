@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+$proxima: (
+    "Regular": 400,
+    "Semibold": 600,
+    "Bold": 700
+);
+
+@include font-face("Proxima Nova", $font-url + "ProximaNova/", "ProximaNova", normal, $proxima);
