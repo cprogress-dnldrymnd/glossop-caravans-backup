@@ -18,7 +18,7 @@ Container::make('post_meta', __('Caravan Properties'))
             ->add_fields(array(
                 Field::make('text', 'image_url', __('Image URL')),
             ))
-            ->set_layout('tabbed-horizontal')
+            ->set_layout('tabbed-vertical')
             ->set_header_template('<%- image_url %>'),
 
         Field::make('text', 'listing_url', __('Listing URL'))->set_attribute('type', 'url'),
