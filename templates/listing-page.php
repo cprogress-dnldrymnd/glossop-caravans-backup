@@ -23,7 +23,7 @@ $args = array(
         'meta_query' => array(
             array(
                 'key' => 'listing_features:berths/listing_feature',
-                'value' => '4',
+                'value' => '5',
             ),
         ),
 
