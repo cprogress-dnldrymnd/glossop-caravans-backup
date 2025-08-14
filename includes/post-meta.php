@@ -52,6 +52,50 @@ Container::make('post_meta', __('Listing Properties'))
             ->add_fields('chassis', array(
                 Field::make('text', 'listing_feature', __('')),
             ))->set_header_template('Chassis: <%- listing_feature %>')
+            ->add_fields('bhp', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('BHP: <%- listing_feature %>')
+            ->add_fields('mileage', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Mileage: <%- listing_feature %>')
+            ->add_fields('engine', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Engine: <%- listing_feature %>')
+            ->add_fields('registered_keepers', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Registered Keepers: <%- listing_feature %>')
+            ->add_fields('motorhome_length', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Motorhome Length: <%- listing_feature %>')
+            ->add_fields('gearbox', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Gearbox: <%- listing_feature %>')
+
+            ->add_fields('gearbox', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Gearbox: <%- listing_feature %>')
+
+            ->add_fields('mtplm', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('MTPLM: <%- listing_feature %>')
+
+            ->add_fields('fuel_type', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Fuel Type: <%- listing_feature %>')
+
+            ->add_fields('country_of_origin', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Country of Origin: <%- listing_feature %>')
+
+            ->add_fields('driver_side', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Driver Side: <%- listing_feature %>')
+
+            ->add_fields('power_steering', array(
+                Field::make('text', 'listing_feature', __('')),
+            ))->set_header_template('Power Steering: <%- listing_feature %>')
+
+            
             ->set_duplicate_groups_allowed(false)
             ->set_layout('tabbed-horizontal'),
 
