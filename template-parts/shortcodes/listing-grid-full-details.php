@@ -58,7 +58,7 @@
             </div>
 
           </div>
-          <?php if ($listing__features != false) { ?>
+          <?php if (listing__features($id, true) != false) { ?>
             <div class="listing-grid-right-item d-none d-lg-block">
               <?php
               echo listing__features($id, true);
