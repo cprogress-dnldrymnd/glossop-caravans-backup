@@ -100,18 +100,6 @@ Container::make('post_meta', __('Warranty'))
         Field::make('text', 'warranty', __(''))
     ));
 
-Container::make('post_meta', __('Unladen Weight(k)'))
-    ->where('post_type', '=', 'caravan')
-    ->where('post_term', '=', array(
-        'field'    => 'slug', // or 'id'
-        'value'    => 'caravans', // or the category ID
-        'taxonomy' => 'listing_category', // or a custom taxonomy slug
-    ))
-    ->add_fields(array(
-        Field::make('text', 'unladen_weight', __(''))->set_attribute('type', 'number'),
-    ));
-
-
 
 Container::make('post_meta', __('Awning Size(m)'))
     ->where('post_type', '=', 'caravan')
