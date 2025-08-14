@@ -44,7 +44,7 @@
               <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
               <div class="listing-inner--key-info d-none d-lg-block">
                 <?php
-                echo listing__key_information(get_the_ID(), $c);
+                echo listing__key_information(get_the_ID(), $args['category']);
                 ?>
               </div>
               <div class="d-block d-lg-none mt-3">
