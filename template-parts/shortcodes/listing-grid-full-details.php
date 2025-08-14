@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="col-xl-5">
-        <div class="listing-grid--right-inner">
+        <div class="listing-grid--right-inner h-100 d-flex flex-column justify-content-between">
           <div class="listing-grid-right-item">
             <!--<div class="image-box image-style mb-20 d-none d-lg-block" style="--fit: contain; --padding: 18%">
               <?= wp_get_attachment_image(189, 'large') ?>
