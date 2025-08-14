@@ -217,8 +217,6 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
             array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
         );
     }
-    $finance_available = get__post_meta_by_id($id, 'finance_available');
-
 ?>
     <div class="listing-grid--gallery <?= $class ?>">
         <div class="zoom d-none d-lg-flex">
@@ -230,6 +228,13 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
                     <div
                         class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
                         Finance available: 7.9% APR
+                    </div>
+                </div>
+                <div class="listing-grid__feature-item col-auto">
+                    <div
+                        class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
+                        <span class="fs-7 fw-medium">Per month</span>
+                        £565.50
                     </div>
                 </div>
             </div>
