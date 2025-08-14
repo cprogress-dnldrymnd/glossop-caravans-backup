@@ -234,7 +234,7 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
                     <div class="swiper-slide <?= $is_thumbnail == false ? 'h-100' : '' ?>">
                         <a href="<?= wp_get_attachment_image_url($image, 'full') ?>" <?= $is_thumbnail == false ? 'data-fancybox="' . $id . '"' : '' ?>
                             class="d-block image-box image-style <?= $is_thumbnail == false ? 'h-100' : '' ?>">
-                            <?= wp_get_attachment_image($image, $is_thumbnail == false ? 'large' : 'medium') ?>
+                            <img src="<?= $image['image_url'] ?>" alt="Caravan Image">
                         </a>
                     </div>
                 <?php } ?>
