@@ -428,3 +428,21 @@ Block::make(__('Listing Gallery'))
 
         echo listing__gallery('gallery---' . get_the_ID(), false, $images, $attributes['className']);
     });
+
+
+
+Container::make('post_meta', __('Caravan Properties'))
+    ->where('post_template', '=', 'templates/listing-page.php')
+    ->add_fields(array(
+        Field::make('association', 'select_category', __('Select Category'))
+            ->set_types(array(
+                array(
+                    'type' => 'term',
+                    'taxonomy' => 'listing_category',
+                ),
+                array(
+                    'type' => 'term',
+                    'taxonomy' => 'manufacturer',
+                ),
+            ))
+    ));
