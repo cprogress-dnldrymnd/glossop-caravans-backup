@@ -11183,7 +11183,7 @@ img {
   font-size: 16px; }
 
 .form-control-lg {
-  padding: 15px 1vw;
+  padding: 10px 0px 10px 0px !important;
   --bs-border-radius-lg: 5px; }
   @media screen and (max-width: 991px) {
     .form-control-lg {
@@ -13084,7 +13084,9 @@ h5, .h5 {
   padding: 30px; }
   .offcanvas-form--form-fields .form-control {
     background-color: var(--lightgray-color-4);
-    border: none; }
+    border: none;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important; }
 
 @media screen and (max-width: 767px) {
   .gallery-row {
@@ -13105,6 +13107,32 @@ h5, .h5 {
 .delear-details .logo-box img {
   max-width: 140px; }
 
+.margin--left {
+  margin-left: var(--margin);
+  --bs-gutter-x: 1.5rem;
+  padding-left: calc(var(--bs-gutter-x) * .5) !important; }
+
+.swiper-wrapper.block-editor-block-list__block.block-editor-block-list__block {
+  flex-direction: column !important; }
+
+.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open {
+  width: 32px;
+  height: 32px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15"><g id="Burger-Menu-Mobile" transform="translate(-388 -29)"><rect id="Rectangle_227" data-name="Rectangle 227" width="17" height="3" transform="translate(388 29)"/><rect id="Rectangle_228" data-name="Rectangle 228" width="17" height="3" transform="translate(388 35)"/><rect id="Rectangle_229" data-name="Rectangle 229" width="17" height="3" transform="translate(388 41)"/></g></svg>');
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open svg {
+  display: none; }
+
+.swiper-listing-loop.swiper-listing-loop {
+  overflow: visible; }
+
+.swiper-listing-loop .swiper-wrapper {
+  padding: 0;
+  margin: 0; }
+
 .static-page-content {
   padding-top: var(--md-spacing);
   padding-bottom: var(--md-spacing); }
@@ -13114,32 +13142,3 @@ h5, .h5 {
 /*-----------------------------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */
-
-.margin--left {
-	margin-left: var(--margin);
-	--bs-gutter-x: 1.5rem;
-    padding-left: calc(var(--bs-gutter-x) * .5) !important;
-}
-
-.swiper-wrapper.block-editor-block-list__block.block-editor-block-list__block {
-	flex-direction: column !important;
-}
-
-.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open {
-	width: 32px;
-	height: 32px;
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15"><g id="Burger-Menu-Mobile" transform="translate(-388 -29)"><rect id="Rectangle_227" data-name="Rectangle 227" width="17" height="3" transform="translate(388 29)"/><rect id="Rectangle_228" data-name="Rectangle 228" width="17" height="3" transform="translate(388 35)"/><rect id="Rectangle_229" data-name="Rectangle 229" width="17" height="3" transform="translate(388 41)"/></g></svg>');
-	    background-size: 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open svg {
-	display: none;
-}
-.swiper-listing-loop.swiper-listing-loop {
-	overflow: visible;
-}
-.swiper-listing-loop .swiper-wrapper {
-	padding: 0;
-	margin: 0;
-}

@@ -67,7 +67,7 @@
               </div>
             <?php } ?>
           </div>
-          <div class="listing-grid-right-item">
+          <div class="listing-grid-right-item listing-grid-right-item--bottom">
             <div class="row g-xxs">
               <div class="col-lg-6">
                 <div class="listing-grid-item__button h-100">
