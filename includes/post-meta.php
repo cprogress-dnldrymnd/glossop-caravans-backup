@@ -28,7 +28,7 @@ Container::make('post_meta', __('Listing Properties'))
         Field::make('text', 'savings', __('Savings (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'per_month', __('Per Month (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
 
-        Field::make('select', 'berths', __('Berths'))
+        Field::make('select', 'berths', __('Berths'))->set_width(25)
             ->set_options(array(
                 'all' => 'All',
                 '2' => '2',
@@ -37,19 +37,19 @@ Container::make('post_meta', __('Listing Properties'))
                 '5' => '5',
                 '6' => '6',
             )),
-        Field::make('select', 'axle', __('Axle'))
+        Field::make('select', 'axle', __('Axle'))->set_width(25)
             ->set_options(array(
                 '' => 'None',
                 'Single Axle' => 'Single Axle',
                 'Twin Axle' => 'Twin Axle',
             )),
-        Field::make('text', 'year', __('Year')),
-        Field::make('text', 'warranty', __('Warranty')),
-        Field::make('text', 'weight', __('Unladen Weight(k)'))->set_attribute('type', 'number'),
-        Field::make('text', 'awning_size', __('Awning Size(m)'))->set_attribute('type', 'number'),
-        Field::make('text', 'internal_length', __('Internal Length'))->set_attribute('type', 'number'),
-        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number'),
-        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number'),
+        Field::make('text', 'year', __('Year'))->set_width(25),
+        Field::make('text', 'warranty', __('Warranty'))->set_width(25),
+        Field::make('text', 'weight', __('Unladen Weight(k)'))->set_attribute('type', 'number')->set_width(25),
+        Field::make('text', 'awning_size', __('Awning Size(m)'))->set_attribute('type', 'number')->set_width(25),
+        Field::make('text', 'internal_length', __('Internal Length'))->set_attribute('type', 'number')->set_width(25),
+        Field::make('text', 'external_length', __('External Length'))->set_attribute('type', 'number')->set_width(25),
+        Field::make('text', 'width', __('Width'))->set_attribute('type', 'number')->set_width(25),
 
         Field::make('checkbox', 'now_on_display', __('Now On Display')),
     ));
