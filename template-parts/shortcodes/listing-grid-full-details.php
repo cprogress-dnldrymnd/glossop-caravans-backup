@@ -12,9 +12,9 @@
     </div>
     <div class="row g-3 justify-content-between">
       <div class="col-md-6">
-        <h3>Swift Sprite Quattro FB 2024</h3>
+        <h3><?php the_title() ?></h3>
         <div class="desc">
-          <p>Now on display - ready to view!</p>
+          <?php the_content() ?>
         </div>
       </div>
       <div class="col-md-6">
