@@ -328,6 +328,76 @@ function listing__key_information($id, $category = 'caravans')
         'after' => 'm',
         'icon' => false
     );
+
+    $key_information[] = array(
+        'id' => 'chassis',
+        'label' => 'Chassis',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+    $key_information[] = array(
+        'id' => 'mileage',
+        'label' => 'Mileage',
+        'show_on_listing_page' => true,
+        'after' => ' miles',
+        'icon' => false
+    );
+
+    $key_information[] = array(
+        'id' => 'gearbox',
+        'label' => 'Gearbox',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+
+    $key_information[] = array(
+        'id' => 'bhp',
+        'label' => 'BHP',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+
+    $key_information[] = array(
+        'id' => 'engine',
+        'label' => 'Engine',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+
+    $key_information[] = array(
+        'id' => 'length',
+        'label' => 'Length',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+    $key_information[] = array(
+        'id' => 'mtplm',
+        'label' => 'MTPLM',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+
+    $key_information[] = array(
+        'id' => 'registered_keepers',
+        'label' => 'Registered Keepers',
+        'show_on_listing_page' => true,
+        'after' => false,
+        'icon' => false
+    );
+
+
+
     $key_information[] = array(
         'id' => 'internal_stock_number',
         'label' => 'Stock Number',
@@ -377,6 +447,8 @@ function listing__key_information($id, $category = 'caravans')
         'after' => false,
         'icon' => false
     );
+
+
 
 ?>
     <ul
