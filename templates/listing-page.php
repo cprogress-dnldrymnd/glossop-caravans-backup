@@ -275,7 +275,7 @@ $listings = new WP_Query($args);
                             <?php
                             while ($listings->have_posts()) {
                                 $listings->the_post();
-                                do_shortcode('[listing_grid_full_details]');
+                                echo do_shortcode('[listing_grid_full_details]');
                             }
                             wp_reset_postdata();
                             ?>
