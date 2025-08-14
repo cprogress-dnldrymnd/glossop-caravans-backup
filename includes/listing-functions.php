@@ -326,7 +326,7 @@ function listing__key_information($id, $category = 'caravans')
         'id' => 'internal_stock_number',
         'label' => 'Stock Number',
         'show_on_listing_page' => true,
-        'after' => 'm',
+        'after' => false,
         'icon' => false
     );
     $key_information[] = array(
