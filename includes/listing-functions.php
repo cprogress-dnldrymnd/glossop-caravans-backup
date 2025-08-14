@@ -352,7 +352,7 @@ function listing__key_information($id, $category = 'caravans')
     );
     $key_information[] = array(
         'id' => 'axle',
-        'label' => 'Axle',
+        'label' => '',
         'show_on_listing_page' => true,
         'after' => false,
         'icon' => false
