@@ -11606,6 +11606,9 @@ img {
     .icon-list.icon-list-v2 > li {
       flex: 0 0 var(--width);
       width: var(--width); }
+      .icon-list.icon-list-v2 > li svg {
+        width: 20px;
+        flex: 0 0 20px; }
   .icon-list.icon-list-v3 {
     gap: 18px; }
     .icon-list.icon-list-v3 li svg {
