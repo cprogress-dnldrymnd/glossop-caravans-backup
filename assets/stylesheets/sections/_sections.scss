@@ -177,8 +177,11 @@
     }
     .listing-grid-right-item--top {
         flex-grow: 1;
-        .listing-grid-right-item {
+        .listing-grid-top--last-item {
             flex-grow: 1;
+            .listing-grid__feature-holder {
+                width: 100%;
+            }
         }
     }
     .listing-grid-right-item--bottom {
