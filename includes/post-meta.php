@@ -27,12 +27,6 @@ Container::make('post_meta', __('Internal Stock Number'))
         Field::make('text', 'internal_stock_number', __('')),
     ));
 
-Container::make('post_meta', __('Chassis No'))
-    ->where('post_type', '=', 'caravan')
-    ->add_fields(array(
-        Field::make('text', 'chassis_no', __('')),
-    ));
-
 Container::make('post_meta', __('Finance Available'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
@@ -169,7 +163,6 @@ Container::make('post_meta', __('Width'))
     ->add_fields(array(
         Field::make('text', 'width', __(''))->set_attribute('type', 'number'),
     ));
-
 Container::make('post_meta', __('MTPLM'))
     ->where('post_type', '=', 'caravan')
     ->where(function ($condition) {
