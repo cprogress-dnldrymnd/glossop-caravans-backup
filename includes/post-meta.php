@@ -14,8 +14,6 @@ Container::make('term_meta', __('Manufacturer Properties'))
 Container::make('post_meta', __('Listing Properties'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
-        Field::make('text', 'chassis_no', __('Chassis No.')),
 
         Field::make('complex', 'images', __('Images'))
             ->add_fields(array(
@@ -23,6 +21,8 @@ Container::make('post_meta', __('Listing Properties'))
             ))
             ->set_layout('tabbed-horizontal'),
         Field::make('text', 'finance_available', __('Finance Available')),
+        Field::make('text', 'internal_stock_number', __('Internal Stock Number')),
+        Field::make('text', 'chassis_no', __('Chassis No.')),
         Field::make('text', 'rrp', __('RRP (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'our_price', __('Our Price (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
         Field::make('text', 'savings', __('Savings (£)'))->set_attribute('type', 'number')->set_attribute('step', '1')->set_width(25),
