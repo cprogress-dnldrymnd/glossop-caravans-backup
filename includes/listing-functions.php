@@ -217,31 +217,29 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
             array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
         );
     }
+    $finance_available = get__post_meta_by_id($id, 'finance_available');
+
 ?>
     <div class="listing-grid--gallery <?= $class ?>">
         <div class="zoom d-none d-lg-flex">
             <?= get__theme_images('zoom.svg') ?>
         </div>
-        <div class="listing-grid--feature--action  listing-grid--feature--action--style-2 d-flex d-lg-none">
-            <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
-                <div class="listing-grid__feature-item col-auto">
-                    <div
-                        class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
-                        Finance available: 7.9% APR
+        <?php if ($finance_available) { ?>
+            <div class="listing-grid--feature--action  listing-grid--feature--action--style-2 d-flex d-lg-none">
+                <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
+                    <div class="listing-grid__feature-item col-auto">
+                        <div
+                            class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
+                            Finance available: <?= $finance_available ?>
+                        </div>
                     </div>
                 </div>
-                <div class="listing-grid__feature-item col-auto">
-                    <div
-                        class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
-                        <span class="fs-7 fw-medium">Per month</span>
-                        £565.50
-                    </div>
-                </div>
+                <?php
+                echo listing__action(false);
+                ?>
             </div>
-            <?php
-            echo listing__action(false);
-            ?>
-        </div>
+
+        <?php } ?>
         <div class="swiper <?= $is_thumbnail == false ? 'swiper-gallery h-100' : 'swiper-thumbnails' ?>">
             <div class="swiper-wrapper <?= $is_thumbnail == false ? 'h-100' : '' ?>">
                 <?php foreach ($images as $image) { ?>
