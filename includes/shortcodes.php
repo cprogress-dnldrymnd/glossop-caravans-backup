@@ -31,19 +31,10 @@ function listing_grid($atts)
 add_shortcode('listing_grid', 'listing_grid');
 
 
-function listing_grid_full_details($atts)
+function listing_grid_full_details()
 {
     ob_start();
-    extract(
-        shortcode_atts(
-            array(
-                'id'    => 'id'
-            ),
-            $atts
-        )
-    );
-    $args['id'] = $id;
-    get_template_part('template-parts/shortcodes/listing-grid-full-details', NULL, $args);
+    get_template_part('template-parts/shortcodes/listing-grid-full-details');
     return ob_get_clean();
 }
 

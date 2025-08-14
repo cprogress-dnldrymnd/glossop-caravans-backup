@@ -1,8 +1,8 @@
-<div class="listing-grid h-100 position-relative rounded <?= $args['style'] ?>">
+<div class="listing-grid h-100 position-relative rounded style-1">
     <div class="listing-grid-item__top position-relative">
-        <h3>Swift Elegance Grande 780</h3>
+        <h3><?php the_title() ?></h3>
         <div class="desc mb-3 mt-3">
-            <p>Step into luxury with the Swift Elegance Grande 780.</p>
+            <?php the_content() ?>
         </div>
 
         <div class="listing-grid--feature--action listing-grid--feature--action--style-2">

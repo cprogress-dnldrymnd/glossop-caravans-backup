@@ -12,6 +12,20 @@ $term_ids = [];
 foreach ($category as $cat) {
     $term_ids[] = $cat['id'];
 }
+
+$args = array(
+    'post_type' => 'caravans',
+    'posts_per_page' => -1,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'listing_category',
+            'field' => 'term_id',
+            'terms' => $term_ids,
+        ),
+    ),
+);
+$listings = new WP_Query($args);
+
 ?>
 <div class="site-content listings background-lightgray">
     <div class="container md-padding-top md-padding-bottom">
@@ -258,9 +272,15 @@ foreach ($category as $cat) {
                     </div>
                     <div class="listings d-flex flex-column" style="--padding: 37%">
                         <div class="listing-item" id="swiper-gallery-1">
-                            <?= do_shortcode('[listing_grid_full_details id="gallery-1"]') ?>
+                            <?php
+                            while ($listings->have_posts()) {
+                                $listings->the_post();
+                                do_shortcode('[listing_grid_full_details]');
+                            }
+                            wp_reset_postdata();
+                            ?>
                         </div>
-                       
+
                     </div>
                     <div class="banner mt-20">
                         <?= wp_get_attachment_image(191, 'full') ?>
