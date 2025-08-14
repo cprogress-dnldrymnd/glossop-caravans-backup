@@ -105,7 +105,7 @@ function listings_fields()
 }
 add_action('after_setup_theme', 'listings_fields');
 
-function listing__features($id, $hide_per_month = false)
+function listing__features($id, $hide_per_month = true)
 {
     ob_start();
     $finance_available = get__post_meta_by_id($id, 'finance_available');
