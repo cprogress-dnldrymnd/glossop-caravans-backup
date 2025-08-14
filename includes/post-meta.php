@@ -481,5 +481,5 @@ Container::make('post_meta', __('Caravan Properties'))
                     'type' => 'term',
                     'taxonomy' => 'manufacturer',
                 ),
-            ))
+            ))->set_max(1)
     ));
