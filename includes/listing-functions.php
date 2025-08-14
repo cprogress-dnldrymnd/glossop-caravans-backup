@@ -381,9 +381,6 @@ function listing__key_information($id, $category = 'caravans')
                 $icon = get__theme_icons($key_info['id'] . '.svg');
             } else {
                 $term = get_term_by('term_id', $category, 'listing_category');
-                echo $category;
-                echo $term->slug;
-                echo $key_info['icon'][$term->slug];
                 $icon = get__theme_icons($key_info['icon'][$term->slug]);
             }
             $value = get__post_meta_by_id($id, $key_info['id']);
