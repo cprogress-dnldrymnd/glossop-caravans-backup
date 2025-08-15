@@ -5,7 +5,6 @@
 ?>
 <?php get_header() ?>
 <?php
-global $listing_fields;
 $category = carbon_get_the_post_meta('select_category');
 $term_ids = [];
 

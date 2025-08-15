@@ -734,6 +734,7 @@ function listing_grid($id, $category = 'caravan', $style = 'style-2')
 function listing_sidebar_filter()
 {
     ob_start();
+    global $listing_fields;
 ?>
 
     <div class="listing-filter sticky-element accordion-style-1">
