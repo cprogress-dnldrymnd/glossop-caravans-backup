@@ -114,11 +114,11 @@ global $listing_fields;
                                 <?php
                                 echo listing__key_information(get_the_ID());
                                 ?>
-                              
+                                <!--
                                 <div class="awning-image image-box border-bottom xs-margin-bottom">
                                     <span class="fw-semibold">Floor Plan</span>
                                     <?= wp_get_attachment_image(189, 'large') ?>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="listing-inner--description xs-margin-bottom">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Description</h4>
