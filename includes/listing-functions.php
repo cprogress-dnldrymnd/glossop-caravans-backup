@@ -851,28 +851,9 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('our_price', 'Our Price', '', $_our_price);
+                    echo accordion__filter('our_price', 'Price', '', $_our_price);
+                    echo accordion__filter('year', 'Year', '', $_year);
                     ?>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseYear" aria-expanded="false"
-                                aria-controls="collapseYear">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('year.svg') ?></span> Year
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseYear" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -894,46 +875,10 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseWidth" aria-expanded="false"
-                                aria-controls="collapseWidth">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('width.svg') ?></span> Width
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseWidth" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseAxles" aria-expanded="false"
-                                aria-controls="collapseAxles">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('axles.svg') ?></span> Axles
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseAxles" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    echo accordion__filter('width', 'Width', '', $_width);
+                    echo accordion__filter('axle', 'Axles', '', $_axle);
+                    ?>
                 </div>
             </div>
         </div>
