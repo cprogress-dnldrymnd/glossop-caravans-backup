@@ -4,7 +4,6 @@ jQuery(document).ready(function () {
     mega_menu();
     search_stock();
     listings();
-    read_more();
     header_distance();
     margin__Left();
     fixed_menu_link_mobile();
@@ -24,7 +23,7 @@ function read__more() {
         $items.slice(visibleItems).hide();
 
         // Create and append the "Read more" button.
-        const $readMoreButton = jQuery('<button>')
+        const $readMoreButton = jQuery('<a class="fw-semibold read-more-button">')
             .text('Read more')
             .addClass('mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300 w-full');
 
@@ -57,13 +56,6 @@ function margin__Left() {
 }
 
 
-function read_more() {
-    jQuery('.read-more-button').click(function (e) {
-        jQuery('.read-more-content').removeClass('d-none');
-        jQuery(this).addClass('d-none');
-        e.preventDefault();
-    });
-}
 
 function listings() {
     if (jQuery('.nav-tabs-js').length > 0) {
