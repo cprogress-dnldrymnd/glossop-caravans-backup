@@ -289,6 +289,48 @@ Container::make('post_meta', __('Registered Keepers'))
         Field::make('text', 'registered_keepers', __(''))->set_attribute('type', 'number'),
     ));
 
+Container::make('post_meta', __('Fuel Type'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'fuel_type', __('')),
+    ));
+
+Container::make('post_meta', __('Country of origin'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'country_of_origin', __('')),
+    ));
+Container::make('post_meta', __('Driver Side'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'driver_side', __('')),
+    ));
+Container::make('post_meta', __('Power Steering'))
+    ->where('post_type', '=', 'caravan')
+    ->where('post_term', '=', array(
+        'field'    => 'slug', // or 'id'
+        'value'    => 'motorhomes', // or the category ID
+        'taxonomy' => 'listing_category', // or a custom taxonomy slug
+    ))
+    ->add_fields(array(
+        Field::make('text', 'power_steering', __('')),
+    ));
+
 /*
 Block::make(__('Grid Items'))
     ->add_fields(array(
