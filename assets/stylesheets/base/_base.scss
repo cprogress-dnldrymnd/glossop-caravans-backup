@@ -658,12 +658,11 @@ img {
         > li {
             flex: 0 0 var(--width);
             width: var(--width);
-            
+
             svg {
                 width: 20px;
                 flex: 0 0 20px;
             }
-         
         }
     }
 
@@ -980,5 +979,13 @@ span.icons {
         &.block-editor-block-list__block {
             flex-direction: column;
         }
+    }
+}
+@include responsive(mobile-lg) {
+    .modal-content {
+        padding: 40px;
+    }
+    .modal-dialog {
+        --bs-modal-width: 700px;
     }
 }

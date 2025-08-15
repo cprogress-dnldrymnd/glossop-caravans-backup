@@ -11831,6 +11831,12 @@ span.icons {
 .swiper .swiper-wrapper.block-editor-block-list__block {
   flex-direction: column; }
 
+@media (min-width: 576px) {
+  .modal-content {
+    padding: 40px; }
+
+  .modal-dialog {
+    --bs-modal-width: 700px; } }
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
