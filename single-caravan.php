@@ -6,6 +6,7 @@
 <?php get_header() ?>
 <?php
 global $listing_fields;
+$warranty = get__post_meta('warranty');
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
@@ -188,30 +189,26 @@ global $listing_fields;
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseWarranty" aria-expanded="false" aria-controls="collapseWarranty">
-                                                    <span class="accordion-button-inner">
-                                                        <span class="icon-text">
-                                                            <span class="icon"><?= get__theme_icons('warranty.svg') ?></span>
-                                                            Warranty
+                                        <?php if ($warranty) { ?>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseWarranty" aria-expanded="false" aria-controls="collapseWarranty">
+                                                        <span class="accordion-button-inner">
+                                                            <span class="icon-text">
+                                                                <span class="icon"><?= get__theme_icons('warranty.svg') ?></span>
+                                                                Warranty
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                </button>
-                                            </h2>
-                                            <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                <div class="accordion-body">
-                                                    <ul>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                    </ul>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
+                                                    <div class="accordion-body">
+                                                        <?= wpautop($warranty) ?>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
