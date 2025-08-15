@@ -851,8 +851,8 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('our_price', 'Price', '', $_our_price);
-                    echo accordion__filter('year', 'Year', '', $_year);
+                    echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
+                    echo accordion__filter('year', 'Year', 'Select year', $_year);
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -876,8 +876,8 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('width', 'Width', '', $_width);
-                    echo accordion__filter('axle', 'Axles', '', $_axle);
+                    echo accordion__filter('width', 'Width', 'Select width', $_width);
+                    echo accordion__filter('axle', 'Axles', 'Select axle', $_axle);
                     ?>
                 </div>
             </div>
