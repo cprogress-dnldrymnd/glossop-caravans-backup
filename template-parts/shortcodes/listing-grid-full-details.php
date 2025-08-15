@@ -1,6 +1,6 @@
 <div class="listing-grid-full-details bg-white rounded overflow-hidden position-relative style-1">
   <div class="listing-grid--top d-none d-lg-block">
-    <div class="listing-grid--top--manufacturer mb-2">
+    <div class="listing-grid--top--manufacturer mb-3">
       <div class="row g-3 justify-content-between mb-1">
         <div class="col-md-6">
           <div class="image-box brand">
