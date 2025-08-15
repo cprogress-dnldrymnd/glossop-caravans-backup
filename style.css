@@ -11838,7 +11838,9 @@ span.icons {
   .modal-dialog {
     --bs-modal-width: 700px; } }
 .wpcf7-spinner {
-  position: absolute; }
+  position: absolute;
+  right: 0;
+  bottom: 22px; }
 
 .container,
 #os-banner .container-fluid,
