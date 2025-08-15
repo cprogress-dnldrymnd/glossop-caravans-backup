@@ -54,7 +54,7 @@ Container::make('post_meta', __('360° Tour'))
 Container::make('post_meta', __('Video'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('oembed', 'video', __('')),
+        Field::make('text', 'video', __('')),
     ));
 
 Container::make('post_meta', __('RRP (£)'))
