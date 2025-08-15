@@ -1,13 +1,15 @@
 <div class="listing-grid-full-details bg-white rounded overflow-hidden position-relative style-1">
   <div class="listing-grid--top d-none d-lg-block">
-    <div class="row g-3 justify-content-between mb-1">
-      <div class="col-md-6">
-        <div class="image-box brand">
-          <?= listing_manufacturer_logo($id) ?>
+    <div class="listing-grid--top--manufacturer mb-2">
+      <div class="row g-3 justify-content-between mb-1">
+        <div class="col-md-6">
+          <div class="image-box brand">
+            <?= listing_manufacturer_logo($id) ?>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <?= listing__action() ?>
+        <div class="col-md-6">
+          <?= listing__action() ?>
+        </div>
       </div>
     </div>
     <div class="row g-3 justify-content-between">
