@@ -515,6 +515,20 @@
                 padding-top: 0.25rem !important;
                 padding-bottom: 0.25rem !important;
             }
+            &.key--info-axle {
+                .icon-list-text {
+                    @include before {
+                        content: "Axle";
+                    }
+                }
+            }
+            &.key--info-warranty {
+                .icon-list-text {
+                    @include before {
+                        content: "Warranty";
+                    }
+                }
+            }
         }
         svg {
             @include responsive(md-lg) {
