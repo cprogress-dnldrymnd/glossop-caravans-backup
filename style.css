@@ -13164,14 +13164,16 @@ h5, .h5 {
 .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li {
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
-  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  max-width: calc(50% - (var(--sm-spacing) / 2)); }
   @media screen and (max-width: 991px) {
     .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li {
       padding-top: 0.25rem !important;
       padding-bottom: 0.25rem !important; } }
-.listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list svg {
-  width: 32px;
-  flex: 0 0 32px; }
+@media screen and (min-width: 992px) {
+  .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list svg {
+    width: 32px;
+    flex: 0 0 32px; } }
 .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list .icon-list-text {
   flex-grow: 1;
   display: flex;

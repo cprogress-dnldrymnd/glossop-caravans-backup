@@ -510,14 +510,17 @@
             padding-top: 1rem !important;
             padding-bottom: 1rem !important;
             border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+            max-width: calc(50% - (var(--sm-spacing) / 2));
             @include responsive(xs-sm) {
                 padding-top: 0.25rem !important;
                 padding-bottom: 0.25rem !important;
             }
         }
         svg {
-            width: 32px;
-            flex: 0 0 32px;
+            @include responsive(md-lg) {
+                width: 32px;
+                flex: 0 0 32px;
+            }
         }
         .icon-list-text {
             flex-grow: 1;
