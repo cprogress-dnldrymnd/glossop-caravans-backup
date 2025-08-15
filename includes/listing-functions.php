@@ -296,7 +296,7 @@ function listing__key_information_simple($berths = 4, $year = 2024, $axle = fals
 function listing__key_information($id, $category = 'caravans', $show = ['berths', 'bedrooms', 'year', 'width', 'internal_length', 'external_length', 'chassis', 'mileage', 'gearbox', 'bhp', 'engine', 'length', 'mtplm', 'registered_keepers', 'new_used', 'internal_stock_number', 'awning_size', 'unladen_weight', 'axle', 'warranty'])
 {
     ob_start();
-    if (in_array('berth', $show)) {
+    if (in_array('berths', $show)) {
         $key_information[] = array(
             'id' => 'berths',
             'label' => 'Berths',
