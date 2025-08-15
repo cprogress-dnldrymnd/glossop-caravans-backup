@@ -8,6 +8,7 @@ jQuery(document).ready(function () {
     header_distance();
     margin__Left();
     fixed_menu_link_mobile();
+    read__more();
 });
 
 function read__more() {
