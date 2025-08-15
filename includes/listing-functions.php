@@ -268,32 +268,8 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
     return ob_get_clean();
 }
 
-function listing__key_information_simple($berths = 4, $year = 2024, $axle = false)
-{
-    ob_start();
-?>
-    <ul class="icon-list mb-0 icon-list-v4 d-flex list-inline align-items-center flex-wrap fs-18">
-        <?php if ($berths) { ?>
-            <li> <?= get__theme_images('berths.svg') ?> <?= $berths ?> Berth</li>
-        <?php } ?>
-        <?php if ($year) { ?>
-            <li><?= get__theme_images('year.svg') ?> <?= $year ?> </li>
-        <?php } ?>
-        <?php if ($axle) { ?>
-            <li>
-                <?php if ($axle == 'Twin Axle') { ?>
-                    <?= get__theme_images('axles.svg') ?>
-                <?php } ?>
-                <?= get__theme_images('axles.svg') ?>
-                <?= $axle ?>
-            </li>
-        <?php } ?>
-    </ul>
-<?php
-    return ob_get_clean();
-}
 
-function listing__key_information($id, $category = 'caravans', $show = ['berths', 'bedrooms', 'year', 'width', 'internal_length', 'external_length', 'chassis', 'mileage', 'gearbox', 'bhp', 'engine', 'length', 'mtplm', 'registered_keepers', 'new_used', 'internal_stock_number', 'awning_size', 'unladen_weight', 'axle', 'warranty'])
+function listing__key_information($id, $category = 'caravans', $show = ['berths', 'bedrooms', 'year', 'width', 'internal_length', 'external_length', 'chassis', 'mileage', 'gearbox', 'bhp', 'engine', 'length', 'mtplm', 'registered_keepers', 'new_used', 'internal_stock_number', 'awning_size', 'unladen_weight', 'axle', 'warranty', 'fuel_type', 'country_of_origin', 'driver_side', 'power_steering'])
 {
     ob_start();
     if (in_array('berths', $show)) {
@@ -484,6 +460,49 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
         );
     }
 
+
+
+    if (in_array('fuel_type', $show)) {
+        $key_information[] = array(
+            'id' => 'fuel_type',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+
+
+    if (in_array('country_of_origin', $show)) {
+        $key_information[] = array(
+            'id' => 'country_of_origin',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+
+
+    if (in_array('driver_side', $show)) {
+        $key_information[] = array(
+            'id' => 'driver_side',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+
+    if (in_array('power_steering', $show)) {
+        $key_information[] = array(
+            'id' => 'power_steering',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
 
 
 ?>
