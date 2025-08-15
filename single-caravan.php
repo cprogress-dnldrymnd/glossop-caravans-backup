@@ -215,7 +215,7 @@ global $listing_fields;
                             </div>
                             <div class="listing--details-mobile d-block d-lg-none mb-4">
                                 <div class="col-lg-12 listing-price">
-                                    <?php echo listing__price(); ?>
+                                    <?php echo listing__price(get_the_ID()); ?>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="listing-grid-item__button mt-3">
