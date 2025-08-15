@@ -638,12 +638,14 @@ function listing_grid($id, $style = 'style-2')
 
             <div class="listing-grid--feature--action listing-grid--feature--action--style-2">
                 <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
-                    <div class="listing-grid__feature-item col-auto">
-                        <div
-                            class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
-                            Finance available: 7.9% APR
+                    <?php if ($finance_available) { ?>
+                        <div class="listing-grid__feature-item col-auto">
+                            <div
+                                class="grid__feature-inner rounded h-100 d-flex align-items-center justify-content-center text-center">
+                                Finance available: <?= $finance_available ?>
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                     <div class="listing-grid__feature-item col-auto">
                         <div
                             class="grid__feature-inner rounded h-100 d-flex flex-column align-items-center justify-content-center text-center">
