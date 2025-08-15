@@ -474,13 +474,19 @@ function listing__key_information($id, $category = 'caravans')
                 }
                 echo '<li>';
                 echo $icon;
+                echo '<span class="icon-list-text">';
+                echo '<span class="icon-list-text_label">';
                 echo $key_info['label'];
                 echo ' ';
+                echo '</span>';
+                echo '<span class="icon-list-text_value">';
                 echo $value;
                 if ($key_info['after']) {
                     echo $key_info['after'];
                 }
+                echo '</span>';
 
+                echo '</span>';
                 echo '</li>';
             }
         }

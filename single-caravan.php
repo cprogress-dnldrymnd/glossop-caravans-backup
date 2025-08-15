@@ -109,7 +109,7 @@ global $listing_fields;
                                 </div>
                             </div>
 
-                            <div class="listing-key--info">
+                            <div class="listing-key--info listing-key--info--single">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Key Information</h4>
                                 <?php
                                 echo listing__key_information(get_the_ID());
