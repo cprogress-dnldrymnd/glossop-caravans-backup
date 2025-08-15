@@ -25,7 +25,7 @@
             </div>
             <?php
             if ($args['style'] == 'style-2') {
-                echo listing__action(get_the_ID());
+                echo listing__action(false);
             }
             ?>
         </div>
@@ -45,7 +45,7 @@
                 ?>
             </div>
         <?php } ?>
-        <?= listing__price() ?>
+        <?= listing__price(get_the_ID()) ?>
         <div class="listing-grid-item__button mt-3">
             <a href="https://newglossopacaravans.theprogressteam.co.uk/listing-inner" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange">
                 View deal
