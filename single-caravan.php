@@ -135,7 +135,7 @@ $features = carbon_get_the_post_meta('features');
                                     <?= wp_get_attachment_image(189, 'large') ?>
                                 </div>-->
                             </div>
-                            <div class="listing-inner--description xs-margin-bottom">
+                            <div class="listing-inner--description xs-margin-bottom xs-margin-top">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Description</h4>
                                 <div class="desc read--more">
                                     <?php the_content() ?>
