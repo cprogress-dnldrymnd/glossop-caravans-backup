@@ -10,6 +10,37 @@ jQuery(document).ready(function () {
     fixed_menu_link_mobile();
 });
 
+function read__more() {
+    // Find the main container and all of its child items.
+    const $container = jQuery('.read--more');
+    const $items = $container.find('> *');
+    const itemCount = $items.length;
+    const visibleItems = 2;
+
+    // Check if there are more items than the desired visible count.
+    if (itemCount > visibleItems) {
+        // Hide all child items starting from the third one.
+        $items.slice(visibleItems).hide();
+
+        // Create and append the "Read more" button.
+        const $readMoreButton = jQuery('<button>')
+            .text('Read more')
+            .addClass('mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300 w-full');
+
+        // Append the button to the container.
+        $container.append($readMoreButton);
+
+        // Add a click event handler to the "Read more" button.
+        $readMoreButton.on('click', function () {
+            // Show all the previously hidden items with a fade effect.
+            $items.fadeIn(600);
+
+            // Remove the "Read more" button after the items are shown.
+            jQuery(this).remove();
+        });
+    }
+}
+
 function fixed_menu_link_mobile() {
     jQuery('li.wp-block-navigation-item:not(.has-custom-submenu) .wp-block-navigation-item__content').click(function (e) {
         $href = jQuery(this).attr('href');
@@ -236,7 +267,7 @@ function swiper_sliders() {
         jQuery('<div class="swiper-button-next"></div><div class="swiper-button-prev"></div>').appendTo('.swiper-on-mobile-2');
         var swiper_on_mobile2 = new Swiper('.swiper-on-mobile-2-js', {
             slidesPerView: 1,
-			autoplay: true,
+            autoplay: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -244,11 +275,11 @@ function swiper_sliders() {
         });
     }
     if (jQuery('.swiper-hero-slider').length > 0) {
-		jQuery('.swiper-hero-slider img').removeAttr('srcset');
+        jQuery('.swiper-hero-slider img').removeAttr('srcset');
         jQuery('<div class="swiper-button-next swiper-button"></div><div class="swiper-button-prev swiper-button"></div>').appendTo('.swiper-hero-slider');
         var swiper_hero_slider = new Swiper('.swiper-hero-slider', {
             slidesPerView: 1,
-			loop: true,
+            loop: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",

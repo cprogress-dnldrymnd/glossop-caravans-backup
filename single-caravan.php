@@ -122,7 +122,7 @@ global $listing_fields;
                             </div>
                             <div class="listing-inner--description xs-margin-bottom">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Description</h4>
-                                <div class="desc">
+                                <div class="desc read--more">
                                     <?php the_content() ?>
                                     <p>The Swift Challenger 530 2008 is a practical and family-friendly caravan, offering a flexible
                                         4-berth
