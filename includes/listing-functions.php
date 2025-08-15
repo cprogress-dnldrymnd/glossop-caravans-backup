@@ -664,7 +664,7 @@ function listing_grid($id, $style = 'style-2')
         </div>
         <div class="listing-grid-item__bottom">
             <?php if ($style == 'style-2') { ?>
-                <h3 class="fs-23">Swift Elegance Grande 780</h3>
+                <h3 class="fs-23"><?= get_the_title($id) ?></h3>
                 <div class="listing-grid--key-information mb-20">
                     <?php
                     echo listing__key_information_simple();
