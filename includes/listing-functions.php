@@ -781,6 +781,9 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
+                    <?php
+                    echo accordion__filter('berths', 'Berths', $placeholder = 'How many berths?');
+                    ?>
 
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -969,3 +972,6 @@ function accordion__filter($id, $label, $placeholder = '')
 <?php
     return ob_get_clean();
 }
+
+
+function get__search_field_options($id, $category) {}
