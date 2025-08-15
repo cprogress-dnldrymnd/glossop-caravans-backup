@@ -497,7 +497,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
     if (in_array('power_steering', $show)) {
         $key_information[] = array(
             'id' => 'power_steering',
-            'label' => 'Power Steerin',
+            'label' => 'Power Steering',
             'show_on_listing_page' => true,
             'after' => false,
             'icon' => false
