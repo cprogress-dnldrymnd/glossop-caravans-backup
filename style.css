@@ -11842,6 +11842,9 @@ span.icons {
   right: 0;
   bottom: 22px; }
 
+modal-backdrop {
+  z-index: 999999999; }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
