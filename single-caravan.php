@@ -326,7 +326,13 @@ if ($terms && !is_wp_error($terms)) {
         'numberposts' => 10,
         'post__not_in' => array(get_the_ID()),
         'orderby' => 'rand',
-       
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'listing_category',
+                'field' => 'term_id',
+                'terms' => $term_ids,
+            ),
+        ),
     ));
     ?>
     <section class="listine-inner--related overflow-hidden pt-5 p5-lg-0">
