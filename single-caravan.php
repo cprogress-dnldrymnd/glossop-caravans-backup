@@ -7,7 +7,7 @@
 <?php
 global $listing_fields;
 $warranty = get__post_meta('warranty');
-$features = get__post_meta('features');
+$features = carbon_get_the_post_meta('features');
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
