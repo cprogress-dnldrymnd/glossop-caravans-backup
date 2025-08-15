@@ -45,6 +45,7 @@ function listings_fields()
             '6'   => '6',
         ),
     ));
+    
     $listing_fields['make'] = form_control(array(
         'type'    => 'select',
         'name'    => 'Make',
@@ -726,7 +727,7 @@ function listing_grid($id, $category = 'caravan', $style = 'style-2')
     return ob_get_clean();
 }
 
-function listing_sidebar_filter()
+function listing_sidebar_filter($category)
 {
     ob_start();
     global $listing_fields;

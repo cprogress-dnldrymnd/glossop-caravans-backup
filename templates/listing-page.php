@@ -55,7 +55,7 @@ $listings = new WP_Query($args);
 
             <div class="row g-4">
                 <div class="col-lg-3 position-relative" style="z-index: 3">
-                    <?= listing_sidebar_filter() ?>
+                    <?= listing_sidebar_filter($category['0']['id']) ?>
                 </div>
                 <div class="col-lg-9">
                     <div class="banner mb-20">
