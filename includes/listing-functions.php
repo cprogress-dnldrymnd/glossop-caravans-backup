@@ -732,11 +732,11 @@ function listing_sidebar_filter($category)
 {
     ob_start();
     global $listing_fields;
-    var_dump(get__search_field_options('_berths', [$category]));
-    var_dump(get__search_field_options('_our_price', [$category]));
-    var_dump(get__search_field_options('_year', [$category]));
-    var_dump(get__search_field_options('_width', [$category]));
-    var_dump(get__search_field_options('_axle', [$category]));
+    $_berths = get__search_field_options('_berths', [$category]);
+    $_our_price = get__search_field_options('_our_price', [$category]);
+    $_year = get__search_field_options('_year', [$category]);
+    $_width = get__search_field_options('_width', [$category]);
+    $_axle = get__search_field_options('_axle', [$category]);
 
 ?>
 
@@ -788,7 +788,7 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('berths', 'Berths', 'How many berths?', get__search_field_options('_berths', $category));
+                    echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -850,6 +850,9 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
+                    <?php
+                    echo accordion__filter('our_price', 'Our Price', '', $_our_price);
+                    ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
