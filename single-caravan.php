@@ -114,9 +114,7 @@ global $listing_fields;
                                 <?php
                                 echo listing__key_information(get_the_ID());
                                 ?>
-                                <?php
-                                echo listing__key_information_v2();
-                                ?>
+                              
                                 <div class="awning-image image-box border-bottom xs-margin-bottom">
                                     <span class="fw-semibold">Floor Plan</span>
                                     <?= wp_get_attachment_image(189, 'large') ?>
