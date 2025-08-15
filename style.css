@@ -11845,8 +11845,7 @@ span.icons {
   right: 0;
   bottom: 22px; }
 
-.modal
-.modal-backdrop {
+.modal-backdrop.modal-backdrop {
   z-index: 999999999; }
 
 .container,
