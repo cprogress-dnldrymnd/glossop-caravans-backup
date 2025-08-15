@@ -733,6 +733,10 @@ function listing_sidebar_filter($category)
     ob_start();
     global $listing_fields;
     var_dump(get__search_field_options('_berths', [$category]));
+    var_dump(get__search_field_options('_our_price', [$category]));
+    var_dump(get__search_field_options('_year', [$category]));
+    var_dump(get__search_field_options('_width', [$category]));
+    var_dump(get__search_field_options('_axle', [$category]));
 
 ?>
 
