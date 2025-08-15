@@ -733,7 +733,7 @@ function listing_sidebar_filter($category)
     ob_start();
     global $listing_fields;
     $_berths = get__search_field_options('_berths', [$category]);
-    $_our_price = get__search_field_options('_our_price', [$category]);
+    $_our_price = get__search_field_options('_our_price', [$category], 'price');
     $_year = get__search_field_options('_year', [$category]);
     $_width = get__search_field_options('_width', [$category]);
     $_axle = get__search_field_options('_axle', [$category]);
@@ -984,7 +984,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
 
 
 
-function get__search_field_options($meta_key, $terms = 'caravans', $post_type = 'caravan', $taxonomy = 'listing_category')
+function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
 {
     global $wpdb;
     // Sanitize the input to prevent SQL injection
@@ -1031,7 +1031,12 @@ function get__search_field_options($meta_key, $terms = 'caravans', $post_type = 
 
     $unique_values_arr = [];
     foreach ($unique_values as $unique_value) {
-        $unique_values_arr[$unique_value] = $unique_value;
+        if ($format == 'default') {
+            $val = $unique_value;
+        } else {
+            $val = price__format($unique_value);
+        }
+        $unique_values_arr[$unique_value] = $val;
     }
     return $unique_values_arr;
 }
