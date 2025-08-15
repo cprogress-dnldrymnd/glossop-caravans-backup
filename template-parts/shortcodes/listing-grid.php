@@ -25,7 +25,7 @@
             </div>
             <?php
             if ($args['style'] == 'style-2') {
-                echo listing__action(false);
+                echo listing__action(get_the_ID());
             }
             ?>
         </div>
