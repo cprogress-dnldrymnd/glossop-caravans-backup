@@ -11,12 +11,22 @@ Container::make('term_meta', __('Manufacturer Properties'))
         Field::make('image', 'main_logo', __('Logo')),
     ));
 
-Container::make('post_meta', __('Listing Images'))
+Container::make('post_meta', __('Images'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
         Field::make('complex', 'images', __(''))
             ->add_fields(array(
                 Field::make('text', 'image_url', __('Image URL')),
+            ))
+            ->set_layout('tabbed-horizontal'),
+    ));
+
+Container::make('post_meta', __('Features'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('complex', 'features', __(''))
+            ->add_fields(array(
+                Field::make('text', 'feature', __('Feature')),
             ))
             ->set_layout('tabbed-horizontal'),
     ));
