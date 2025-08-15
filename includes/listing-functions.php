@@ -830,26 +830,6 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePrice" aria-expanded="false"
-                                aria-controls="collapsePrice">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('price.svg') ?></span> Price
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapsePrice" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
                     <?php
                     echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
