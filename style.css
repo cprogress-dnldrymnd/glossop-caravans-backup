@@ -13172,6 +13172,8 @@ h5, .h5 {
       padding-bottom: 0.25rem !important; } }
   .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li.key--info-axle .icon-list-text:before {
     content: "Axle"; }
+  .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li.key--info-warranty .icon-list-text:before {
+    content: "Warranty"; }
 @media screen and (min-width: 992px) {
   .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list svg {
     width: 32px;
