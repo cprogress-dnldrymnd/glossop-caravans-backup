@@ -5,12 +5,10 @@
 ?>
 <?php get_header() ?>
 <?php
-global $listing_fields;
 $warranty = get__post_meta('warranty');
 $tour_360 = get__post_meta('tour_360');
 $video = get__post_meta('video');
 $features = carbon_get_the_post_meta('features');
-
 $term_ids = [];
 $terms = get_the_terms(get_the_ID(), 'listing_category');
 if ($terms && !is_wp_error($terms)) {
@@ -20,7 +18,6 @@ if ($terms && !is_wp_error($terms)) {
 }
 $term_slug = $terms[0]->slug;
 ?>
-
 
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>

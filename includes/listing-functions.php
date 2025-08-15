@@ -782,9 +782,8 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('berths', 'Berths', $placeholder = 'How many berths?');
+                    echo accordion__filter('berths', 'Berths', 'How many berths?', get__search_field_options('_berths', $category));
                     ?>
-
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -935,9 +934,13 @@ function listing_sidebar_filter($category)
     return ob_get_clean();
 }
 
-function accordion__filter($id, $label, $placeholder = '')
+function accordion__filter($id, $label, $placeholder = '', $available_options)
 {
     ob_start();
+    $available_options_arr = [];
+    foreach ($available_options as $available_option) {
+        $c[$available_option] = $available_option;
+    }
 ?>
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -963,7 +966,7 @@ function accordion__filter($id, $label, $placeholder = '')
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg',
-                    'options' => $options
+                    'options' => array_merge($options, $available_option)
                 ));
                 ?>
             </div>
@@ -974,4 +977,51 @@ function accordion__filter($id, $label, $placeholder = '')
 }
 
 
-function get__search_field_options($id, $category) {}
+
+function get__search_field_options($meta_key, $terms = 'caravans', $post_type = 'caravan', $taxonomy = 'listing_category')
+{
+    global $wpdb;
+    // Sanitize the input to prevent SQL injection
+    $meta_key = sanitize_text_field($meta_key);
+    $post_type = sanitize_text_field($post_type);
+    $taxonomy = sanitize_text_field($taxonomy);
+    $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
+
+    // Build the query to get post IDs filtered by taxonomy and term slugs
+    $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
+
+    $query_post_ids = "
+        SELECT p.ID
+        FROM {$wpdb->posts} AS p
+        INNER JOIN {$wpdb->term_relationships} AS tr ON p.ID = tr.object_id
+        INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+        INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
+        WHERE p.post_type = %s
+        AND p.post_status = 'publish'
+        AND tt.taxonomy = %s
+        AND t.slug IN ({$sql_in_clause})
+    ";
+
+    $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
+    $post_ids = $wpdb->get_col($prepared_post_ids_query);
+
+    if (empty($post_ids)) {
+        return [];
+    }
+
+    // Build the query to get unique meta values from the retrieved post IDs
+    $post_ids_in_clause = implode(",", array_map('intval', $post_ids));
+
+    $query_meta_values = "
+        SELECT DISTINCT meta_value
+        FROM {$wpdb->postmeta}
+        WHERE meta_key = %s
+        AND post_id IN ({$post_ids_in_clause})
+        ORDER BY meta_value ASC
+    ";
+
+    $prepared_meta_values_query = $wpdb->prepare($query_meta_values, $meta_key);
+    $unique_values = $wpdb->get_col($prepared_meta_values_query);
+
+    return $unique_values;
+}
