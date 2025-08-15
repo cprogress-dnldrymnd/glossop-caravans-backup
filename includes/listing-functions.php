@@ -620,7 +620,7 @@ function listing_grid($id)
 {
     ob_start();
 ?>
-    <div class="listing-grid h-100 position-relative rounded <?= $args['style'] ?>">
+    <div class="listing-grid h-100 position-relative rounded style-1">
         <div class="listing-grid-item__top position-relative">
             <h3>Swift Elegance Grande 780</h3>
             <div class="desc mb-3 mt-3">
