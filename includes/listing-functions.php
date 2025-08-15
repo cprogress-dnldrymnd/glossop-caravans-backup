@@ -732,7 +732,7 @@ function listing_sidebar_filter($category)
 {
     ob_start();
     global $listing_fields;
-                    var_dump(get__search_field_options('_berths', $category));
+    var_dump(get__search_field_options('_berths', [$category]));
 
 ?>
 
