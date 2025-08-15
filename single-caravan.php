@@ -37,11 +37,11 @@ global $listing_fields;
 
                                 <div class="row g-3 justify-content-between align-items-center">
                                     <div class="col-lg-8">
-                                        <?php echo listing__price(); ?>
+                                        <?php echo listing__price(get_the_ID()); ?>
                                     </div>
                                     <div class="col-lg-4">
                                         <?php
-                                        echo listing__features(true);
+                                        echo listing__features(get_the_ID(), true);
                                         ?>
                                     </div>
                                 </div>
