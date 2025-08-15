@@ -939,7 +939,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
     ob_start();
     $available_options_arr = [];
     foreach ($available_options as $available_option) {
-        $c[$available_option] = $available_option;
+        $available_options_arr[$available_option] = $available_option;
     }
 ?>
     <div class="accordion-item">
