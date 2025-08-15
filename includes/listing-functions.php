@@ -176,7 +176,7 @@ function listing__price($id, $per_month = true)
                 <div class="listing-grid-item__price col">
                     <div class="grid-item__price-inner rounded h-100">
                         <span class="fs-14">Per month</span>
-                        <strong class="text-orange-3"><?= price__format(500) ?></strong>
+                        <strong class="text-yellow"><?= price__format(500) ?></strong>
                     </div>
                 </div>
             <?php } ?>
