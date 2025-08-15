@@ -53,12 +53,12 @@ global $listing_fields;
                                         <div class="row g-xs flex-column-reverse flex-lg-row gallery-row">
                                             <div class="col-lg-2">
                                                 <div class="swiper-gallery-thumbnails">
-                                                    <?php echo listing__gallery('gallery-1', true); ?>
+                                                    <?php echo listing__gallery(get_the_ID(), true); ?>
                                                 </div>
                                             </div>
                                             <div class="col-lg-10">
                                                 <div class="listing-inner--gallery-grid-holder position-relative rounded overflow-hidden">
-                                                    <?php echo listing__gallery('gallery-1'); ?>
+                                                    <?php echo listing__gallery(get_the_ID()); ?>
                                                 </div>
                                             </div>
                                         </div>
