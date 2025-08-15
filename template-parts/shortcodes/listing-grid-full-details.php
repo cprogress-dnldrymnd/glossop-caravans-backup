@@ -14,7 +14,7 @@
       <div class="col-md-12">
         <h3><?php the_title() ?></h3>
         <div class="desc">
-          <?php the_content() ?>
+          <?php the_excerpt() ?>
         </div>
       </div>
     </div>
