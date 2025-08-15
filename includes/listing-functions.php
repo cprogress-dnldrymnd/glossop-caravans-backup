@@ -6,18 +6,13 @@ function listings_fields()
 
     $listing_fields['sortby'] = form_control(array(
         'type'    => 'select',
-        'name'    => 'Type',
-        'id'      => 'Type',
-        'label'   => 'Type',
+        'name'    => 'price_sort',
+        'id'      => 'price_sort',
+        'label'   => 'Sort by',
         'class'   => 'form-control-lg',
         'options' => array(
-            ''         => 'Sort 1',
-            'Option 1' => 'Option 1',
-            'Option 2' => 'Option 2',
-            'Option 3' => 'Option 3',
-            'Option 4' => 'Option 4',
-            'Option 5' => 'Option 5',
-            'Option 6' => ' Option6',
+            'asc'         => 'Low to High',
+            'desc' => 'High to Low',
         ),
     ));
     $listing_fields['type'] = form_control(array(
