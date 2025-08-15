@@ -148,7 +148,7 @@ $features = get__post_meta('features');
                                                 </h2>
                                                 <div id="collapseInterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
                                                     <div class="accordion-body">
-                                                        <ul>
+                                                        <ul class="ul-stlye-1">
                                                             <?php foreach ($features as $feature) { ?>
                                                                 <li><?= $feature['feature'] ?></li>
                                                             <?php } ?>
