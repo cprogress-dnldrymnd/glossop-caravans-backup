@@ -138,7 +138,7 @@ function listing__features($id, $hide_per_month = true)
     return ob_get_clean();
 }
 
-function listing__price($id, $per_month = false)
+function listing__price($id, $per_month = true)
 {
     ob_start();
     $rrp = get__post_meta_by_id($id, 'rrp');
