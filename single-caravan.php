@@ -7,7 +7,10 @@
 <?php
 global $listing_fields;
 $warranty = get__post_meta('warranty');
+$tour_360 = get__post_meta('tour_360');
+$video = get__post_meta('video');
 $features = carbon_get_the_post_meta('features');
+
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
