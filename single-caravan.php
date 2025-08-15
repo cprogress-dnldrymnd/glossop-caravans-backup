@@ -173,7 +173,9 @@ $features = carbon_get_the_post_meta('features');
                                                 </h2>
                                                 <div id="collapseWarranty" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
                                                     <div class="accordion-body">
-                                                        <?= wpautop($warranty) ?>
+                                                        <ul class="ul-stlye-1">
+                                                            <li><?= wpautop($warranty) ?></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
