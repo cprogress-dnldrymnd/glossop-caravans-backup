@@ -13210,6 +13210,9 @@ h5, .h5 {
   justify-content: space-between;
   align-items: center; }
 
+.listing-grid--key-information--simple .icon-list.icon-list-v2 > li {
+  --width: auto; }
+
 .static-page-content {
   padding-top: var(--md-spacing);
   padding-bottom: var(--md-spacing); }

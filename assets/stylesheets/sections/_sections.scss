@@ -544,3 +544,12 @@
         }
     }
 }
+
+.listing-grid--key-information--simple {
+    .icon-list.icon-list-v2 {
+        justify-content: flex-start !important;
+        > li {
+            --width: auto;
+        }
+    }
+}
