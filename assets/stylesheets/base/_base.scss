@@ -989,13 +989,15 @@ span.icons {
         --bs-modal-width: 700px;
     }
 }
-
+.modal.modal {
+    z-index: 9999999999;
+}
 .wpcf7-spinner {
     position: absolute;
     right: 0;
     bottom: 22px;
 }
 
-.modal-backdrop {
+.modal-backdrop.modal-backdrop {
     z-index: 999999999;
 }
