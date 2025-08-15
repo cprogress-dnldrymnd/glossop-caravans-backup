@@ -498,10 +498,10 @@ function listing__key_information($id, $category = 'caravans')
 
 
 
-function listing_manufacturer_logo()
+function listing_manufacturer_logo($id)
 {
     ob_start();
-    $manufacturer = get_the_terms(get_the_ID(), 'manufacturer');
+    $manufacturer = get_the_terms($id, 'manufacturer');
     $logo = get__term_meta($manufacturer[0]->term_id, 'main_logo');
     if ($logo) {
     ?>

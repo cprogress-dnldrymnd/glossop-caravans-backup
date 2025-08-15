@@ -20,7 +20,7 @@ $warranty = get__post_meta('warranty');
                                 <div class="row g-3 justify-content-between align-items-center mb-1">
                                     <div class="col-md-6">
                                         <div class="image-box brand">
-                                            <?= wp_get_attachment_image(190, 'medium') ?>
+                                            <?= listing_manufacturer_logo(get_the_ID()) ?>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -29,7 +29,7 @@ $warranty = get__post_meta('warranty');
                                 </div>
                                 <div class="row g-3 justify-content-between align-items-center">
                                     <div class="col-auto">
-                                        <h1 class="h3">Swift Sprite Quattro FB 2024</h1>
+                                        <h1 class="h3"><?php the_title() ?></h1>
                                     </div>
                                     <div class="col-auto">
                                         <div class="available-now fs-18">Available to view</div>

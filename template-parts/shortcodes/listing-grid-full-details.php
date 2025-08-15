@@ -3,7 +3,7 @@
     <div class="row g-3 justify-content-between mb-1">
       <div class="col-md-6">
         <div class="image-box brand">
-          <?= listing_manufacturer_logo() ?>
+          <?= listing_manufacturer_logo($id) ?>
         </div>
       </div>
       <div class="col-md-6">
@@ -26,7 +26,7 @@
           <?php
           echo listing__gallery($id);
           ?>
-          <div class="d-none d-lg-block">
+          <div class="d-none d-lg-block"
             <?php
             echo listing__price($id);
             ?>
