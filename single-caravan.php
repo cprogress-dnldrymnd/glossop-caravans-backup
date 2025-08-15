@@ -11,6 +11,14 @@ $tour_360 = get__post_meta('tour_360');
 $video = get__post_meta('video');
 $features = carbon_get_the_post_meta('features');
 
+$term_ids = [];
+$terms = get_the_terms(get_the_ID(), 'listing_category');
+if ($terms && !is_wp_error($terms)) {
+    foreach ($terms as $term) {
+        $term_ids[] = $term->term_id;
+    }
+}
+
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
@@ -135,7 +143,7 @@ $features = carbon_get_the_post_meta('features');
                                     <?= wp_get_attachment_image(189, 'large') ?>
                                 </div>-->
                             </div>
-                            <div class="listing-inner--description xs-margin-bottom xs-margin-top">
+                            <div class="listing-inner--description xs-margin-bottom">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Description</h4>
                                 <div class="desc read--more">
                                     <?php the_content() ?>
@@ -312,28 +320,32 @@ $features = carbon_get_the_post_meta('features');
             </div>
         </div>
     </section>
-
+    <?php
+    $related_posts = get_posts(array(
+        'post_type' => 'caravan',
+        'numberposts' => 10,
+        'post__not_in' => array(get_the_ID()),
+        'orderby' => 'rand',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'listing_category',
+                'field' => 'term_id',
+                'terms' => $term_ids,
+            ),
+        ),
+    ));
+    ?>
     <section class="listine-inner--related overflow-hidden pt-5 p5-lg-0">
         <div class="container">
             <h2 class="sm-margin-bottom">You may also like</h2>
             <div class="swiper-holder">
                 <div class="swiper swiper-listing">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
-                        </div>
-                        <div class="swiper-slide">
-                            <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
-                        </div>
-                        <div class="swiper-slide">
-                            <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
-                        </div>
-                        <div class="swiper-slide">
-                            <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
-                        </div>
-                        <div class="swiper-slide">
-                            <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
-                        </div>
+                        <?php foreach ($related_posts as $post) { ?>
+                            <div class="swiper-slide">
+                                <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
