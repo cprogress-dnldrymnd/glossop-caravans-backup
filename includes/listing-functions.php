@@ -939,10 +939,7 @@ function listing_sidebar_filter($category)
 function accordion__filter($id, $label, $placeholder = '', $available_options)
 {
     ob_start();
-    $available_options_arr = [];
-    foreach ($available_options as $available_option) {
-        $available_options_arr[$available_option] = $available_option;
-    }
+
 ?>
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -968,7 +965,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg',
-                    'options' => array_merge($options, $available_options_arr)
+                    'options' => array_merge($options, $available_options)
                 ));
                 ?>
             </div>
@@ -1025,5 +1022,9 @@ function get__search_field_options($meta_key, $terms = 'caravans', $post_type = 
     $prepared_meta_values_query = $wpdb->prepare($query_meta_values, $meta_key);
     $unique_values = $wpdb->get_col($prepared_meta_values_query);
 
-    return $unique_values;
+    $unique_values_arr = [];
+    foreach ($unique_values as $unique_value) {
+        $unique_values_arr[$unique_value] = $unique_value;
+    }
+    return $unique_values_arr;
 }
