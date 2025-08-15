@@ -321,7 +321,7 @@ global $listing_fields;
         <div class="container">
             <div class="row g-xs align-items-center">
                 <div class="col-7">
-                    <?= listing__price(false) ?>
+                    <?= listing__price(get_the_ID()) ?>
                 </div>
                 <div class="col-5">
                     <a class="btn btn-primary w-100" data-bs-toggle="offcanvas" href="#offcanvasReserveForm" role="button" aria-controls="offcanvasReserveForm">Reserve now</a>
