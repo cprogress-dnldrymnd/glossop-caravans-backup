@@ -15,11 +15,12 @@ function listings_fields()
             'desc' => 'High to Low',
         ),
     ));
+
     $listing_fields['type'] = form_control(array(
         'type'    => 'select',
-        'name'    => 'Type',
-        'id'      => 'Type',
-        'label'   => 'Type',
+        'name'    => 'new_used',
+        'id'      => 'new_used',
+        'label'   => 'New-Used',
         'class'   => 'form-control-lg',
         'options' => array(
             ''     => 'New or Used?',
