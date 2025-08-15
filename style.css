@@ -11848,6 +11848,25 @@ span.icons {
 .modal-backdrop.modal-backdrop {
   z-index: 999999999; }
 
+.ul-stlye-1 {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+  gap: 10px; }
+  .ul-stlye-1 li {
+    display: flex;
+    align-items: center;
+    gap: 10px; }
+    .ul-stlye-1 li:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      background-color: var(--orange-color);
+      border-radius: 50%; }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
