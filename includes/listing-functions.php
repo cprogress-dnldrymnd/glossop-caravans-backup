@@ -305,160 +305,184 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
             'icon' => false
         );
     }
-    $key_information[] = array(
-        'id' => 'bedrooms',
-        'label' => 'Bedrooms',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'year',
-        'label' => 'Year',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'width',
-        'label' => 'Width',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => array(
-            'caravans' => 'caravan_width.svg',
-            'static-caravans' => 'static_caravan_width.svg'
-        )
-    );
-    $key_information[] = array(
-        'id' => 'internal_length',
-        'label' => 'Internal Length',
-        'show_on_listing_page' => true,
-        'after' => 'm',
-        'icon' => false
+    if (in_array('bedrooms', $show)) {
+        $key_information[] = array(
+            'id' => 'bedrooms',
+            'label' => 'Bedrooms',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('berths', $show)) {
+        $key_information[] = array(
+            'id' => 'year',
+            'label' => 'Year',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('width', $show)) {
+        $key_information[] = array(
+            'id' => 'width',
+            'label' => 'Width',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => array(
+                'caravans' => 'caravan_width.svg',
+                'static-caravans' => 'static_caravan_width.svg'
+            )
+        );
+    }
+    if (in_array('internal_length', $show)) {
+        $key_information[] = array(
+            'id' => 'internal_length',
+            'label' => 'Internal Length',
+            'show_on_listing_page' => true,
+            'after' => 'm',
+            'icon' => false
 
-    );
-    $key_information[] = array(
-        'id' => 'external_length',
-        'label' => 'External Length',
-        'show_on_listing_page' => true,
-        'after' => 'm',
-        'icon' => false
-    );
-
-    $key_information[] = array(
-        'id' => 'chassis',
-        'label' => 'Chassis',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'mileage',
-        'label' => 'Mileage',
-        'show_on_listing_page' => true,
-        'after' => ' miles',
-        'icon' => false
-    );
-
-    $key_information[] = array(
-        'id' => 'gearbox',
-        'label' => 'Gearbox',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-
-    $key_information[] = array(
-        'id' => 'bhp',
-        'label' => 'BHP',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-
-    $key_information[] = array(
-        'id' => 'engine',
-        'label' => 'Engine',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-
-    $key_information[] = array(
-        'id' => 'length',
-        'label' => 'Length',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => array(
-            'motorhomes' => 'motorhomes_length.svg',
-            'static-caravans' => 'static_caravan_length.svg'
-        )
-    );
-
-    $key_information[] = array(
-        'id' => 'mtplm',
-        'label' => 'MTPLM',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-
-    $key_information[] = array(
-        'id' => 'registered_keepers',
-        'label' => 'Registered Keepers',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'new_used',
-        'label' => 'New/Used',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'internal_stock_number',
-        'label' => 'Stock Number',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-    $key_information[] = array(
-        'id' => 'awning_size',
-        'label' => 'Awning Size',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'unladen_weight',
-        'label' => 'Unladen Weight',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
-    $key_information[] = array(
-        'id' => 'axle',
-        'label' => '',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-    $key_information[] = array(
-        'id' => 'warranty',
-        'label' => '',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
-
+        );
+    }
+    if (in_array('external_length', $show)) {
+        $key_information[] = array(
+            'id' => 'external_length',
+            'label' => 'External Length',
+            'show_on_listing_page' => true,
+            'after' => 'm',
+            'icon' => false
+        );
+    }
+    if (in_array('chassis', $show)) {
+        $key_information[] = array(
+            'id' => 'chassis',
+            'label' => 'Chassis',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('mileage', $show)) {
+        $key_information[] = array(
+            'id' => 'mileage',
+            'label' => 'Mileage',
+            'show_on_listing_page' => true,
+            'after' => ' miles',
+            'icon' => false
+        );
+    }
+    if (in_array('gearbox', $show)) {
+        $key_information[] = array(
+            'id' => 'gearbox',
+            'label' => 'Gearbox',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('bhp', $show)) {
+        $key_information[] = array(
+            'id' => 'bhp',
+            'label' => 'BHP',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('engine', $show)) {
+        $key_information[] = array(
+            'id' => 'engine',
+            'label' => 'Engine',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('length', $show)) {
+        $key_information[] = array(
+            'id' => 'length',
+            'label' => 'Length',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => array(
+                'motorhomes' => 'motorhomes_length.svg',
+                'static-caravans' => 'static_caravan_length.svg'
+            )
+        );
+    }
+    if (in_array('mtplm', $show)) {
+        $key_information[] = array(
+            'id' => 'mtplm',
+            'label' => 'MTPLM',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('registered_keepers', $show)) {
+        $key_information[] = array(
+            'id' => 'registered_keepers',
+            'label' => 'Registered Keepers',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('new_used', $show)) {
+        $key_information[] = array(
+            'id' => 'new_used',
+            'label' => 'New/Used',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('internal_stock_number', $show)) {
+        $key_information[] = array(
+            'id' => 'internal_stock_number',
+            'label' => 'Stock Number',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('awning_size', $show)) {
+        $key_information[] = array(
+            'id' => 'awning_size',
+            'label' => 'Awning Size',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('unladen_weight', $show)) {
+        $key_information[] = array(
+            'id' => 'unladen_weight',
+            'label' => 'Unladen Weight',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('axle', $show)) {
+        $key_information[] = array(
+            'id' => 'axle',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
+    if (in_array('warranty', $show)) {
+        $key_information[] = array(
+            'id' => 'warranty',
+            'label' => '',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
 
 
 
