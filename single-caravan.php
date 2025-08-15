@@ -343,7 +343,7 @@ if ($terms && !is_wp_error($terms)) {
                     <div class="swiper-wrapper">
                         <?php foreach ($related_posts as $post) { ?>
                             <div class="swiper-slide">
-                                <?= do_shortcode('[listing_grid image_id="195" style="style-2"]') ?>
+                                <?= listing_grid($id) ?>
                             </div>
                         <?php } ?>
                     </div>
