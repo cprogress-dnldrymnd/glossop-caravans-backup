@@ -125,16 +125,6 @@ $warranty = get__post_meta('warranty');
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Description</h4>
                                 <div class="desc read--more">
                                     <?php the_content() ?>
-                                    <p>The Swift Challenger 530 2008 is a practical and family-friendly caravan, offering a flexible
-                                        4-berth
-                                        layout and a spacious separate end washroom. Designed with comfort and functionality in mind, it's
-                                        ideal for couples or small families who value a well-organised living space.</p>
-                                    <p><a href="#" class="fw-semibold read-more-button">Read more</a></p>
-                                    <div class="d-none read-more-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quibusdam, consequatur nihil mollitia eum sint adipisci esse recusandae nulla, quidem, porro placeat accusantium voluptatibus maxime praesentium earum in? Beatae, sint!</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quibusdam, consequatur nihil mollitia eum sint adipisci esse recusandae nulla, quidem, porro placeat accusantium voluptatibus maxime praesentium earum in? Beatae, sint!</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quibusdam, consequatur nihil mollitia eum sint adipisci esse recusandae nulla, quidem, porro placeat accusantium voluptatibus maxime praesentium earum in? Beatae, sint!</p>
-                                    </div>
                                 </div>
                             </div>
                             <div class="listing-inner--specifications md-margin-bottom">
