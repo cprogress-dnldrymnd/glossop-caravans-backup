@@ -737,7 +737,7 @@ function listing_sidebar_filter($category)
 ?>
 
     <div class="listing-filter sticky-element accordion-style-1">
-        <div class="offcanvas offcanvas-end offcanvas-visible-desktop" tabindex="-1" id="offCanvasFilter" aria-labelledby="offCanvasFilterLabel">
+        <div class="offcanvas offcanvas-end offcanvas-visible-desktop" tabindex="-1" id="offCanvasFilter" raria-labelledby="offCanvasFilterLabel">
             <div class="offcanvas-body">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 <div class="accordion rounded overflow-hidden" id="accordionFilter">
@@ -1001,7 +1001,7 @@ function get__search_field_options($meta_key, $terms = 'caravans', $post_type = 
         WHERE p.post_type = %s
         AND p.post_status = 'publish'
         AND tt.taxonomy = %s
-        AND t.slug IN ({$sql_in_clause})
+        AND t.term_id IN ({$sql_in_clause})
     ";
 
     $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
