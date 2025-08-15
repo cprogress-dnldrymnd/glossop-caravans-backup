@@ -465,7 +465,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
     if (in_array('fuel_type', $show)) {
         $key_information[] = array(
             'id' => 'fuel_type',
-            'label' => '',
+            'label' => 'Fuel Type',
             'show_on_listing_page' => true,
             'after' => false,
             'icon' => false
@@ -476,7 +476,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
     if (in_array('country_of_origin', $show)) {
         $key_information[] = array(
             'id' => 'country_of_origin',
-            'label' => '',
+            'label' => 'Country of Origin',
             'show_on_listing_page' => true,
             'after' => false,
             'icon' => false
@@ -487,7 +487,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
     if (in_array('driver_side', $show)) {
         $key_information[] = array(
             'id' => 'driver_side',
-            'label' => '',
+            'label' => 'Driver Side',
             'show_on_listing_page' => true,
             'after' => false,
             'icon' => false
@@ -497,7 +497,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
     if (in_array('power_steering', $show)) {
         $key_information[] = array(
             'id' => 'power_steering',
-            'label' => '',
+            'label' => 'Power Steerin',
             'show_on_listing_page' => true,
             'after' => false,
             'icon' => false
