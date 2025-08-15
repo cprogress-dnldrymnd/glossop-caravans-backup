@@ -293,16 +293,18 @@ function listing__key_information_simple($berths = 4, $year = 2024, $axle = fals
     return ob_get_clean();
 }
 
-function listing__key_information($id, $category = 'caravans')
+function listing__key_information($id, $category = 'caravans', $show = ['berths', 'bedrooms', 'year', 'width', 'internal_length', 'external_length', 'chassis', 'mileage', 'gearbox', 'bhp', 'engine', 'length', 'mtplm', 'registered_keepers', 'new_used', 'internal_stock_number', 'awning_size', 'unladen_weight', 'axle', 'warranty'])
 {
     ob_start();
-    $key_information[] = array(
-        'id' => 'berths',
-        'label' => 'Berths',
-        'show_on_listing_page' => true,
-        'after' => false,
-        'icon' => false
-    );
+    if (in_array('berth', $show)) {
+        $key_information[] = array(
+            'id' => 'berths',
+            'label' => 'Berths',
+            'show_on_listing_page' => true,
+            'after' => false,
+            'icon' => false
+        );
+    }
     $key_information[] = array(
         'id' => 'bedrooms',
         'label' => 'Bedrooms',
@@ -456,6 +458,7 @@ function listing__key_information($id, $category = 'caravans')
         'after' => false,
         'icon' => false
     );
+
 
 
 
@@ -667,9 +670,9 @@ function listing_grid($id, $style = 'style-2')
         <div class="listing-grid-item__bottom">
             <?php if ($style == 'style-2') { ?>
                 <h3 class="fs-23"><?= get_the_title($id) ?></h3>
-                <div class="listing-grid--key-information mb-20">
+                <div class="listing-grid--key-information listing-grid--key-information--simple mb-20">
                     <?php
-                    echo listing__key_information_simple();
+                    echo listing__key_information($id);
                     ?>
                 </div>
             <?php } ?>
