@@ -43,6 +43,20 @@ Container::make('post_meta', __('Finance Available'))
         Field::make('text', 'finance_available', __('')),
     ));
 
+
+Container::make('post_meta', __('360° Tour'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'tour_360', __('')),
+    ));
+
+
+Container::make('post_meta', __('Video'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('oembed', 'video', __('')),
+    ));
+
 Container::make('post_meta', __('RRP (£)'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
