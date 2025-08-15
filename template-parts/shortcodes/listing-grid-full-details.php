@@ -26,7 +26,7 @@
           <?php
           echo listing__gallery($id);
           ?>
-          <div class="d-none d-lg-block"
+          <div class="d-none d-lg-block">
             <?php
             echo listing__price($id);
             ?>
