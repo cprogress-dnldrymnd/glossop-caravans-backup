@@ -112,6 +112,9 @@ global $listing_fields;
                             <div class="listing-key--info">
                                 <h4 class="fs-35 heading mb-3 mb-lg-4">Key Information</h4>
                                 <?php
+                                echo listing__key_information(get_the_ID());
+                                ?>
+                                <?php
                                 echo listing__key_information_v2();
                                 ?>
                                 <div class="awning-image image-box border-bottom xs-margin-bottom">
