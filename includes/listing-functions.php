@@ -770,7 +770,7 @@ function listing_sidebar_filter($category)
                                         <span class="icon"><?= get__theme_icons('new-used.svg') ?></span>
                                         New-Used
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -790,7 +790,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('berths.svg') ?></span> Berths
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -810,7 +810,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('make.svg') ?></span> Make
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -830,7 +830,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('model.svg') ?></span> Model
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -850,7 +850,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('price.svg') ?></span> Price
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -870,7 +870,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('year.svg') ?></span> Year
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -891,7 +891,7 @@ function listing_sidebar_filter($category)
                                         <span class="icon"><?= get__theme_icons('layout-type.svg') ?></span>
                                         Layout-type
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -911,7 +911,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('width.svg') ?></span> Width
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
@@ -931,7 +931,7 @@ function listing_sidebar_filter($category)
                                     <span class="icon-text">
                                         <span class="icon"><?= get__theme_icons('axles.svg') ?></span> Axles
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Value</span>
+                                    <span class="selected fs-14 fw-bold"></span>
                                 </span>
                             </button>
                         </h2>
