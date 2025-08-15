@@ -46,7 +46,7 @@ function listings_fields()
             '6'   => '6',
         ),
     ));
-    
+
     $listing_fields['make'] = form_control(array(
         'type'    => 'select',
         'name'    => 'Make',
@@ -781,26 +781,7 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseBerths" aria-expanded="false"
-                                aria-controls="collapseBerths">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('berths.svg') ?></span> Berths
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseBerths" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['berths'] ?>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -946,6 +927,44 @@ function listing_sidebar_filter($category)
             </div>
         </div>
 
+    </div>
+<?php
+    return ob_get_clean();
+}
+
+function accordion__filter($id, $label, $placeholder = '')
+{
+    ob_start();
+?>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-<?= $id ?>" aria-expanded="false"
+                aria-controls="collapseBerths">
+                <span class="accordion-button-inner">
+                    <span class="icon-text">
+                        <span class="icon"><?= get__theme_icons($id . '.svg') ?></span>
+                        <?= $label ?>
+                    </span>
+                    <span class="selected fs-14 fw-bold"></span>
+                </span>
+            </button>
+        </h2>
+        <div id="collapse-<?= $id ?>" class="accordion-collapse collapse"
+            data-bs-parent="#accordionFilter">
+            <div class="accordion-body">
+                <?php
+                $options[''] = $placeholder;
+                echo form_control(array(
+                    'type'    => 'select',
+                    'name'    => $id,
+                    'id'      => $id,
+                    'class'   => 'form-control-lg',
+                    'options' => $options
+                ));
+                ?>
+            </div>
+        </div>
     </div>
 <?php
     return ob_get_clean();
