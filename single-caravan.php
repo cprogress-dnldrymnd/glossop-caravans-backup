@@ -18,7 +18,7 @@ if ($terms && !is_wp_error($terms)) {
         $term_ids[] = $term->term_id;
     }
 }
-
+$term_slug = $terms[0]->slug;
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
@@ -343,7 +343,7 @@ if ($terms && !is_wp_error($terms)) {
                     <div class="swiper-wrapper">
                         <?php foreach ($related_posts as $post) { ?>
                             <div class="swiper-slide">
-                                <?= listing_grid($post->ID) ?>
+                                <?= listing_grid($post->ID, $term_slug) ?>
                             </div>
                         <?php } ?>
                     </div>

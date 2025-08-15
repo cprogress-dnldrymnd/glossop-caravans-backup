@@ -643,7 +643,7 @@ function listing_grid_full_details($id, $category = 'caravans')
 }
 
 
-function listing_grid($id, $style = 'style-2')
+function listing_grid($id, $category = 'caravan', $style = 'style-2')
 {
     ob_start();
     $images = carbon_get_post_meta($id, 'images');
@@ -696,7 +696,7 @@ function listing_grid($id, $style = 'style-2')
                 <h3 class="fs-23"><?= get_the_title($id) ?></h3>
                 <div class="listing-grid--key-information listing-grid--key-information--simple mb-20">
                     <?php
-                    echo listing__key_information($id);
+                    echo listing__key_information($id, $category, ['berths', 'bedrooms', 'year']);
                     ?>
                 </div>
             <?php } ?>
