@@ -68,14 +68,19 @@ $features = carbon_get_the_post_meta('features');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="three-sixty-tab-pane" role="tabpanel" aria-labelledby="three-sixty-tab"
-                                        tabindex="0">
-                                        <iframe class="w-100" height="500" src="https://www.glossopcaravans.co.uk/images360/shop/" frameborder="0"></iframe>
-                                    </div>
-                                    <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab"
-                                        tabindex="0">
-                                        <iframe class="rounded overflow-hidden" title="YouTube video player" src="https://www.youtube.com/embed/u6yCMPWOt4Q?autoplay=1&amp;mute=1&amp;loop=1" width="100%" height="600" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                                    </div>
+                                    <?php if ($tour_360) {  ?>
+                                        <div class="tab-pane fade" id="three-sixty-tab-pane" role="tabpanel" aria-labelledby="three-sixty-tab"
+                                            tabindex="0">
+                                            <iframe class="w-100" height="500" src="<?= $tour_360 ?>" frameborder="0"></iframe>
+                                        </div>
+                                    <?php } ?>
+                                    <?php if ($video) {  ?>
+                                        <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab"
+                                            tabindex="0">
+                                            <iframe class="rounded overflow-hidden" title="YouTube video player" src="<?= $video ?>" width="100%" height="600" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                        </div>
+                                    <?php } ?>
+
                                 </div>
 
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -84,15 +89,20 @@ $features = carbon_get_the_post_meta('features');
                                         aria-selected="true">
                                         <span class="icon"><?= get__theme_icons('gallery.svg') ?></span> Gallery
                                     </button>
-                                    <button class="nav-link" id="three-sixty-tab" data-bs-toggle="tab"
-                                        data-bs-target="#three-sixty-tab-pane" type="button" role="tab"
-                                        aria-controls="three-sixty-tab-pane" aria-selected="false">
-                                        <span class="icon"><?= get__theme_icons('360.svg') ?></span> 360° TOUR
-                                    </button>
-                                    <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane"
-                                        type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false">
-                                        <span class="icon"><?= get__theme_icons('video.svg') ?></span> Video
-                                    </button>
+                                    <?php if ($tour_360) {  ?>
+                                        <button class="nav-link" id="three-sixty-tab" data-bs-toggle="tab"
+                                            data-bs-target="#three-sixty-tab-pane" type="button" role="tab"
+                                            aria-controls="three-sixty-tab-pane" aria-selected="false">
+                                            <span class="icon"><?= get__theme_icons('360.svg') ?></span> 360° TOUR
+                                        </button>
+                                    <?php } ?>
+                                    <?php if ($video) {  ?>
+                                        <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video-tab-pane"
+                                            type="button" role="tab" aria-controls="video-tab-pane" aria-selected="false">
+                                            <span class="icon"><?= get__theme_icons('video.svg') ?></span> Video
+                                        </button>
+                                    <?php } ?>
+
                                 </ul>
                             </div>
                             <div class="listing--details-mobile d-block d-lg-none">
