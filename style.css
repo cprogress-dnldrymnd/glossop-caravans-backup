@@ -13161,18 +13161,18 @@ h5, .h5 {
   padding: 0;
   margin: 0; }
 
-.listing-key--info--single .icon-list li {
+.listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li {
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
   border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
   @media screen and (max-width: 991px) {
-    .listing-key--info--single .icon-list li {
+    .listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list li {
       padding-top: 0.25rem !important;
       padding-bottom: 0.25rem !important; } }
-.listing-key--info--single .icon-list svg {
+.listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list svg {
   width: 32px;
   flex: 0 0 32px; }
-.listing-key--info--single .icon-list .icon-list-text {
+.listing-key--info--single.listing-key--info--single.listing-key--info--single .icon-list .icon-list-text {
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
