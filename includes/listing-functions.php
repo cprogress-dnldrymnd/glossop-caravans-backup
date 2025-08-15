@@ -534,9 +534,9 @@ function listing_grid_full_details($id, $category = 'caravans')
             </div>
             <div class="row g-3 justify-content-between">
                 <div class="col-md-12">
-                    <h3><?php the_title() ?></h3>
+                    <h3><?= get_the_title($id) ?></h3>
                     <div class="desc">
-                        <?php the_excerpt() ?>
+                        <?= get_the_excerpt($id) ?>
                     </div>
                 </div>
             </div>
@@ -566,7 +566,7 @@ function listing_grid_full_details($id, $category = 'caravans')
                                 <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
                                 <div class="listing-inner--key-info d-none d-lg-block">
                                     <?php
-                                    echo listing__key_information($id, $args['category']);
+                                    echo listing__key_information($id, $category);
                                     ?>
                                 </div>
                                 <div class="d-block d-lg-none mt-3">
@@ -592,7 +592,7 @@ function listing_grid_full_details($id, $category = 'caravans')
                             <div class="row g-xxs">
                                 <div class="col-lg-6">
                                     <div class="listing-grid-item__button h-100">
-                                        <a href="<?php the_permalink() ?>" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange fw-semibold h-100 d-inline-flex align-items-center justify-content-center">
+                                        <a href="<?= get_the_permalink($id) ?>" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange fw-semibold h-100 d-inline-flex align-items-center justify-content-center">
                                             View deal
                                         </a>
                                     </div>
@@ -616,16 +616,25 @@ function listing_grid_full_details($id, $category = 'caravans')
 }
 
 
-function listing_grid($id)
+function listing_grid($id, $style = 'style-2')
 {
     ob_start();
+    $images = carbon_get_post_meta($id, 'images');
+    if (!$images || empty($images)) {
+        $images = array(
+            array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
+        );
+    }
+    $finance_available = get__post_meta_by_id($id, 'finance_available');
 ?>
-    <div class="listing-grid h-100 position-relative rounded style-1">
+    <div class="listing-grid h-100 position-relative rounded <?= $style ?>">
         <div class="listing-grid-item__top position-relative">
-            <h3>Swift Elegance Grande 780</h3>
-            <div class="desc mb-3 mt-3">
-                <p>Step into luxury with the Swift Elegance Grande 780.</p>
-            </div>
+            <?php if ($style == 'style-1') { ?>
+                <h3><?= get_the_title($id) ?></h3>
+                <div class="desc mb-3 mt-3">
+                    <p><?= get_the_excerpt($id) ?></p>
+                </div>
+            <?php } ?>
 
             <div class="listing-grid--feature--action listing-grid--feature--action--style-2">
                 <div class="listing-grid__feature fs-13 row g-xxs fw-semibold">
@@ -643,18 +652,28 @@ function listing_grid($id)
                         </div>
                     </div>
                 </div>
+                <?php
+                if ($style == 'style-2') {
+                    echo listing__action(false);
+                }
+                ?>
             </div>
-
-
-
             <div class="listing-grid__image image-style">
-                <?= wp_get_attachment_image($args['image_id'], 'large') ?>
+                <img src="<?= $images['0']['image_url'] ?>" alt="Listing Imae">
             </div>
         </div>
         <div class="listing-grid-item__bottom">
-            <?= listing__price(get_the_ID()) ?>
+            <?php if ($style == 'style-2') { ?>
+                <h3 class="fs-23">Swift Elegance Grande 780</h3>
+                <div class="listing-grid--key-information mb-20">
+                    <?php
+                    echo listing__key_information_simple();
+                    ?>
+                </div>
+            <?php } ?>
+            <?= listing__price($id) ?>
             <div class="listing-grid-item__button mt-3">
-                <a href="https://newglossopacaravans.theprogressteam.co.uk/listing-inner" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange">
+                <a href="<?= get_the_permalink($id) ?>" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange">
                     View deal
                 </a>
             </div>
