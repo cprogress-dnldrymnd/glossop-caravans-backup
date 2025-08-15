@@ -8,15 +8,15 @@ function form_control($args)
 
 
     if ($args['type'] == 'select') {
-        $html .= '<select ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '">';
+        $html .= '<select ' . isset($args['attribute']) ? $args['attribute'] : '' . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '">';
         foreach ($args['options'] as $key => $value) {
             $html .= '<option value="' . $key . '">' . $value . '</option>';
         }
         $html .= '</select>';
     } elseif ($args['type'] == 'textarea') {
-        $html .= '<textarea ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '" placeholder="' . $args['placeholder'] . '">' . $args['value'] . '</textarea>';
+        $html .= '<textarea ' . isset($args['attribute']) ? $args['attribute'] : '' . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '" placeholder="' . $args['placeholder'] . '">' . $args['value'] . '</textarea>';
     } else {
-        $html .= '<input ' . $args['attribute'] . ' type="' . $args['type'] . '" name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '" placeholder="' . $args['placeholder'] . '" value="' . $args['value'] . '">';
+        $html .= '<input ' . isset($args['attribute']) ? $args['attribute'] : '' . ' type="' . $args['type'] . '" name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '" placeholder="' . $args['placeholder'] . '" value="' . $args['value'] . '">';
     }
     $html .= '</div>';
 

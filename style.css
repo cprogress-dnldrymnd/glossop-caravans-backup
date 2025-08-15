@@ -11795,7 +11795,7 @@ span.icons {
     padding-right: 10px; } }
 
 .fancybox__container.fancybox__container {
-  z-index: 9999999999; }
+  z-index: 999999999; }
 
 .offcanvas-backdrop.offcanvas-backdrop {
   z-index: 9999; }
