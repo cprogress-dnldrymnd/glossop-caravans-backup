@@ -966,7 +966,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg',
-                    'options' => array_merge($options, $available_option)
+                    'options' => array_merge($options)
                 ));
                 ?>
             </div>
