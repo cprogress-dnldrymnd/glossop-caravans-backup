@@ -343,7 +343,7 @@ if ($terms && !is_wp_error($terms)) {
                     <div class="swiper-wrapper">
                         <?php foreach ($related_posts as $post) { ?>
                             <div class="swiper-slide">
-                                <?= listing_grid($id) ?>
+                                <?= listing_grid(get_the_ID()) ?>
                             </div>
                         <?php } ?>
                     </div>
