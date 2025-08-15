@@ -7,6 +7,7 @@
 <?php
 global $listing_fields;
 $warranty = get__post_meta('warranty');
+$features = get__post_meta('features');
 ?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
@@ -131,54 +132,32 @@ $warranty = get__post_meta('warranty');
                                 <h4 class="fs-35 headingmb-3 mb-lg-4">Specification and Features</h4>
                                 <div class="listing-filter accordion-style-1">
                                     <div class="accordion rounded border overflow-hidden" id="accordionSpecs">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseInterior" aria-expanded="false" aria-controls="collapseInterior">
-                                                    <span class="accordion-button-inner">
-                                                        <span class="icon-text">
-                                                            <span class="icon"><?= get__theme_icons('berths.svg') ?></span>
-                                                            Interior Features
+
+                                        <?php if ($features) { ?>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseInterior" aria-expanded="false" aria-controls="collapseInterior">
+                                                        <span class="accordion-button-inner">
+                                                            <span class="icon-text">
+                                                                <span class="icon"><?= get__theme_icons('berths.svg') ?></span>
+                                                                Features
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                </button>
-                                            </h2>
-                                            <div id="collapseInterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                <div class="accordion-body">
-                                                    <ul>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                    </ul>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseInterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
+                                                    <div class="accordion-body">
+                                                        <ul>
+                                                            <?php foreach ($features as $feature) { ?>
+                                                                <li><?= $feature['feature'] ?></li>
+                                                            <?php } ?>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseExterior" aria-expanded="false" aria-controls="collapseExterior">
-                                                    <span class="accordion-button-inner">
-                                                        <span class="icon-text">
-                                                            <span class="icon"><?= get__theme_icons('caravan.svg') ?></span>
-                                                            Exterior Features
-                                                        </span>
-                                                    </span>
-                                                </button>
-                                            </h2>
-                                            <div id="collapseExterior" class="accordion-collapse collapse" data-bs-parent="#accordionSpecs">
-                                                <div class="accordion-body">
-                                                    <ul>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                        <li>Ut velit odio totam illo</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
+
                                         <?php if ($warranty) { ?>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header">
