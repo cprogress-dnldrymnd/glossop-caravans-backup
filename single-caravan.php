@@ -20,6 +20,64 @@ if ($terms && !is_wp_error($terms)) {
 }
 $term_slug = $terms[0]->slug;
 ?>
+
+<?php
+
+function get_unique_meta_values_by_term($meta_key, $post_type, $taxonomy, $terms)
+{
+    global $wpdb;
+
+    // Sanitize the input to prevent SQL injection
+    $meta_key = sanitize_text_field($meta_key);
+    $post_type = sanitize_text_field($post_type);
+    $taxonomy = sanitize_text_field($taxonomy);
+    $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
+
+    // Build the query to get post IDs filtered by taxonomy and term slugs
+    $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
+
+    $query_post_ids = "
+        SELECT p.ID
+        FROM {$wpdb->posts} AS p
+        INNER JOIN {$wpdb->term_relationships} AS tr ON p.ID = tr.object_id
+        INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+        INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
+        WHERE p.post_type = %s
+        AND p.post_status = 'publish'
+        AND tt.taxonomy = %s
+        AND t.slug IN ({$sql_in_clause})
+    ";
+
+    $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
+    $post_ids = $wpdb->get_col($prepared_post_ids_query);
+
+    if (empty($post_ids)) {
+        return [];
+    }
+
+    // Build the query to get unique meta values from the retrieved post IDs
+    $post_ids_in_clause = implode(",", array_map('intval', $post_ids));
+
+    $query_meta_values = "
+        SELECT DISTINCT meta_value
+        FROM {$wpdb->postmeta}
+        WHERE meta_key = %s
+        AND post_id IN ({$post_ids_in_clause})
+        ORDER BY meta_value ASC
+    ";
+
+    $prepared_meta_values_query = $wpdb->prepare($query_meta_values, $meta_key);
+    $unique_values = $wpdb->get_col($prepared_meta_values_query);
+
+    return $unique_values;
+}
+
+// Example usage:
+// Get unique values for the meta key 'caravan_make' from the 'caravan' post type,
+// filtered by the 'listing_category' taxonomy terms 'luxury' and 'used'.
+$unique_makes = get_unique_meta_values_by_term('_berths', 'caravan', 'listing_category', ['caravans']);
+var_dump($unique_makes);
+?>
 <div class="site-content listing-inner md-padding-bottom">
     <div class="md-padding-top d-none d-lg-block"></div>
     <section class="listing-inner--main-details">
