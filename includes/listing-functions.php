@@ -671,7 +671,7 @@ function listing_grid($id, $style = 'style-2')
                     ?>
                 </div>
             <?php } ?>
-            <?= listing__price($id) ?>
+            <?= listing__price($id, false) ?>
             <div class="listing-grid-item__button mt-3">
                 <a href="<?= get_the_permalink($id) ?>" class="btn btn-primary w-100 btn-lg btn-hover-bordered text-hover-orange">
                     View deal
