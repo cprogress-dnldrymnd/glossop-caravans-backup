@@ -615,7 +615,16 @@ function listing_grid_full_details($id, $category = 'caravans')
                                     echo listing__key_information($id, $category);
                                     ?>
                                 </div>
-                           
+                                <div class="d-block d-lg-none mt-3">
+                                    <div class="listing-inner--key-info mb-3">
+                                        <?php
+                                        echo listing__key_information($id, $category, ['berths', 'bedrooms', 'year']);
+                                        ?>
+                                    </div>
+                                    <?php
+                                    echo listing__price($id);
+                                    ?>
+                                </div>
                             </div>
                             <?php if (listing__features($id, true) != false) { ?>
                                 <div class="listing-grid-right-item listing-grid-top--last-item d-none d-lg-flex align-items-center">
