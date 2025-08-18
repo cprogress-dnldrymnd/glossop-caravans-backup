@@ -93,12 +93,18 @@ function listing_search()
 	}
 
 	if ($price_sort) {
-		$args['meta_key'] = '_our_price';
-		$args['orderby'] = 'meta_value_num';
-		if ($price_sort == 'price-desc') {
+		if ($price_sort == 'price-desc' || $price_sort == 'price-asc') {
+			$args['meta_key'] = '_our_price';
+			$args['orderby'] = 'meta_value_num';
+		}
+		if ($price_sort == 'name-asc' || $price_sort == 'name-desc') {
+			$args['orderby'] = 'title';
+		}
+
+		if ($price_sort == 'price-desc' || $price_sort == 'name-desc') {
 			$args['order'] = 'desc';
 		}
-		if ($price_sort == 'price-asc') {
+		if ($price_sort == 'price-asc' || $price_sort == 'name-asc') {
 			$args['order'] = 'asc';
 		}
 	}
