@@ -816,6 +816,8 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
     } else {
         $icon = $id;
     }
+
+    var_dump(array_unshift($available_options, $placeholder));
 ?>
     <div class="accordion-item">
         <h2 class="accordion-header">
