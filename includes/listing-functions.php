@@ -836,13 +836,12 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
             <div class="accordion-body accordion-body--search-field d-flex gap-1">
                 <?php
                 if ($is_price == true) {
-                    $options_min[''] = $placeholder[0];
                     echo form_control(array(
                         'type'    => 'select',
                         'name'    => $id[0],
                         'id'      => $id[0],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_merge($options_min, $available_options)
+                        'options' => array_unshift($available_options, array('' => $placeholder[0]))
                     ));
                     $options_max[''] = $placeholder[1];
                     echo form_control(array(
@@ -850,7 +849,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id[1],
                         'id'      => $id[1],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_merge($options_max, $available_options)
+                        'options' => array_unshift($available_options, array('' => $placeholder[1]))
                     ));
                 } else {
                     $options[''] = $placeholder;
@@ -859,7 +858,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id,
                         'id'      => $id,
                         'class'   => 'form-control-lg listing-search--trigger',
-                        'options' => array_merge($options, $available_options)
+                        'options' => $available_options
                     ));
                 }
 
@@ -968,7 +967,6 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
 
     $unique_values_arr = [];
     foreach ($unique_values as $unique_value) {
-        $id = $unique_value;
         if ($format == 'default') {
             $val = $unique_value;
         } else {
