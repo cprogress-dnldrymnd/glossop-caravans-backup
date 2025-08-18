@@ -29,6 +29,7 @@ $args = array(
 );
 $listings = new WP_Query($args);
 
+var_dump(carbon_get_post_meta(3579, 'images'));
 ?>
 <div class="site-content listings ajax--section-js background-lightgray">
     <div class="container md-padding-top md-padding-bottom">
