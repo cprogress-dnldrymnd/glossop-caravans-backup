@@ -82,6 +82,11 @@ Container::make('post_meta', __('Our Price (£)'))
         Field::make('text', 'our_price', __(''))->set_attribute('type', 'number')->set_attribute('step', '1'),
     ));
 
+Container::make('post_meta', __('Per month (£)'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'per_month', __(''))->set_attribute('type', 'number')->set_attribute('step', '1'),
+    ));
 Container::make('post_meta', __('Berths'))
     ->where('post_type', '=', 'caravan')
     ->where(function ($condition) {
