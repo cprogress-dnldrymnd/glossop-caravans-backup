@@ -1009,7 +1009,7 @@ span.icons {
     padding: 0;
     margin-left: 20px;
     gap: 10px;
-        align-items: flex-start;
+    align-items: flex-start;
     li {
         display: flex;
         align-items: center;
@@ -1022,5 +1022,11 @@ span.icons {
             background-color: var(--orange-color);
             border-radius: 50%;
         }
+    }
+}
+
+.accordion-body--search-field {
+    > div {
+        flex-grow: 1;
     }
 }

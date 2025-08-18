@@ -832,7 +832,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         </h2>
         <div id="collapse-<?= $id ?>" class="accordion-collapse collapse"
             data-bs-parent="#accordionFilter">
-            <div class="accordion-body d-flex gap-1">
+            <div class="accordion-body accordion-body--search-field d-flex gap-1">
                 <?php
                 if ($is_price == true) {
                     $options_min[''] = $placeholder[0];
