@@ -775,7 +775,7 @@ function listing_sidebar_filter($category)
                                 aria-controls="collapseNew-Used">
                                 <span class="accordion-button-inner">
                                     <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('new-used.svg') ?></span>
+                                        <span class="icon"><?= get__theme_icons('new_used.svg') ?></span>
                                         New-Used
                                     </span>
                                     <span class="selected fs-14 fw-bold"></span>
@@ -790,7 +790,8 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
+                    echo accordion__filter('new_used', 'New-Used', 'Any', $_berths);
+                    echo accordion__filter('berths', 'Berths', 'Any', $_berths);
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
                     echo accordion__filter('model', 'Model', 'Any', $_model);
                     echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
