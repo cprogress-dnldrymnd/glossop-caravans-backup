@@ -878,7 +878,7 @@ function accordion__filter_terms($id, $label, $taxonomy)
                         <span class="icon"><?= get__theme_icons($id . '.svg') ?></span>
                         <?= $label ?>
                     </span>
-                    <span class="selected fs-14 fw-bold"></span>
+                    <span class="selected fs-14 fw-bold">Any</span>
                 </span>
             </button>
         </h2>
