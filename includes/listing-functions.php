@@ -793,7 +793,7 @@ function listing_sidebar_filter($category)
                     echo accordion__filter_terms('model', 'Model', 'manufacturer');
                     echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
-                    echo accordion__filter('layout_type', 'Layout Type', 'Select Layout Type', $_layout_type);
+                    echo accordion__filter('layout_type', 'Layout Type', 'Select layout type', $_layout_type);
                     echo accordion__filter('width', 'Width', 'Select width', $_width);
                     echo accordion__filter('axle', 'Axles', 'Select axle', $_axle);
                     ?>
