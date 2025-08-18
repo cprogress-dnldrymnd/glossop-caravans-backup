@@ -15,7 +15,7 @@ function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         $val = jQuery(this).val();
         $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
-        jQuery(this).parents('.accordion-item').find('.selected--option').text($val);
+        jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
 
         const nonce = posts_vars.nonce;
