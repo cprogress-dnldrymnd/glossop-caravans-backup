@@ -74,8 +74,6 @@ function listing_search()
 			'compare' => '='
 		);
 	}
-
-
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
 		'field' => 'term_id',

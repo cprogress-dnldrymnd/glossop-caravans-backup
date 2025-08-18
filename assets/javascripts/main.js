@@ -42,6 +42,7 @@ function listing_search_trigger() {
             year: year,
             axle: axle,
         };
+        jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
         jQuery('#results').addClass('hidden-visibility');
         ajax_function(data);
@@ -57,6 +58,7 @@ function listing_search(response) {
     jQuery('#results .listings > div').remove();
     jQuery('#results .listings').html(response);
 
+    jQuery('.ajax--section-js').removeClass('is--doing-ajax');
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
 }

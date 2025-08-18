@@ -566,3 +566,12 @@
         display: block;
     }
 }
+
+
+.ajax--section-js {
+    &.is--doing-ajax {
+        .listing-search--trigger {
+            pointer-events: none;
+        }
+    }
+}
