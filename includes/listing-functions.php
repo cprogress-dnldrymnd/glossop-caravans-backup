@@ -851,7 +851,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id[1],
                         'id'      => $id[1],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_merge($options_max, $available_options)
+                        'options' => $options_max + $available_options
                     ));
                 } else {
                     $options[''] = $placeholder;
@@ -860,7 +860,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id,
                         'id'      => $id,
                         'class'   => 'form-control-lg listing-search--trigger',
-                        'options' => array_merge($options, $available_options)
+                        'options' => $options + $available_options
                     ));
                 }
 
