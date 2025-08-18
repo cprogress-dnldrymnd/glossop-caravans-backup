@@ -968,14 +968,13 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
 
     $unique_values_arr = [];
     foreach ($unique_values as $unique_value) {
-        $id = $unique_value;
         if ($format == 'default') {
             $val = $unique_value;
         } else {
             $val = price__format($unique_value);
         }
 
-        $unique_values_arr[$id] = $val;
+        $unique_values_arr[$val] = $val;
     }
     return $unique_values_arr;
 }
