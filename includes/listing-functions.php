@@ -211,12 +211,11 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
 {
     ob_start();
 
-    $images = carbon_get_post_meta($id, 'images');
+    $images = get__post_meta_by_id($id, 'images');
+    $images_arr = explode("|", $images);
     $finance_available = get__post_meta_by_id($id, 'finance_available');
-    if (!$images || empty($images)) {
-        $images = array(
-            array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
-        );
+    if (!$images) {
+        $images_arr = array('/wp-content/uploads/2025/08/glossop-placeholder.jpg');
     }
 ?>
     <div class="listing-grid--gallery <?= $class ?>">
@@ -248,11 +247,11 @@ function listing__gallery($id, $is_thumbnail = false, $images = 'default', $clas
         <?php } ?>
         <div class="swiper <?= $is_thumbnail == false ? 'swiper-gallery h-100' : 'swiper-thumbnails' ?>">
             <div class="swiper-wrapper <?= $is_thumbnail == false ? 'h-100' : '' ?>">
-                <?php foreach ($images as $image) { ?>
+                <?php foreach ($images_arr as $image) { ?>
                     <div class="swiper-slide <?= $is_thumbnail == false ? 'h-100' : '' ?>">
-                        <a href="<?= $image['image_url'] ?>" <?= $is_thumbnail == false ? 'data-fancybox="gallery-' . $id . '"' : '' ?>
+                        <a href="<?= $image ?>" <?= $is_thumbnail == false ? 'data-fancybox="gallery-' . $id . '"' : '' ?>
                             class="d-block image-box image-style <?= $is_thumbnail == false ? 'h-100' : '' ?>">
-                            <img src="<?= $image['image_url'] ?>" alt="Caravan Image">
+                            <img src="<?= $image ?>" alt="Caravan Image">
                         </a>
                     </div>
                 <?php } ?>
