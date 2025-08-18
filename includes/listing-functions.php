@@ -733,7 +733,7 @@ function listing_sidebar_filter($category)
 {
     ob_start();
     global $listing_fields;
-    
+
     $_new_used = get__search_field_options('_new_used', [$category]);
     $_berths = get__search_field_options('_berths', [$category]);
     $_our_price = get__search_field_options('_our_price', [$category], 'price');
@@ -759,7 +759,7 @@ function listing_sidebar_filter($category)
                                         <span class="icon"><?= get__theme_icons('sort-by.svg') ?></span>
                                         Sort by
                                     </span>
-                                    <span class="selected fs-14 fw-bold">Price: low to high</span>
+                                    <span class="selected fs-14 fw-bold">Default</span>
                                 </span>
                             </button>
                         </h2>
