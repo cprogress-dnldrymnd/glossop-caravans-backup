@@ -4,10 +4,10 @@ add_action('wp_ajax_listing_search', 'listing_search');
 function listing_search()
 {
 
-	  // Verify nonce for security.
-    if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'my_ajax_nonce')) {
-        wp_send_json_error('Nonce verification failed.');
-    }
+	// Verify nonce for security.
+	if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'my_ajax_nonce')) {
+		wp_send_json_error('Nonce verification failed.');
+	}
 	$category = $_POST['category'];
 	$price_sort = $_POST['price_sort'];
 	$new_used = $_POST['new_used'];
@@ -22,17 +22,17 @@ function listing_search()
 	$axle = $_POST['axle'];
 
 
-	$args = array(
-		'post_type' => 'caravan',
-		'posts_per_page' => 10,
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'listing_category',
-				'field' => 'term_id',
-				'terms' => $category,
-			),
-		),
+	$args['post_type'] = 'caravan';
+	$args['posts_per_page'] = 10;
+
+	$tax_query[] = array(
+		'taxonomy' => 'listing_category',
+		'field' => 'term_id',
+		'terms' => $category,
 	);
+
+	$args['tax_query'] = $tax_query;
+
 	$listings = new WP_Query($args);
 
 	echo '<pre>';
