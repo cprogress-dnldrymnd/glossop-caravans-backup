@@ -789,7 +789,8 @@ function listing_sidebar_filter($category)
                     </div>
                     <?php
                     echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
-                    echo accordion__filter_terms('manufacturer', 'manufacturer');
+                    echo accordion__filter_terms('make', 'Make', 'manufacturer');
+                    echo accordion__filter_terms('model', 'Model', 'manufacturer');
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -909,7 +910,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
 }
 
 
-function accordion__filter_terms($id, $taxonomy)
+function accordion__filter_terms($id, $label, $taxonomy)
 {
     ob_start();
     $terms = get_terms(array(
