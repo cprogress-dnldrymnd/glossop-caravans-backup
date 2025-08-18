@@ -14,6 +14,7 @@ jQuery(document).ready(function () {
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         const nonce = posts_vars.nonce;
+        category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
         new_used = jQuery('#new_used').val();
         berths = jQuery('#berths').val();
@@ -28,6 +29,7 @@ function listing_search_trigger() {
         data = {
             action: 'listing_search',
             nonce: nonce,
+            category: category,
             price_sort: price_sort,
             new_used: new_used,
             berths: berths,
