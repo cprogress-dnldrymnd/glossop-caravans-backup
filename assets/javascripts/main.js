@@ -16,12 +16,12 @@ function listing_search_trigger() {
         const nonce = posts_vars.nonce;
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
-        new_used = jQuery('#new_used').val();
+        new_used = jQuery('.listing-filter #new_used').val();
         berths = jQuery('#berths').val();
-        make = jQuery('#make').val();
-        model = jQuery('#model').val();
-        min_price = jQuery('#min_price').val();
-        max_price = jQuery('#max_price').val();
+        make = jQuery('.listing-filter #make').val();
+        model = jQuery('.listing-filter #model').val();
+        min_price = jQuery('.listing-filter #min_price').val();
+        max_price = jQuery('.listing-filter #max_price').val();
         layout_type = jQuery('#layout_type').val();
         width = jQuery('#width').val();
         year = jQuery('#year').val();
