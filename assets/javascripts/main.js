@@ -43,15 +43,16 @@ function listing_search_trigger() {
         jQuery('.loading').removeClass('hidden');
         jQuery('#results').addClass('hidden');
         ajax_function(data);
-        jQuery('.loading').addClass('hidden');
-        jQuery('#results').removeClass('hidden');
+
         e.preventDefault();
     });
 }
 
 
 function listing_search(response) {
-    console.log(response);
+
+    jQuery('.loading').addClass('hidden');
+    jQuery('#results').removeClass('hidden');
 }
 
 
@@ -65,6 +66,7 @@ function ajax_function(data) {
         success: function (response) {
             if (data.action == 'listing_search') {
                 listing_search(response, data.post_id);
+
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
