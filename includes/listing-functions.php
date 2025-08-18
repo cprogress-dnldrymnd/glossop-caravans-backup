@@ -14,6 +14,8 @@ function listings_fields()
             ''         => 'Default',
             'price-asc'         => 'Price: Low to High',
             'price-desc' => 'Price: High to Low',
+            'name-asc' => 'Name: A-Z',
+            'name-desc' => 'Name: Z-A',
         ),
     ));
 
