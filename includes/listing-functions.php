@@ -737,7 +737,7 @@ function listing_sidebar_filter($category)
     $_year = get__search_field_options('_year', [$category]);
     $_width = get__search_field_options('_width', [$category]);
     $_axle = get__search_field_options('_axle', [$category]);
-    $_layout_type = get__search_field_options('_axle', [$category]);
+    $_layout_type = get__search_field_options('_layout_type', [$category]);
 ?>
 
     <div class="listing-filter sticky-element accordion-style-1">
