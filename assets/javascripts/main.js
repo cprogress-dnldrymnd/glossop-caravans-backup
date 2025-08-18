@@ -40,9 +40,11 @@ function listing_search_trigger() {
             year: year,
             axle: axle,
         };
+        jQuery('.loading').removeClass('hidden');
+        jQuery('#results').addClass('hidden');
         ajax_function(data);
-
-        console.log(nonce);
+        jQuery('.loading').addClass('hidden');
+        jQuery('#results').removeClass('hidden');
         e.preventDefault();
     });
 }
@@ -58,7 +60,6 @@ function ajax_function(data) {
     const ajaxurl = posts_vars.ajax_url;
     jQuery.ajax({
         url: ajaxurl, // WordPress AJAX URL
-
         type: 'POST',
         data: data,
         success: function (response) {

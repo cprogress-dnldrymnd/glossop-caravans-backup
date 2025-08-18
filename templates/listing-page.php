@@ -61,23 +61,25 @@ $listings = new WP_Query($args);
                     <div class="banner mb-20">
                         <?= wp_get_attachment_image(188, 'full') ?>
                     </div>
-                    <div class="loading">
+                    <div class="loading hidden">
                         <span class="wpcf7-spinner"></span>
                     </div>
-                    <div class="listings d-flex flex-column" style="--padding: 37%">
-                        <?php
-                        while ($listings->have_posts()) {
-                            $listings->the_post();
-                        ?>
-                            <div class="listing-item" id="swiper-gallery-1">
-                                <?php
-                                echo listing_grid_full_details(get_the_ID(), $category['0']['id']);
-                                ?>
-                            </div>
-                        <?php } ?>
+                    <div id="results">
+                        <div class="listings d-flex flex-column" style="--padding: 37%">
+                            <?php
+                            while ($listings->have_posts()) {
+                                $listings->the_post();
+                            ?>
+                                <div class="listing-item" id="swiper-gallery-1">
+                                    <?php
+                                    echo listing_grid_full_details(get_the_ID(), $category['0']['id']);
+                                    ?>
+                                </div>
+                            <?php } ?>
 
-                        <?php wp_reset_postdata(); ?>
+                            <?php wp_reset_postdata(); ?>
 
+                        </div>
                     </div>
                     <div class="banner mt-20">
                         <?= wp_get_attachment_image(191, 'full') ?>

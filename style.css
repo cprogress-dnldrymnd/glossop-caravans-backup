@@ -12243,6 +12243,9 @@ span.icons {
   .mobile-only:not(.block-editor-block-list__block) {
     display: none; } }
 
+.hidden {
+  display: none !important; }
+
 body {
   font-family: "Proxima Nova", sans-serif;
   color: var(--text-color);
