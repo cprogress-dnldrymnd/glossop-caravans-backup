@@ -13235,6 +13235,9 @@ h5, .h5 {
   margin-right: auto;
   display: block; }
 
+.ajax--section-js.is--doing-ajax .listing-search--trigger {
+  pointer-events: none; }
+
 .static-page-content {
   padding-top: var(--md-spacing);
   padding-bottom: var(--md-spacing); }
