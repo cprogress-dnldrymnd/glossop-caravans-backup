@@ -14,10 +14,31 @@ jQuery(document).ready(function () {
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         const nonce = posts_vars.nonce;
-        
+        price_sort = jQuery('#price_sort');
+        new_used = jQuery('#new_used');
+        berths = jQuery('#berths');
+        make = jQuery('#make');
+        model = jQuery('#model');
+        min_price = jQuery('#min_price');
+        max_price = jQuery('#max_price');
+        layout_type = jQuery('#layout_type');
+        width = jQuery('#width');
+        year = jQuery('#year');
+        axle = jQuery('#axle');
         data = {
             action: 'listing_search',
             nonce: nonce,
+            price_sort: price_sort,
+            new_used: new_used,
+            berths: berths,
+            make: make,
+            model: model,
+            min_price: min_price,
+            max_price: max_price,
+            layout_type: layout_type,
+            width: width,
+            year: year,
+            axle: axle,
         };
         ajax_function(data);
 
