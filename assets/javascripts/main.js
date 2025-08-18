@@ -52,7 +52,7 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-
+    console.log(response);
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
 }
