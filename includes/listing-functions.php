@@ -973,6 +973,8 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
         } else {
             $val = price__format($unique_value);
         }
+            $val = $unique_value;
+
         $unique_values_arr[$unique_value] = $val;
     }
     return $unique_values_arr;
