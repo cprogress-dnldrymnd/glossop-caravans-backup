@@ -21,9 +21,9 @@ function listing_search()
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 
-
-
-
+	$tax_query = [];
+	$meta_query = [];
+	
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
 		'field' => 'term_id',
@@ -39,7 +39,10 @@ function listing_search()
 
 	$args['post_type'] = 'caravan';
 	$args['posts_per_page'] = 10;
-	$args['tax_query'] = $tax_query;
+
+	if (!empty($tax_query)) {
+		$args['tax_query'] = $tax_query;
+	}
 
 	$listings = new WP_Query($args);
 
