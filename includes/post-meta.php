@@ -19,11 +19,7 @@ Container::make('post_meta', __('Model'))
 Container::make('post_meta', __('Images'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('complex', 'images', __(''))
-            ->add_fields(array(
-                Field::make('text', 'image_url', __('Image URL')),
-            ))
-            ->set_layout('tabbed-horizontal'),
+        Field::make('text', 'images', __(''))->set_help_text('Seperate using "|"')
     ));
 
 
@@ -31,22 +27,14 @@ Container::make('post_meta', __('Images'))
 Container::make('post_meta', __('Videos'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('complex', 'videos', __(''))
-            ->add_fields(array(
-                Field::make('text', 'video_url', __('Video URL')),
-            ))
-            ->set_layout('tabbed-horizontal'),
+        Field::make('text', 'videos', __(''))->set_help_text('Seperate using "|"'),
     ));
 
 
 Container::make('post_meta', __('Features'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('complex', 'features', __(''))
-            ->add_fields(array(
-                Field::make('text', 'feature', __('Feature')),
-            ))
-            ->set_layout('tabbed-horizontal'),
+        Field::make('text', 'features', __(''))->set_help_text('Seperate using "|"'),
     ));
 
 Container::make('post_meta', __('Internal Stock Number'))
