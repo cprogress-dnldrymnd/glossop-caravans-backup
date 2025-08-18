@@ -8,7 +8,7 @@ function form_control($args)
 
 
     if ($args['type'] == 'select') {
-        $html .= '<select ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control ' . $args['class'] . '">';
+        $html .= '<select ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control listing-search--trigger ' . $args['class'] . '">';
         foreach ($args['options'] as $key => $value) {
             $html .= '<option value="' . $key . '">' . $value . '</option>';
         }
