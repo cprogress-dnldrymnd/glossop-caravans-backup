@@ -816,9 +816,8 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
     } else {
         $icon = $id;
     }
-
-    var_dump(array_unshift($available_options, $placeholder));
 ?>
+    <pre></pre>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -838,12 +837,13 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
             <div class="accordion-body accordion-body--search-field d-flex gap-1">
                 <?php
                 if ($is_price == true) {
+                    $options_min[''] = $placeholder[0];
                     echo form_control(array(
                         'type'    => 'select',
                         'name'    => $id[0],
                         'id'      => $id[0],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_unshift($available_options, $placeholder[0])
+                        'options' => $options_min + $available_options
                     ));
                     $options_max[''] = $placeholder[1];
                     echo form_control(array(
@@ -851,7 +851,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id[1],
                         'id'      => $id[1],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => $available_options
+                        'options' => array_merge($options_max, $available_options)
                     ));
                 } else {
                     $options[''] = $placeholder;
@@ -860,7 +860,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id,
                         'id'      => $id,
                         'class'   => 'form-control-lg listing-search--trigger',
-                        'options' => $available_options
+                        'options' => array_merge($options, $available_options)
                     ));
                 }
 
