@@ -13,6 +13,10 @@ jQuery(document).ready(function () {
 
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
+        $val = jQuery(this).val();
+        jQuery(this).closest('.selected--option').text($val);
+
+
         const nonce = posts_vars.nonce;
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
@@ -46,7 +50,6 @@ function listing_search_trigger() {
         jQuery('.loading').removeClass('hidden');
         jQuery('#results').addClass('hidden-visibility');
         ajax_function(data);
-
         e.preventDefault();
     });
 }
