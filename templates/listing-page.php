@@ -40,7 +40,6 @@ $listings = new WP_Query($args);
                     <div class="col-6">
                         <button class="btn-with-icon btn btn-primary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvasFilter" aria-controls="offCanvasFilter">
                             <?= get__theme_icons('filter.svg') ?>
-
                             Filter
                         </button>
                     </div>
@@ -55,6 +54,7 @@ $listings = new WP_Query($args);
 
             <div class="row g-4">
                 <div class="col-lg-3 position-relative" style="z-index: 3">
+                    <input type="hidden" id="category" value="<?= $category['0']['id'] ?>">
                     <?= listing_sidebar_filter($category['0']['id']) ?>
                 </div>
                 <div class="col-lg-9">
