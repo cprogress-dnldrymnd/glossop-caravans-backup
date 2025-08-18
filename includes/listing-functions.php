@@ -834,7 +834,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
                     'type'    => 'select',
                     'name'    => $id,
                     'id'      => $id,
-                    'class'   => 'form-control-lg',
+                    'class'   => 'form-control-lg listing-search--trigger',
                     'options' => array_merge($options, $available_options)
                 ));
                 ?>
@@ -882,7 +882,7 @@ function accordion__filter_terms($id, $label, $taxonomy)
                     'type'    => 'select',
                     'name'    => $id,
                     'id'      => $id,
-                    'class'   => 'form-control-lg',
+                    'class'   => 'form-control-lg listing-search--trigger',
                     'options' => $options
                 ));
                 ?>

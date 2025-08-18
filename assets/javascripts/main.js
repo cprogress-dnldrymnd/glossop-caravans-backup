@@ -8,7 +8,50 @@ jQuery(document).ready(function () {
     margin__Left();
     fixed_menu_link_mobile();
     read__more();
+    listing_search_trigger();
 });
+
+function listing_search_trigger() {
+    jQuery('body').on('change', '.listing-search--trigger', function (e) {
+        const nonce = posts_vars.nonce;
+        data = {
+            action: 'listing_search',
+            nonce: nonce,
+        };
+        ajax_function(data);
+
+        console.log(nonce);
+        e.preventDefault();
+    });
+}
+
+
+function listing_search(response) {
+    console.log(response);
+}
+
+
+
+function ajax_function(data) {
+    const ajaxurl = posts_vars.ajax_url;
+    jQuery.ajax({
+        url: ajaxurl, // WordPress AJAX URL
+
+        type: 'POST',
+        data: data,
+        success: function (response) {
+            if (data.action == 'listing_search') {
+                listing_search(response, data.post_id);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error('AJAX Request Failed:', textStatus, errorThrown, jqXHR);
+
+        }
+    });
+}
+
+
 
 function read__more() {
     // Find the main container and all of its child items.

