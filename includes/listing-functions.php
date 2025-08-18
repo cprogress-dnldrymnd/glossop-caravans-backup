@@ -809,7 +809,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         <span class="icon"><?= get__theme_icons($icon . '.svg') ?></span>
                         <?= $label ?>
                     </span>
-                    <span class="selected fs-14 fw-bold"></span>
+                    <span class="selected fs-14 fw-bold"><?= $placeholder ?></span>
                 </span>
             </button>
         </h2>
