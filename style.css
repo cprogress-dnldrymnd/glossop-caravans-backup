@@ -13218,10 +13218,15 @@ h5, .h5 {
   .listing-grid--key-information--simple .icon-list.icon-list-v2 > li {
     --width: auto; }
 
-.loading .wpcf7-spinner {
+.loading.loading .wpcf7-spinner {
   position: relative;
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+  margin: 0;
+  bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
 
 .static-page-content {
   padding-top: var(--md-spacing);
