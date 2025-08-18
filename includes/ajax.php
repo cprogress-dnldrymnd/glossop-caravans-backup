@@ -52,7 +52,7 @@ function listing_search()
 	if (!empty($tax_query)) {
 		$args['tax_query'] = $tax_query;
 	}
-		if (!empty($meta_query)) {
+	if (!empty($meta_query)) {
 		$args['meta_query'] = $meta_query;
 	}
 
