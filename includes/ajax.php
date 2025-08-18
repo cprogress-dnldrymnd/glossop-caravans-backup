@@ -32,6 +32,49 @@ function listing_search()
 			'compare' => '='
 		);
 	}
+	if ($berths) {
+		$meta_query[] = 	array(
+			'key'     => '_berths',
+			'value'   => $berths,
+			'compare' => '='
+		);
+	}
+	if ($model) {
+		$meta_query[] = 	array(
+			'key'     => '_model',
+			'value'   => $model,
+			'compare' => '='
+		);
+	}
+	if ($layout_type) {
+		$meta_query[] = 	array(
+			'key'     => '_layout_type',
+			'value'   => $layout_type,
+			'compare' => '='
+		);
+	}
+	if ($width) {
+		$meta_query[] = 	array(
+			'key'     => '_width',
+			'value'   => $width,
+			'compare' => '='
+		);
+	}
+	if ($year) {
+		$meta_query[] = 	array(
+			'key'     => '_year',
+			'value'   => $year,
+			'compare' => '='
+		);
+	}
+	if ($axle) {
+		$meta_query[] = 	array(
+			'key'     => '_axle',
+			'value'   => $axle,
+			'compare' => '='
+		);
+	}
+
 
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
