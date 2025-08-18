@@ -789,6 +789,7 @@ function listing_sidebar_filter($category)
                     </div>
                     <?php
                     echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
+                    echo accordion__filter_terms('manufacturer', 'manufacturer');
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -898,6 +899,54 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
                     'id'      => $id,
                     'class'   => 'form-control-lg',
                     'options' => array_merge($options, $available_options)
+                ));
+                ?>
+            </div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+
+
+function accordion__filter_terms($id, $taxonomy)
+{
+    ob_start();
+    $terms = get_terms(array(
+        'taxonomy' => $taxonomy,
+        'hide_empty' => true
+    ));
+    $options[''] = 'Any';
+
+    foreach ($terms as $term) {
+        $options[$term->slug] = $term->name;
+    }
+
+?>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse-<?= $id ?>" aria-expanded="false"
+                aria-controls="collapseBerths">
+                <span class="accordion-button-inner">
+                    <span class="icon-text">
+                        <span class="icon"><?= get__theme_icons($id . '.svg') ?></span>
+                        <?= $label ?>
+                    </span>
+                    <span class="selected fs-14 fw-bold"></span>
+                </span>
+            </button>
+        </h2>
+        <div id="collapse-<?= $id ?>" class="accordion-collapse collapse"
+            data-bs-parent="#accordionFilter">
+            <div class="accordion-body">
+                <?php
+                echo form_control(array(
+                    'type'    => 'select',
+                    'name'    => $id,
+                    'id'      => $id,
+                    'class'   => 'form-control-lg',
+                    'options' => $options
                 ));
                 ?>
             </div>
