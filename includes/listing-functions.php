@@ -840,7 +840,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'type'    => 'select',
                         'name'    => $id[0],
                         'id'      => $id[0],
-                        'class'   => 'form-control-lg listing-search--trigger',
+                        'class'   => 'w-100 form-control-lg listing-search--trigger',
                         'options' => array_merge($options_min, $available_options)
                     ));
                     $options_max[''] = $placeholder[1];
@@ -848,7 +848,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'type'    => 'select',
                         'name'    => $id[1],
                         'id'      => $id[1],
-                        'class'   => 'form-control-lg listing-search--trigger',
+                        'class'   => 'w-100 form-control-lg listing-search--trigger',
                         'options' => array_merge($options_max, $available_options)
                     ));
                 } else {
