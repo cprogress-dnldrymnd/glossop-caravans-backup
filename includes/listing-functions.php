@@ -11,7 +11,7 @@ function listings_fields()
         'label'   => 'Sort by',
         'class'   => 'form-control-lg',
         'options' => array(
-            ''         => 'Any',
+            ''         => 'Default',
             'asc'         => 'Low to High',
             'desc' => 'High to Low',
         ),
