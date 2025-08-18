@@ -32,7 +32,7 @@ function listing_search()
 	if ($make) {
 		$tax_query[] = array(
 			'taxonomy' => 'manufacturer',
-			'field' => 'term_id',
+			'field' => 'slug',
 			'terms' => $make,
 		);
 	}
