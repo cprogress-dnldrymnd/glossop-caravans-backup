@@ -1031,11 +1031,11 @@ span.icons {
     }
 }
 .select2-container.select2-container {
-    width: 100 !important;
+    width: 100% !important;
 }
 
 .select2-container .select2-selection--single {
-    height: 35px !important; /* Adjust to your desired height */
+    height: 40px !important; /* Adjust to your desired height */
 }
 
 .select2-container .select2-selection--multiple {
@@ -1045,5 +1045,5 @@ span.icons {
     line-height: 31px !important; /* Adjust to vertically align text */
 }
 .select2-selection__arrow {
-    height: 34px !important; /* Adjust to match the selection box height */
+    height: 40px !important; /* Adjust to match the selection box height */
 }
