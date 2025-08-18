@@ -11,6 +11,7 @@ function listings_fields()
         'label'   => 'Sort by',
         'class'   => 'form-control-lg',
         'options' => array(
+            ''         => 'Any',
             'asc'         => 'Low to High',
             'desc' => 'High to Low',
         ),
@@ -791,7 +792,7 @@ function listing_sidebar_filter($category)
                     echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
                     echo accordion__filter_terms('model', 'Model', 'manufacturer');
-                    echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
+                    echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
                     echo accordion__filter('layout_type', 'Layout Type', 'Select layout type', $_layout_type);
                     echo accordion__filter('width', 'Width', 'Select width', $_width);
@@ -806,7 +807,7 @@ function listing_sidebar_filter($category)
     return ob_get_clean();
 }
 
-function accordion__filter($id, $label, $placeholder = '', $available_options)
+function accordion__filter($id, $label, $placeholder = '', $available_options, $is_price = false)
 {
     ob_start();
 
@@ -829,14 +830,34 @@ function accordion__filter($id, $label, $placeholder = '', $available_options)
             data-bs-parent="#accordionFilter">
             <div class="accordion-body">
                 <?php
-                $options[''] = $placeholder;
-                echo form_control(array(
-                    'type'    => 'select',
-                    'name'    => $id,
-                    'id'      => $id,
-                    'class'   => 'form-control-lg listing-search--trigger',
-                    'options' => array_merge($options, $available_options)
-                ));
+                if ($is_price == true) {
+                    $options_min[''] = $placeholder[0];
+                    echo form_control(array(
+                        'type'    => 'select',
+                        'name'    => $id[0],
+                        'id'      => $id[0],
+                        'class'   => 'form-control-lg listing-search--trigger',
+                        'options' => array_merge($options_min, $available_options)
+                    ));
+                    $options_max[''] = $placeholder[1];
+                    echo form_control(array(
+                        'type'    => 'select',
+                        'name'    => $id[1],
+                        'id'      => $id[1],
+                        'class'   => 'form-control-lg listing-search--trigger',
+                        'options' => array_merge($options_max, $available_options)
+                    ));
+                } else {
+                    $options[''] = $placeholder;
+                    echo form_control(array(
+                        'type'    => 'select',
+                        'name'    => $id,
+                        'id'      => $id,
+                        'class'   => 'form-control-lg listing-search--trigger',
+                        'options' => array_merge($options, $available_options)
+                    ));
+                }
+
                 ?>
             </div>
         </div>

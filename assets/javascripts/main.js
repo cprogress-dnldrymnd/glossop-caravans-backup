@@ -14,6 +14,7 @@ jQuery(document).ready(function () {
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         const nonce = posts_vars.nonce;
+        
         data = {
             action: 'listing_search',
             nonce: nonce,
