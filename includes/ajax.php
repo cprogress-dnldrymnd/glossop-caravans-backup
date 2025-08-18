@@ -3,6 +3,11 @@ add_action('wp_ajax_nopriv_listing_search', 'listing_search'); // for not logged
 add_action('wp_ajax_listing_search', 'listing_search');
 function listing_search()
 {
+
+	  // Verify nonce for security.
+    if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'my_ajax_nonce')) {
+        wp_send_json_error('Nonce verification failed.');
+    }
 	$category = $_POST['category'];
 	$price_sort = $_POST['price_sort'];
 	$new_used = $_POST['new_used'];
