@@ -817,9 +817,6 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         $icon = $id;
     }
 ?>
-<pre>
-    <?php var_dump($available_options) ?>
-</pre>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -844,7 +841,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id[0],
                         'id'      => $id[0],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_unshift($available_options, array(['' => $placeholder[0]]))
+                        'options' => array_unshift($available_options, $placeholder[0])
                     ));
                     $options_max[''] = $placeholder[1];
                     echo form_control(array(
@@ -852,7 +849,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         'name'    => $id[1],
                         'id'      => $id[1],
                         'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => array_unshift($available_options, array('' => $placeholder[1]))
+                        'options' => $available_options
                     ));
                 } else {
                     $options[''] = $placeholder;
