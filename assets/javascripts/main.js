@@ -14,17 +14,17 @@ jQuery(document).ready(function () {
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         const nonce = posts_vars.nonce;
-        price_sort = jQuery('#price_sort');
-        new_used = jQuery('#new_used');
-        berths = jQuery('#berths');
-        make = jQuery('#make');
-        model = jQuery('#model');
-        min_price = jQuery('#min_price');
-        max_price = jQuery('#max_price');
-        layout_type = jQuery('#layout_type');
-        width = jQuery('#width');
-        year = jQuery('#year');
-        axle = jQuery('#axle');
+        price_sort = jQuery('#price_sort').val();
+        new_used = jQuery('#new_used').val();
+        berths = jQuery('#berths').val();
+        make = jQuery('#make').val();
+        model = jQuery('#model').val();
+        min_price = jQuery('#min_price').val();
+        max_price = jQuery('#max_price').val();
+        layout_type = jQuery('#layout_type').val();
+        width = jQuery('#width').val();
+        year = jQuery('#year').val();
+        axle = jQuery('#axle').val();
         data = {
             action: 'listing_search',
             nonce: nonce,
