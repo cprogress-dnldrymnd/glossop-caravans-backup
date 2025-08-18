@@ -138,10 +138,6 @@ function listing_search()
 
 	$listings = new WP_Query($args);
 
-	echo '<pre>';
-	var_dump($args);
-	echo '</pre>';
-
 	while ($listings->have_posts()) {
 		$listings->the_post();
 ?>
