@@ -553,3 +553,16 @@
         }
     }
 }
+
+.loading.loading {
+    .wpcf7-spinner {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        margin: 0;
+        bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
