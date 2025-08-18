@@ -733,6 +733,8 @@ function listing_sidebar_filter($category)
 {
     ob_start();
     global $listing_fields;
+    
+    $_new_used = get__search_field_options('_new_used', [$category]);
     $_berths = get__search_field_options('_berths', [$category]);
     $_our_price = get__search_field_options('_our_price', [$category], 'price');
     $_year = get__search_field_options('_year', [$category]);
@@ -769,7 +771,7 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('new_used', 'New-Used', 'Any', $_berths);
+                    echo accordion__filter('new_used', 'New-Used', 'Any', $_new_used);
                     echo accordion__filter('berths', 'Berths', 'Any', $_berths);
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
                     echo accordion__filter('model', 'Model', 'Any', $_model);
