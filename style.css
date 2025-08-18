@@ -11868,6 +11868,9 @@ span.icons {
       background-color: var(--orange-color);
       border-radius: 50%; }
 
+.accordion-body--search-field > div {
+  flex-grow: 1; }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
