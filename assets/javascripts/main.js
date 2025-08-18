@@ -53,6 +53,10 @@ function listing_search_trigger() {
 
 function listing_search(response) {
     console.log(response);
+
+    jQuery('#results .listings > div').remove();
+    jQuery('#results .listings').html(response);
+
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
 }
@@ -67,7 +71,7 @@ function ajax_function(data) {
         data: data,
         success: function (response) {
             if (data.action == 'listing_search') {
-                listing_search(response, data.post_id);
+                listing_search(response);
 
             }
         },
