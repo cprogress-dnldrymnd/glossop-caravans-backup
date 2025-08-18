@@ -817,6 +817,9 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         $icon = $id;
     }
 ?>
+<pre>
+    <?php var_dump($available_options) ?>
+</pre>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
