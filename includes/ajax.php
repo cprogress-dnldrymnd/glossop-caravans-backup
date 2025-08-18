@@ -23,7 +23,16 @@ function listing_search()
 
 	$tax_query = [];
 	$meta_query = [];
-	
+
+
+	if ($new_used) {
+		$meta_query[] = 	array(
+			'key'     => '_new_used',
+			'value'   => $new_used,
+			'compare' => '='
+		);
+	}
+
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
 		'field' => 'term_id',
