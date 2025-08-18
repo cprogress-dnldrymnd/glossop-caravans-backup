@@ -39,7 +39,17 @@ function listing_search()
 	var_dump($args);
 	echo '</pre>';
 
+	while ($listings->have_posts()) {
+		$listings->the_post();
 ?>
-	<?php
+		<div class="listing-item" id="swiper-gallery-1">
+			<?php
+			echo listing_grid_full_details(get_the_ID(), $category);
+			?>
+		</div>
+<?php
+	}
+	wp_reset_postdata();
+
 	die();
 }
