@@ -810,7 +810,11 @@ function listing_sidebar_filter($category)
 function accordion__filter($id, $label, $placeholder = '', $available_options, $is_price = false)
 {
     ob_start();
-
+    if ($is_price == true) {
+        $icon = 'our_price';
+    } else {
+        $icon = $id;
+    }
 ?>
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -819,7 +823,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                 aria-controls="collapseBerths">
                 <span class="accordion-button-inner">
                     <span class="icon-text">
-                        <span class="icon"><?= get__theme_icons($id . '.svg') ?></span>
+                        <span class="icon"><?= get__theme_icons($icon . '.svg') ?></span>
                         <?= $label ?>
                     </span>
                     <span class="selected fs-14 fw-bold"></span>
