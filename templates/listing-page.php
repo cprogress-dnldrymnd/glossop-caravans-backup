@@ -61,6 +61,9 @@ $listings = new WP_Query($args);
                     <div class="banner mb-20">
                         <?= wp_get_attachment_image(188, 'full') ?>
                     </div>
+                    <div class="loading">
+                        <span class="wpcf7-spinner"></span>
+                    </div>
                     <div class="listings d-flex flex-column" style="--padding: 37%">
                         <?php
                         while ($listings->have_posts()) {
