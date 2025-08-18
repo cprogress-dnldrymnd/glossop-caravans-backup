@@ -10,6 +10,11 @@ Container::make('term_meta', __('Manufacturer Properties'))
     ->add_fields(array(
         Field::make('image', 'main_logo', __('Logo')),
     ));
+Container::make('post_meta', __('Model'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'model', __('')),
+    ));
 
 Container::make('post_meta', __('Images'))
     ->where('post_type', '=', 'caravan')
@@ -20,6 +25,8 @@ Container::make('post_meta', __('Images'))
             ))
             ->set_layout('tabbed-horizontal'),
     ));
+
+
 
 Container::make('post_meta', __('Videos'))
     ->where('post_type', '=', 'caravan')
