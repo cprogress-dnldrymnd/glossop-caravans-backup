@@ -794,29 +794,6 @@ function listing_sidebar_filter($category)
                     echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
                     echo accordion__filter('layout_type', 'Layout Type', 'Select Layout Type', $_layout_type);
-                    ?>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseLayout-type" aria-expanded="false"
-                                aria-controls="collapseLayout-type">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('layout_type.svg') ?></span>
-                                        Layout-type
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseLayout-type" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
                     echo accordion__filter('width', 'Width', 'Select width', $_width);
                     echo accordion__filter('axle', 'Axles', 'Select axle', $_axle);
                     ?>
