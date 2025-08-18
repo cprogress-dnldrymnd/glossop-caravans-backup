@@ -48,7 +48,7 @@ $new_images_val[] = array(
 $new_images_val[] = array(
     'image_url' => 'https://manage.compare.group/images/caravans/photos/01755099069_Screenshot%202025-08-13%20163029.png'
 );
-update_post_meta(3579, 'images', $new_images_val);
+update_post_meta(3579, '_images', $new_images_val);
 ?>
 <div class="site-content listings ajax--section-js background-lightgray">
     <div class="container md-padding-top md-padding-bottom">
