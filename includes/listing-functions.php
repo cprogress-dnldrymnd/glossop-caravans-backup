@@ -12,8 +12,8 @@ function listings_fields()
         'class'   => 'form-control-lg',
         'options' => array(
             ''         => 'Default',
-            'asc'         => 'Price: Low to High',
-            'desc' => 'Price: High to Low',
+            'price-asc'         => 'Price: Low to High',
+            'price-desc' => 'Price: High to Low',
         ),
     ));
 
