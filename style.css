@@ -11882,6 +11882,14 @@ span.icons {
   min-height: 40px !important;
   /* Adjust for multi-select height */ }
 
+.select2-selection__rendered {
+  line-height: 31px !important;
+  /* Adjust to vertically align text */ }
+
+.select2-selection__arrow {
+  height: 34px !important;
+  /* Adjust to match the selection box height */ }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
