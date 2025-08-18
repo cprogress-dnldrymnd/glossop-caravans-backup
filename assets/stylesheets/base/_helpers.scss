@@ -456,3 +456,8 @@
 .hidden {
     display: none !important;
 }
+
+.hidden-visibility {
+    opacity: 0;
+    visibility: hidden;
+}

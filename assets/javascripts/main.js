@@ -41,7 +41,7 @@ function listing_search_trigger() {
             axle: axle,
         };
         jQuery('.loading').removeClass('hidden');
-        jQuery('#results').addClass('hidden');
+        jQuery('#results').addClass('hidden-visibility');
         ajax_function(data);
 
         e.preventDefault();
@@ -52,7 +52,7 @@ function listing_search_trigger() {
 function listing_search(response) {
 
     jQuery('.loading').addClass('hidden');
-    jQuery('#results').removeClass('hidden');
+    jQuery('#results').removeClass('hidden-visibility');
 }
 
 
