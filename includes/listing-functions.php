@@ -737,7 +737,7 @@ function listing_sidebar_filter($category)
     $_year = get__search_field_options('_year', [$category]);
     $_width = get__search_field_options('_width', [$category]);
     $_axle = get__search_field_options('_axle', [$category]);
-
+    $_layout_type = get__search_field_options('_axle', [$category]);
 ?>
 
     <div class="listing-filter sticky-element accordion-style-1">
@@ -791,50 +791,9 @@ function listing_sidebar_filter($category)
                     echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
                     echo accordion__filter_terms('model', 'Model', 'manufacturer');
-                    ?>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseMake" aria-expanded="false"
-                                aria-controls="collapseMake">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('make.svg') ?></span> Make
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseMake" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['make'] ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseModel" aria-expanded="false"
-                                aria-controls="collapseModel">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('model.svg') ?></span> Model
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseModel" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['model'] ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
                     echo accordion__filter('our_price', 'Price', 'Select price', $_our_price);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
+                    echo accordion__filter('layout_type', 'Layout Type', 'Select Layout Type', $_layout_type);
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -843,7 +802,7 @@ function listing_sidebar_filter($category)
                                 aria-controls="collapseLayout-type">
                                 <span class="accordion-button-inner">
                                     <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('layout-type.svg') ?></span>
+                                        <span class="icon"><?= get__theme_icons('layout_type.svg') ?></span>
                                         Layout-type
                                     </span>
                                     <span class="selected fs-14 fw-bold"></span>
