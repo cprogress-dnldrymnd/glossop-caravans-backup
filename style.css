@@ -11871,6 +11871,17 @@ span.icons {
 .accordion-body--search-field > div {
   flex-grow: 1; }
 
+.select2-container.select2-container {
+  width: 100 !important; }
+
+.select2-container .select2-selection--single {
+  height: 35px !important;
+  /* Adjust to your desired height */ }
+
+.select2-container .select2-selection--multiple {
+  min-height: 40px !important;
+  /* Adjust for multi-select height */ }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
