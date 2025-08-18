@@ -74,6 +74,21 @@ function listing_search()
 			'compare' => '='
 		);
 	}
+	if ($min_price) {
+		$meta_query[] = 	array(
+			'key'     => '_our_price',
+			'value'   => $min_price,
+			'type'    => 'numeric',
+			'compare' => '>='
+		);
+		$meta_query[] = 	array(
+			'key'     => '_our_price',
+			'value'   => $max_price,
+			'type'    => 'numeric',
+			'compare' => '<='
+		);
+	}
+
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
 		'field' => 'term_id',
@@ -86,6 +101,8 @@ function listing_search()
 			'terms' => $make,
 		);
 	}
+
+
 
 	$args['post_type'] = 'caravan';
 	$args['posts_per_page'] = 10;
