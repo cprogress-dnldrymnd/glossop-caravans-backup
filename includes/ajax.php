@@ -8,29 +8,37 @@ function listing_search()
 	if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'my_ajax_nonce')) {
 		wp_send_json_error('Nonce verification failed.');
 	}
-	$category = $_POST['category'];
-	$price_sort = $_POST['price_sort'];
-	$new_used = $_POST['new_used'];
-	$berths = $_POST['berths'];
-	$make = $_POST['make'];
-	$model = $_POST['model'];
-	$min_price = $_POST['min_price'];
-	$max_price = $_POST['max_price'];
-	$layout_type = $_POST['layout_type'];
-	$width = $_POST['widthwidth'];
-	$year = $_POST['year'];
-	$axle = $_POST['axle'];
+	$category = isset($_POST['category']) ? $_POST['category'] : false;
+	$price_sort = isset($_POST['price_sort']) ? $_POST['price_sort'] : false;
+	$new_used = isset($_POST['new_used']) ? $_POST['new_used'] : false;
+	$berths = isset($_POST['berths']) ? $_POST['berths'] : false;
+	$make = isset($_POST['make']) ? $_POST['make'] : false;
+	$model = isset($_POST['model']) ? $_POST['model'] : false;
+	$min_price = isset($_POST['min_price']) ? $_POST['min_price'] : false;
+	$max_price = isset($_POST['max_price']) ? $_POST['max_price'] : false;
+	$layout_type = isset($_POST['layout_type']) ? $_POST['layout_type'] : false;
+	$width = isset($_POST['widthwidth']) ? $_POST['widthwidth'] : false;
+	$year = isset($_POST['year']) ? $_POST['year'] : false;
+	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 
 
-	$args['post_type'] = 'caravan';
-	$args['posts_per_page'] = 10;
+
 
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
 		'field' => 'term_id',
 		'terms' => $category,
 	);
+	if ($make) {
+		$tax_query[] = array(
+			'taxonomy' => 'manufacturer',
+			'field' => 'term_id',
+			'terms' => $make,
+		);
+	}
 
+	$args['post_type'] = 'caravan';
+	$args['posts_per_page'] = 10;
 	$args['tax_query'] = $tax_query;
 
 	$listings = new WP_Query($args);
