@@ -794,10 +794,10 @@ function listing_sidebar_filter($category)
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
                     echo accordion__filter('model', 'Model', 'Any', $_model);
                     echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
-                    echo accordion__filter('year', 'Year', 'Select year', $_year);
-                    echo accordion__filter('layout_type', 'Layout Type', 'Select layout type', $_layout_type);
-                    echo accordion__filter('width', 'Width', 'Select width', $_width);
-                    echo accordion__filter('axle', 'Axles', 'Select axle', $_axle);
+                    echo accordion__filter('year', 'Year', 'Any', $_year);
+                    echo accordion__filter('layout_type', 'Any', 'Select layout type', $_layout_type);
+                    echo accordion__filter('width', 'Width', 'Any', $_width);
+                    echo accordion__filter('axle', 'Axles', 'Any', $_axle);
                     ?>
                 </div>
             </div>
@@ -817,7 +817,6 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         $icon = $id;
     }
 ?>
-    <pre></pre>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
