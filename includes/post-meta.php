@@ -19,7 +19,7 @@ Container::make('post_meta', __('Model'))
 Container::make('post_meta', __('Images'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'images', __(''))->set_help_text('Seperate using "|"')
+        Field::make('textarea', 'images', __(''))->set_help_text('Seperate using "|"')
     ));
 
 
@@ -27,14 +27,14 @@ Container::make('post_meta', __('Images'))
 Container::make('post_meta', __('Videos'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'videos', __(''))->set_help_text('Seperate using "|"'),
+        Field::make('textarea', 'videos', __(''))->set_help_text('Seperate using "|"'),
     ));
 
 
 Container::make('post_meta', __('Features'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
-        Field::make('text', 'features', __(''))->set_help_text('Seperate using "|"'),
+        Field::make('textarea', 'features', __(''))->set_help_text('Seperate using "|"'),
     ));
 
 Container::make('post_meta', __('Internal Stock Number'))
