@@ -24,7 +24,7 @@ function listing_search()
 	$tax_query = [];
 	$meta_query = [];
 
-
+echo $new_used;
 	if ($new_used) {
 		$meta_query[] = 	array(
 			'key'     => '_new_used',
