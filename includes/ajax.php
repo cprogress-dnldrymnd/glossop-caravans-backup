@@ -92,6 +92,17 @@ function listing_search()
 		);
 	}
 
+	if ($price_sort) {
+		$args['meta_key'] = '_our_price';
+		$args['orderby'] = 'meta_value_num';
+		if ($price_sort == 'price-desc') {
+			$args['order'] = 'desc';
+		}
+		if ($price_sort == 'price-asc') {
+			$args['order'] = 'asc';
+		}
+	}
+
 	echo $price_sort;
 
 	$tax_query[] = array(
