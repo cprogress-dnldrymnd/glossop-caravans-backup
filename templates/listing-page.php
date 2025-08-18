@@ -29,7 +29,9 @@ $args = array(
 );
 $listings = new WP_Query($args);
 
+echo '<pre>';
 var_dump(carbon_get_post_meta(3579, 'images'));
+echo '</pre>';
 
 $new_images_val[] = array(
     'image_url' => 'https://manage.compare.group/images/caravans/photos/01755099069_Screenshot%202025-08-13%20163029.png'
