@@ -739,6 +739,7 @@ function listing_sidebar_filter($category)
     $_width = get__search_field_options('_width', [$category]);
     $_axle = get__search_field_options('_axle', [$category]);
     $_layout_type = get__search_field_options('_layout_type', [$category]);
+    $_model = get__search_field_options('_model', [$category]);
 ?>
 
     <div class="listing-filter sticky-element accordion-style-1">
@@ -791,7 +792,7 @@ function listing_sidebar_filter($category)
                     <?php
                     echo accordion__filter('berths', 'Berths', 'How many berths?', $_berths);
                     echo accordion__filter_terms('make', 'Make', 'manufacturer');
-                    echo accordion__filter_terms('model', 'Model', 'manufacturer');
+                    echo accordion__filter('model', 'Model', 'Any', $_model);
                     echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo accordion__filter('year', 'Year', 'Select year', $_year);
                     echo accordion__filter('layout_type', 'Layout Type', 'Select layout type', $_layout_type);
