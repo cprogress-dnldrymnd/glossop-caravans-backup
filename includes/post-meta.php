@@ -21,6 +21,17 @@ Container::make('post_meta', __('Images'))
             ->set_layout('tabbed-horizontal'),
     ));
 
+Container::make('post_meta', __('Videos'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('complex', 'videos', __(''))
+            ->add_fields(array(
+                Field::make('text', 'video_url', __('Video URL')),
+            ))
+            ->set_layout('tabbed-horizontal'),
+    ));
+
+
 Container::make('post_meta', __('Features'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
@@ -51,11 +62,6 @@ Container::make('post_meta', __('360° Tour'))
     ));
 
 
-Container::make('post_meta', __('Video'))
-    ->where('post_type', '=', 'caravan')
-    ->add_fields(array(
-        Field::make('text', 'video', __('')),
-    ));
 
 Container::make('post_meta', __('RRP (£)'))
     ->where('post_type', '=', 'caravan')
