@@ -81,6 +81,9 @@ function listing_search()
 			'type'    => 'numeric',
 			'compare' => '>='
 		);
+	}
+
+	if ($max_price) {
 		$meta_query[] = 	array(
 			'key'     => '_our_price',
 			'value'   => $max_price,
