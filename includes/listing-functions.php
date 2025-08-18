@@ -610,7 +610,7 @@ function listing_grid_full_details($id, $category = 'caravans')
                                 <h3 class="d-block d-lg-none">Swift Sprite Quattro FB 2024</h3>
                                 <div class="listing-inner--key-info d-none d-lg-block">
                                     <?php
-                                    echo listing__key_information($id, $category);
+                                    echo listing__key_information($id, $category), ['year', 'width', 'internal_length', 'external_length', 'internal_stock_number', 'berths'];
                                     ?>
                                 </div>
                                 <div class="d-block d-lg-none mt-3">
