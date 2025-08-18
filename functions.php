@@ -24,12 +24,14 @@ function action_wp_enqueue_scripts()
 {
     global $is_static_page;
     wp_enqueue_style('fancybox', vendor_dir . 'fancybox/css/fancybox.css');
+    wp_enqueue_style('select2', vendor_dir . 'select2/css/select2.min.css');
     wp_enqueue_style('style', theme_dir . 'style.css');
     if ($is_static_page == false) {
         wp_enqueue_script('jquery');
         wp_enqueue_script('bootstrap', vendor_dir . 'bootstrap/dist/js/bootstrap.min.js');
         wp_enqueue_script('swiper', vendor_dir . 'swiper/js/swiper-bundle.min.js');
         wp_enqueue_script('fancybox', vendor_dir . 'fancybox/js/fancybox.umd.js');
+        wp_enqueue_script('select2', vendor_dir . 'select2/js/select2.min.js');
         wp_enqueue_script('main', assets_dir . 'javascripts/main.js');
 
         wp_localize_script(
