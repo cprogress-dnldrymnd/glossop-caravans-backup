@@ -768,27 +768,6 @@ function listing_sidebar_filter($category)
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseNew-Used" aria-expanded="false"
-                                aria-controls="collapseNew-Used">
-                                <span class="accordion-button-inner">
-                                    <span class="icon-text">
-                                        <span class="icon"><?= get__theme_icons('new_used.svg') ?></span>
-                                        New-Used
-                                    </span>
-                                    <span class="selected fs-14 fw-bold"></span>
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseNew-Used" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFilter">
-                            <div class="accordion-body">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                        </div>
-                    </div>
                     <?php
                     echo accordion__filter('new_used', 'New-Used', 'Any', $_berths);
                     echo accordion__filter('berths', 'Berths', 'Any', $_berths);
