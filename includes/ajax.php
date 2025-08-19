@@ -224,7 +224,8 @@ function filter_options($args, $field_id)
 ?>
 	<script>
 		jQuery(document).ready(function() {
-			jQuery('<?= $html ?>').appendTo('head');
+			console.log('<?= $html ?>');
+			//jQuery('<?= $html ?>').appendTo('head');
 		});
 	</script>
 <?php
