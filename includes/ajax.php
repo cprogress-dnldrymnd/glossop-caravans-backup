@@ -167,7 +167,17 @@ function listing_search()
 		});
 	</script>
 <?php
+	$response_data = array(
+		'status'  => 'success',
+		'message' => 'Data received successfully!',
+		'items'   => array(
+			'item1' => 'value1',
+			'item2' => 'value2'
+		)
+	);
 
+	// Use wp_send_json_success() to return the JSON object
+	wp_send_json_success($response_data);
 	die();
 }
 
