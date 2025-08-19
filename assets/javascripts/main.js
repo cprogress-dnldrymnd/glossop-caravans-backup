@@ -13,6 +13,7 @@ jQuery(document).ready(function () {
 });
 
 function listing_search_trigger() {
+    var listing_filter = '';
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
@@ -53,7 +54,9 @@ function listing_search_trigger() {
             } else {
                 jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
             }
+
         }
+        filter_active += '#' + jQuery(this).attr('id') + ',';
 
         if (jQuery(this).attr('id') == 'make') {
             model = '';
@@ -66,7 +69,6 @@ function listing_search_trigger() {
 
         const nonce = posts_vars.nonce;
 
-        filter_active = jQuery('.filter-item--active').length;
 
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
