@@ -703,7 +703,7 @@ function listing_grid($id, $category = 'caravan', $style = 'style-2')
                 ?>
             </div>
             <div class="listing-grid__image image-style">
-                <img src="<?= $images['0'] ?>" alt="Listing Imae">
+                <img src="<?= $images['0'] ?>" alt="Listing Image">
             </div>
         </div>
         <div class="listing-grid-item__bottom">
