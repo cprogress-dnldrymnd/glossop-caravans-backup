@@ -20,6 +20,7 @@ function listing_search()
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 	$field_id = isset($_POST['field_id']) ? $_POST['field_id'] : false;
+	$filter_active = isset($_POST['filter_active']) ? $_POST['filter_active'] : false;
 
 	$tax_query = [];
 	$meta_query = [];
@@ -147,7 +148,7 @@ function listing_search()
 
 	$response_data = array(
 		'status'  => 'success',
-		'filter_options' => filter_options($args, $field_id),
+		'filter_options' => filter_options($args, $field_id, $filter_active),
 		'listing_count' => $count,
 		'html' => $html
 	);
@@ -175,7 +176,7 @@ function model_options()
 	die();
 }*/
 
-function filter_options($args, $field_id)
+function filter_options($args, $field_id, $filter_active)
 {
 	ob_start();
 	unset($args['posts_per_page']);
@@ -200,8 +201,9 @@ function filter_options($args, $field_id)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-
-	//unset($css[$field_id_val]);
+	if ($filter_active == 'false') {
+		unset($css[$field_id_val]);
+	}
 	$html = '<style id="filter--options-style">';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);

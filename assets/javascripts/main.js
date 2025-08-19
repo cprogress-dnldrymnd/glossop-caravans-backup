@@ -50,6 +50,13 @@ function listing_search_trigger() {
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
+
+        if (jQuery('.listing-filter').hasClass('filter--active')) {
+            filter_active = 'true';
+        } else {
+            filter_active = 'false';
+        }
+
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
         new_used = jQuery('.listing-filter #new_used').val();
@@ -76,11 +83,13 @@ function listing_search_trigger() {
             year: year,
             axle: axle,
             field_id: field_id,
+            filter_active: filter_active,
         };
         jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
         jQuery('#results').addClass('hidden-visibility');
         ajax_function(data);
+        jQuery('.listing-filter').addClass('filter--active')
         e.preventDefault();
     });
 }
