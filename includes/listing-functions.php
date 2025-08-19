@@ -781,9 +781,7 @@ function listing_sidebar_filter($category)
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 $our_price_count = count($_our_price);
                                 ?>
-                                <pre>
-                                    <?php var_dump($_our_price) ?>
-                                </pre>
+                             
                                 <div class="slider--parent">
                                     <div class="slider">
                                         <div class="price-slider"></div>
