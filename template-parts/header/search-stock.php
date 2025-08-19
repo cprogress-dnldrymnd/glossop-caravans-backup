@@ -42,7 +42,7 @@ $_new_used = get__search_field_options('_new_used', [$category]);
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
                             <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['type'] ?>
+                                <?= listing__filter_field('new_used', 'New-Used', 'Any', $_new_used, false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
                                 <?= $listing_fields['berths'] ?>
