@@ -203,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	/*
+	
 	if (count($filter_active_arr) == 2) {
 		unset($css[$filter_active_arr[0]]);
 	} else if (count($filter_active_arr) == 3) {
@@ -211,9 +211,10 @@ function filter_options($args, $field_id, $filter_active)
 			unset($css['#make']);
 		}
 	} else {
-	}*/
+	}
+	/*
 	unset($css[$field_id_val]);
-
+*/
 	$html = '<style id="filter--options-style" ' . (count($filter_active_arr) - 1) . '>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
