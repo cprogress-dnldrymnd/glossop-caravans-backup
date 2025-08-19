@@ -781,19 +781,13 @@ function listing_sidebar_filter($category)
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 ?>
 
-                                <div>
-                                    <div class="price-input row g-0">
-                                        <div class="price-field col-auto">
-                                            <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
-                                        </div>
-                                        <div class="price-field col-auto">
-                                            <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
-                                        </div>
-                                    </div>
+                                <div class="d-none">
+                                    <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
+                                    <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
                                 </div>
                                 <div class="d-flex justify-content-between min-max--holder">
-                                    <div class="min-input form-control">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
-                                    <div class="max-input form-control">£ <span class="max-input-html"><?= end($_our_price) ?></span> </div>
+                                    <div class="min-max--inner">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
+                                    <div class="min-max--inner">£ <span class="max-input-html"><?= end($_our_price) ?></span> </div>
                                 </div>
                                 <div class="slider--parent">
                                     <div class="slider">
