@@ -788,7 +788,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         $placeholder_val = $placeholder;
     }
 ?>
-    <?php if ($is_accordion) { ?>
+    <?php if ($is_accordion == true) { ?>
         <div class="accordion-item accordion-item--<?= $id ?>">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
