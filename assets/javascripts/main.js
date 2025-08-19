@@ -111,6 +111,8 @@ function model_options_trigger() {
 
 function model_options(response) {
     console.log(response);
+    jQuery('.accordion-item--model').remove();
+    jQuery(response).insertAfter('.accordion-item--make')
 }
 
 
