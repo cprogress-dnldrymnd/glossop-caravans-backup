@@ -197,12 +197,15 @@ function filter_options($args)
 	$args['fields'] = 'ids';
 
 	$posts = get_posts($args);
+	$css = [];
 	foreach ($posts as $post) {
-		$year = get__post_meta_by_id($post, 'year');
-		echo $year;
+		$css['year'] = get__post_meta_by_id($post, 'year');
 	}
+	echo '<style>';
+	echo '</style>';
+
 	echo '<pre>';
-	var_dump($posts);
+	var_dump($css);
 	echo '</pre>';
 	return ob_get_clean();
 }
