@@ -66,7 +66,7 @@ function listing_search_trigger() {
 
         const nonce = posts_vars.nonce;
         console.log(jQuery('.filter-item--active').length);
-        if (jQuery('.filter-item--active').length > 1) {
+        if (jQuery('.filter-item--active').length > 0) {
             filter_active = 'true';
         } else {
             filter_active = 'false';

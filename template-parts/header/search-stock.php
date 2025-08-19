@@ -44,7 +44,7 @@ global $listing_fields;
                                 <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
-                             
+
                             </div>
                             <div class="col-6 col-md-4 col-lg">
                                 <?= $listing_fields['make'] ?>
