@@ -18,8 +18,8 @@ function listing_search_trigger() {
 
         $val = jQuery(this).val();
         if (jQuery(this).attr('id') == 'min_price') {
-            $min_price = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
-            $max_price = jQuery('#max_price').val();
+            $min_price = jQuery(this).parents('.accordion-item').find('select#min_price option[value="' + $val + '"]').text();
+            $max_price = jQuery(this).parents('.accordion-item').find('select#max_price option[value="' + $val + '"]').text();
 
             if ($max_price) {
                 $val_text = $min_price + '-' + $max_price;
