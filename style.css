@@ -11890,6 +11890,58 @@ span.icons {
   height: 40px !important;
   /* Adjust to match the selection box height */ }
 
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.slider {
+  width: 100%; }
+
+.slider {
+  height: 6px;
+  position: relative;
+  background: #e4e4e4;
+  border-radius: 5px; }
+
+.slider .price-slider {
+  height: 100%;
+  left: 25%;
+  right: 15%;
+  position: absolute;
+  border-radius: 5px;
+  background: #01940b; }
+
+.range-input {
+  position: relative; }
+
+.range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: none;
+  top: -5px;
+  pointer-events: none;
+  cursor: pointer;
+  -webkit-appearance: none; }
+
+/* Styles for the range thumb in WebKit browsers */
+input[type="range"]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 70%;
+  background: #555;
+  pointer-events: auto;
+  -webkit-appearance: none; }
+
+@media screen and (max-width: 768px) {
+  .price-input {
+    flex-direction: column;
+    align-items: center; }
+
+  .price-field {
+    margin-bottom: 10px; } }
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
