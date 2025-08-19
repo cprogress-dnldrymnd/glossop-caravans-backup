@@ -803,7 +803,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         $placeholder_val = $placeholder;
     }
 ?>
-    <div class="accordion-item">
+    <div class="accordion-item accordion-item--<?= $id ?>">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapse-<?= $id ?>" aria-expanded="false"
