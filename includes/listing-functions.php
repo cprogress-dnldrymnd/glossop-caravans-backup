@@ -781,15 +781,24 @@ function listing_sidebar_filter($category)
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 $our_price_count = count($_our_price);
                                 ?>
-                             
+                                <div class="price-input">
+                                    <div class="price-field">
+                                        <span>Minimum Price</span>
+                                        <input type="number" class="min-input" value="<?= reset($_our_price) ?>">
+                                    </div>
+                                    <div class="price-field">
+                                        <span>Maximum Price</span>
+                                        <input type="number" class="max-input" value="<?= end($_our_price) ?>">
+                                    </div>
+                                </div>
                                 <div class="slider--parent">
                                     <div class="slider">
                                         <div class="price-slider"></div>
                                     </div>
                                     <!-- Slider -->
                                     <div class="range-input">
-                                        <input type="range" class="min-range" min="<?= reset($_our_price) ?>" max="<?= end($_our_price)?>" value="<?= reset($_our_price) ?>" step="100">
-                                        <input type="range" class="max-range" min="<?= reset($_our_price) ?>" max="<?= end($_our_price)?>" value="<?= end($_our_price)?>" step="100">
+                                        <input type="range" class="min-range" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= reset($_our_price) ?>" step="100">
+                                        <input type="range" class="max-range" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
                                     </div>
 
                                 </div>
