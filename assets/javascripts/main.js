@@ -16,6 +16,10 @@ jQuery(document).ready(function () {
 
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
+        jQuery('html, body').animate({
+            scrollTop: jQuery('#listings').offset().top
+        }, 800);
+
         if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
             $min_price_val = jQuery('#min_price').val();
             $max_price_val = jQuery('#max_price').val();
