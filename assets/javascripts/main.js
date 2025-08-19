@@ -89,11 +89,9 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-    console.log(response.data.listing_count);
-    console.log(response.data.listing_count);
-    console.log(response.data.html);
     console.log(response.data.filter_options);
     jQuery('#results .listings > div').remove();
+    jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
@@ -104,6 +102,7 @@ function listing_search(response) {
 
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
+    jQuery(response.data.filter_options).appendTo('head');
 }
 
 function ajax_function(data) {
