@@ -14,6 +14,8 @@ jQuery(document).ready(function () {
 });
 function price_range() {
     const rangevalue = $(".slider .price-slider");
+    const min_input_html = $(".min-input-html");
+    const max_input_html = $(".max-input-html");
     const rangeInputvalue = $(".range-input input");
     const priceInputvalue = $(".price-input input");
     const priceGap = 500;
@@ -24,7 +26,7 @@ function price_range() {
     const rangeTotal = maxPossible - minPossible;
 
     // Adding event listeners to price input elements
-    priceInputvalue.on("input", function(e) {
+    priceInputvalue.on("input", function (e) {
         let minp = parseInt(priceInputvalue.eq(0).val());
         let maxp = parseInt(priceInputvalue.eq(1).val());
         let diff = maxp - minp;
@@ -64,7 +66,7 @@ function price_range() {
     });
 
     // Add event listeners to range input elements
-    rangeInputvalue.on("input", function(e) {
+    rangeInputvalue.on("input", function (e) {
         let minVal = parseInt(rangeInputvalue.eq(0).val());
         let maxVal = parseInt(rangeInputvalue.eq(1).val());
         let diff = maxVal - minVal;
@@ -81,6 +83,8 @@ function price_range() {
             // Update price inputs and range progress
             priceInputvalue.eq(0).val(minVal);
             priceInputvalue.eq(1).val(maxVal);
+            min_input_html.text(minVal);
+            max_input_html.text(maxVal);
             rangevalue.css('left', `${((minVal - minPossible) / rangeTotal) * 100}%`);
             rangevalue.css('right', `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`);
         }
