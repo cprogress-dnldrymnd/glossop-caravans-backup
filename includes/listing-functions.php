@@ -782,8 +782,8 @@ function listing_sidebar_filter($category)
                                 ?>
 
                                 <div class="d-none">
-                                    <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
-                                    <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
+                                    <input name="min_price" id="min_price" type="number" class="min-input form-control listing-search--trigger" value="<?= reset($_our_price) ?>" readonly>
+                                    <input name="max_price" id="max_price" type="number" class="max-input form-control listing-search--trigger" value="<?= end($_our_price) ?>" readonly>
                                 </div>
                                 <div class="d-flex justify-content-between min-max--holder mb-3">
                                     <div class="min-max--inner">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
@@ -804,7 +804,7 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
+                    //echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo listing__filter_field('year', 'Year', 'Any', $_year);
                     echo listing__filter_field('width', 'Width', 'Any', $_width);
                     echo listing__filter_field('axle', 'Axles', 'Any', $_axle);
