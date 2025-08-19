@@ -733,7 +733,7 @@ function listing_sidebar_filter($category)
             <div class="offcanvas-body">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 <div class="accordion rounded overflow-hidden" id="accordionFilter">
-                    <div class="accordion-item">
+                    <div class="accordion-item accordion-item--sortby">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseSort-by" aria-expanded="false"

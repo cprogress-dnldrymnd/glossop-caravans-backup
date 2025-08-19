@@ -57,7 +57,7 @@ function listing_search_trigger() {
             }
 
         }
-        jQuery('.filter-item--active select').each(function (index, element) {
+        jQuery('.filter-item--active:not(.accordion-item--sortby) select').each(function (index, element) {
             filter_active += '#' + jQuery(this).attr('id') + '|';
         });
 
