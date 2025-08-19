@@ -732,6 +732,7 @@ function listing_sidebar_filter($category)
         <div class="offcanvas offcanvas-end offcanvas-visible-desktop" tabindex="-1" id="offCanvasFilter" raria-labelledby="offCanvasFilterLabel">
             <div class="offcanvas-body">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button class="reset--filter">Reset</button>
                 <div class="accordion rounded overflow-hidden" id="accordionFilter">
                     <div class="accordion-item accordion-item--sortby">
                         <h2 class="accordion-header">
