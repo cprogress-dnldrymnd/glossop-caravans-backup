@@ -102,7 +102,11 @@ function listing_search(response) {
 
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
-    jQuery(response.data.filter_options).appendTo('head');
+    if (jQuery('#filter--options-style').length == 0) {
+        jQuery(response.data.filter_options).appendTo('head');
+    } else {
+        jQuery('#filter--options-style').html(response.data.filter_options);
+    }
 }
 
 function ajax_function(data) {
