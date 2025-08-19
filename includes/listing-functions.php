@@ -785,8 +785,8 @@ function listing_sidebar_filter($category)
                                 ?>
 
                                 <div class="price-input d-none">
-                                    <input name="min_price" id="min_price" type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
-                                    <input name="max_price" id="max_price" type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
+                                    <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
+                                    <input  type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
                                 </div>
                                 <div class="d-flex justify-content-between min-max--holder mb-3">
                                     <div class="min-max--inner">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
@@ -798,8 +798,8 @@ function listing_sidebar_filter($category)
                                     </div>
                                     <!-- Slider -->
                                     <div class="range-input">
-                                        <input type="range" class="min-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= reset($_our_price) ?>" step="100">
-                                        <input type="range" class="max-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
+                                        <input type="range" name="min_price" id="min_price" class="min-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= reset($_our_price) ?>" step="100">
+                                        <input type="range" name="max_price" id="max_price" class="max-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
                                     </div>
 
                                 </div>
