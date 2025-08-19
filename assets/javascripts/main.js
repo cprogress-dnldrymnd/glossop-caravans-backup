@@ -20,9 +20,9 @@ function listing_filter_reset() {
 
         jQuery('.listing-filter select').each(function (index, element) {
             jQuery(this).val('');
-            jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+            jQuery(this).trigger('change');
+  
         });
-        jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
 }
