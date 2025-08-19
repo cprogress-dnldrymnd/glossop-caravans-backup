@@ -1102,3 +1102,16 @@ input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -webkit-appearance: none;
 }
+
+.price-field {
+    > div {
+        flex: 0 0 auto;
+        width: auto;
+        flex-grow: 1;
+        input {
+            width: auto;
+            max-width: 100%;
+            display: flex;
+        }
+    }
+}

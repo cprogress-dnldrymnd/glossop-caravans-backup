@@ -11938,6 +11938,14 @@ input[type="range"]::-webkit-slider-thumb {
   pointer-events: auto;
   -webkit-appearance: none; }
 
+.price-field > div {
+  flex: 0 0 auto;
+  width: auto;
+  flex-grow: 1; }
+  .price-field > div input {
+    width: auto;
+    max-width: 100%; }
+
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
