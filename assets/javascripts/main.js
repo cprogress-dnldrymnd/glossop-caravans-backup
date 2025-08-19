@@ -13,8 +13,9 @@ jQuery(document).ready(function () {
 });
 
 function listing_search_trigger() {
-    var filter_active = '';
+
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
+        var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
         }, 800);
