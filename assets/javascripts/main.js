@@ -9,6 +9,7 @@ jQuery(document).ready(function () {
     fixed_menu_link_mobile();
     read__more();
     listing_search_trigger();
+    model_options_trigger();
 
     //jQuery('.listing-search--trigger').select2();
 });
