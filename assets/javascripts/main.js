@@ -121,7 +121,7 @@ function price_range() {
 }
 function listing_search_trigger() {
 
-    jQuery('body').on('change', '.listing-search--trigger', function (e) {
+    jQuery('body').on('change', '.listing-filter .listing-search--trigger', function (e) {
         var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
