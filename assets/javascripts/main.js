@@ -106,6 +106,8 @@ function listing_search_trigger() {
         if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
             $min_price_val = jQuery('#min_price').val();
             $max_price_val = jQuery('#max_price').val();
+            console.log($min_price_val);
+            console.log($max_price_val);
             $min_price = jQuery(this).parents('.accordion-item').find('select#min_price option[value="' + $min_price_val + '"]').text();
             $max_price = jQuery(this).parents('.accordion-item').find('select#max_price option[value="' + $max_price_val + '"]').text();
             if ($max_price_val && $min_price_val) {
