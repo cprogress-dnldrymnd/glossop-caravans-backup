@@ -96,12 +96,14 @@ function listing_search(response) {
 function model_options_trigger() {
     jQuery('body').on('change', '#make', function (e) {
         make = jQuery('.listing-filter #make').val();
+        category = jQuery('#category').val();
         const nonce = posts_vars.nonce;
 
         data = {
             action: 'model_options',
             nonce: nonce,
             make: make,
+            category: category,
         };
         ajax_function(data);
     });
