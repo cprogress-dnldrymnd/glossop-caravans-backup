@@ -32,6 +32,7 @@ function listing_filter_reset() {
 
         jQuery('.min-range').val(jQuery('.min-range').attr('min'));
         jQuery('.max-range').val(jQuery('.max-range').attr('max'));
+        price_range();
         jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
