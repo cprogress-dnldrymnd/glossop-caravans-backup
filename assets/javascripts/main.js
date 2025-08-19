@@ -79,7 +79,7 @@ function listing_search_trigger() {
             width: width,
             year: year,
             axle: axle,
-            field_id: axle,
+            field_id: field_id,
         };
         jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
