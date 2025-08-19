@@ -150,6 +150,7 @@ function listing_search()
 		'filter_options' => filter_options($args, $field_id, $filter_active),
 		'listing_count' => $count,
 		'html' => $html,
+		'args' => $args,
 	);
 
 	// Use wp_send_json_success() to return the JSON object
@@ -179,7 +180,6 @@ function filter_options($args, $field_id, $filter_active)
 {
 	ob_start();
 	unset($args['posts_per_page']);
-	$field_id_val = '#' . $field_id;
 	$args['numberposts'] = -1;
 	$args['fields'] = 'ids';
 
@@ -203,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	
+
 	if (count($filter_active_arr) == 2) {
 		unset($css[$filter_active_arr[0]]);
 	} else if (count($filter_active_arr) == 3) {

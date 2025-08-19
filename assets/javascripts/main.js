@@ -195,9 +195,13 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
+    response.data.listing_count
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
+
+    jQuery('.banner').text(response.data.args);
+
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
 
