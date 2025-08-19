@@ -149,7 +149,8 @@ function listing_search()
 		'status'  => 'success',
 		'filter_options' => filter_options($args, $field_id, $filter_active),
 		'listing_count' => $count,
-		'html' => $html
+		'html' => $html,
+		'args' => json_encode($args),
 	);
 
 	// Use wp_send_json_success() to return the JSON object
