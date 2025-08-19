@@ -57,7 +57,10 @@ function listing_search_trigger() {
             }
 
         }
-        filter_active += '#' + jQuery(this).attr('id') + '|';
+        jQuery('.filter-item--active select').each(function (index, element) {
+            filter_active += '#' + jQuery(this).attr('id') + '|';
+        });
+
 
         if (jQuery(this).attr('id') == 'make') {
             model = '';
