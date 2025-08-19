@@ -109,7 +109,6 @@ function listing_search()
 		}
 	}
 
-	echo $price_sort;
 
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
