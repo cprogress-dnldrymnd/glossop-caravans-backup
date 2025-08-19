@@ -48,7 +48,7 @@ function listing_search_trigger() {
             $val = jQuery(this).val();
             $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
 
-            if (!$val) {
+            if ($val != '') {
                 jQuery(this).parents('.accordion-item').addClass('filter-item--active');
             } else {
                 jQuery(this).parents('.accordion-item').removeAttr('filter-item--active');
