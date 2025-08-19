@@ -7,7 +7,8 @@
 <?php
 $warranty = get__post_meta('warranty');
 $tour_360 = get__post_meta('tour_360');
-$video = get__post_meta('video');
+$videos = get__post_meta('videos');
+$videos_arr = explode("|", $videos);
 $features = carbon_get_the_post_meta('features');
 $term_ids = [];
 $terms = get_the_terms(get_the_ID(), 'listing_category');
@@ -81,10 +82,12 @@ $term_slug = $terms[0]->slug;
                                             <iframe class="w-100" height="500" src="<?= $tour_360 ?>" frameborder="0"></iframe>
                                         </div>
                                     <?php } ?>
-                                    <?php if ($video) {  ?>
+                                    <?php if ($videos_arr) {  ?>
                                         <div class="tab-pane fade" id="video-tab-pane" role="tabpanel" aria-labelledby="video-tab"
                                             tabindex="0">
-                                            <iframe class="rounded overflow-hidden" title="YouTube video player" src="<?= $video ?>" width="100%" height="600" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                            <?php foreach ($videos_arr as $video) { ?>
+                                                <iframe class="rounded overflow-hidden" title="YouTube video player" src="<?= $video ?>" width="100%" height="600" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                            <?php } ?>
                                         </div>
                                     <?php } ?>
 
