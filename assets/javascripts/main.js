@@ -65,7 +65,7 @@ function listing_search_trigger() {
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
-
+        console.log(jQuery('.filter-item--active'));
         if (jQuery('.filter-item--active').length > 2) {
             filter_active = 'true';
         } else {
