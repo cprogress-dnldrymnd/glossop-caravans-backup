@@ -223,7 +223,7 @@ function filter_options($args, $field_id)
 ?>
 	<script>
 		jQuery(document).ready(function() {
-			console.log('xxx');
+			console.log("<?= $html ?>");
 		});
 	</script>
 <?php
