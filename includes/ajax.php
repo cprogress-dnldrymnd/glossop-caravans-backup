@@ -204,13 +204,12 @@ function filter_options($args, $field_id)
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
 	unset($css[$field_id_val]);
-	$html = '';
+	$html = '<style id="filter--options-style">';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
-		$html .= '<style style_id="' . $key . '">';
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
-		$html .= '</style>';
 	}
+	$html = '<style>';
 
 	echo $html;
 
