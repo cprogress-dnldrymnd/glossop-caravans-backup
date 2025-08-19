@@ -220,4 +220,5 @@ function css_val_format($css_val)
 	foreach ($css_val as $css) {
 		$html .= ':not([value="' . $css . '"])';
 	}
+	return $html;
 }
