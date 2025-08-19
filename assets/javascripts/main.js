@@ -88,108 +88,113 @@ function price_range() {
             max_input_html.text(maxVal);
             rangevalue.css('left', `${((minVal - minPossible) / rangeTotal) * 100}%`);
             rangevalue.css('right', `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`);
+            listing_search_function();
         }
     });
 }
 function listing_search_trigger() {
 
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
-        var filter_active = '';
-        jQuery('html, body').animate({
-            scrollTop: jQuery('#listings').offset().top
-        }, 800);
-
-        if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
-            $min_price_val = jQuery('#min_price').val();
-            $max_price_val = jQuery('#max_price').val();
-            $min_price = jQuery(this).parents('.accordion-item').find('select#min_price option[value="' + $min_price_val + '"]').text();
-            $max_price = jQuery(this).parents('.accordion-item').find('select#max_price option[value="' + $max_price_val + '"]').text();
-            if ($max_price_val && $min_price_val) {
-                if ($max_price_val == $min_price_val) {
-                    $val_text = $min_price;
-                } else {
-                    $val_text = $min_price + '-' + $max_price;
-                }
-            } else if ($max_price_val && !$min_price_val) {
-                $val_text = 'Up to ' + $max_price;
-            } else if (!$max_price_val && $min_price_val) {
-                $val_text = 'From ' + $min_price;
-            } else {
-                $val_text = 'Any'
-            }
-
-
-            if ($val_text == 'Any') {
-                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
-            } else {
-                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
-            }
-
-        } else {
-            $val = jQuery(this).val();
-            $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
-
-            if ($val != '') {
-                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
-            } else {
-                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
-            }
-
-        }
-        jQuery('.filter-item--active:not(.accordion-item--sortby) select').each(function (index, element) {
-            filter_active += '#' + jQuery(this).attr('id') + '|';
-        });
-
-
-        if (jQuery(this).attr('id') == 'make') {
-            model = '';
-        } else {
-            model = jQuery('.listing-filter #model').val();
-        }
-
-
-        jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
-
-        const nonce = posts_vars.nonce;
-
-
-        category = jQuery('#category').val();
-        price_sort = jQuery('#price_sort').val();
-        new_used = jQuery('.listing-filter #new_used').val();
-        berths = jQuery('#berths').val();
-        make = jQuery('.listing-filter #make').val();
-        min_price = jQuery('.listing-filter #min_price').val();
-        max_price = jQuery('.listing-filter #max_price').val();
-        width = jQuery('#width').val();
-        year = jQuery('#year').val();
-        axle = jQuery('#axle').val();
-        field_id = jQuery(this).attr('id');
-        data = {
-            action: 'listing_search',
-            nonce: nonce,
-            category: category,
-            price_sort: price_sort,
-            new_used: new_used,
-            berths: berths,
-            make: make,
-            model: model,
-            min_price: min_price,
-            max_price: max_price,
-            width: width,
-            year: year,
-            axle: axle,
-            field_id: field_id,
-            filter_active: filter_active,
-        };
-        jQuery('.ajax--section-js').addClass('is--doing-ajax');
-        jQuery('.loading').removeClass('hidden');
-        jQuery('#results').addClass('hidden-visibility');
-        ajax_function(data);
-        jQuery('.listing-filter').addClass('filter--active')
+        listing_search_function();
         e.preventDefault();
+
     });
 }
 
+function listing_search_function() {
+    var filter_active = '';
+    jQuery('html, body').animate({
+        scrollTop: jQuery('#listings').offset().top
+    }, 800);
+
+    if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
+        $min_price_val = jQuery('#min_price').val();
+        $max_price_val = jQuery('#max_price').val();
+        $min_price = jQuery(this).parents('.accordion-item').find('select#min_price option[value="' + $min_price_val + '"]').text();
+        $max_price = jQuery(this).parents('.accordion-item').find('select#max_price option[value="' + $max_price_val + '"]').text();
+        if ($max_price_val && $min_price_val) {
+            if ($max_price_val == $min_price_val) {
+                $val_text = $min_price;
+            } else {
+                $val_text = $min_price + '-' + $max_price;
+            }
+        } else if ($max_price_val && !$min_price_val) {
+            $val_text = 'Up to ' + $max_price;
+        } else if (!$max_price_val && $min_price_val) {
+            $val_text = 'From ' + $min_price;
+        } else {
+            $val_text = 'Any'
+        }
+
+
+        if ($val_text == 'Any') {
+            jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
+        } else {
+            jQuery(this).parents('.accordion-item').addClass('filter-item--active');
+        }
+
+    } else {
+        $val = jQuery(this).val();
+        $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
+
+        if ($val != '') {
+            jQuery(this).parents('.accordion-item').addClass('filter-item--active');
+        } else {
+            jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
+        }
+
+    }
+    jQuery('.filter-item--active:not(.accordion-item--sortby) select').each(function (index, element) {
+        filter_active += '#' + jQuery(this).attr('id') + '|';
+    });
+
+
+    if (jQuery(this).attr('id') == 'make') {
+        model = '';
+    } else {
+        model = jQuery('.listing-filter #model').val();
+    }
+
+
+    jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+
+    const nonce = posts_vars.nonce;
+
+
+    category = jQuery('#category').val();
+    price_sort = jQuery('#price_sort').val();
+    new_used = jQuery('.listing-filter #new_used').val();
+    berths = jQuery('#berths').val();
+    make = jQuery('.listing-filter #make').val();
+    min_price = jQuery('.listing-filter #min_price').val();
+    max_price = jQuery('.listing-filter #max_price').val();
+    width = jQuery('#width').val();
+    year = jQuery('#year').val();
+    axle = jQuery('#axle').val();
+    field_id = jQuery(this).attr('id');
+    data = {
+        action: 'listing_search',
+        nonce: nonce,
+        category: category,
+        price_sort: price_sort,
+        new_used: new_used,
+        berths: berths,
+        make: make,
+        model: model,
+        min_price: min_price,
+        max_price: max_price,
+        width: width,
+        year: year,
+        axle: axle,
+        field_id: field_id,
+        filter_active: filter_active,
+    };
+    jQuery('.ajax--section-js').addClass('is--doing-ajax');
+    jQuery('.loading').removeClass('hidden');
+    jQuery('#results').addClass('hidden-visibility');
+    ajax_function(data);
+    jQuery('.listing-filter').addClass('filter--active')
+}
 
 function listing_search(response) {
     jQuery('#results .listings > div').remove();
