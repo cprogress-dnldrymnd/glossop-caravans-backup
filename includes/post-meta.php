@@ -22,8 +22,6 @@ Container::make('post_meta', __('Images'))
         Field::make('textarea', 'images', __(''))->set_help_text('Seperate using "|"')
     ));
 
-
-
 Container::make('post_meta', __('Videos'))
     ->where('post_type', '=', 'caravan')
     ->add_fields(array(
@@ -164,7 +162,7 @@ Container::make('post_meta', __('External Length(m)'))
         Field::make('text', 'external_length', __(''))->set_attribute('type', 'number'),
     ));
 
-Container::make('post_meta', __('Width'))
+Container::make('post_meta', __('Width(m)'))
     ->where('post_type', '=', 'caravan')
     ->where(function ($condition) {
         $condition->or_where('post_term', '=', array(
