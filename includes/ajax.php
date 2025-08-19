@@ -199,13 +199,25 @@ function filter_options($args)
 	$posts = get_posts($args);
 	$css = [];
 	foreach ($posts as $post) {
-		$css['year'][] = get__post_meta_by_id($post, 'year');
+		$css['#year'][] = get__post_meta_by_id($post, 'year');
 	}
 	echo '<style>';
+	foreach ($css as $key => $css_val) {
+		$css_val_format = css_val_format($css_val);
+		echo $key . " option$css_val_format{display: none !important}";
+	}
 	echo '</style>';
 
 	echo '<pre>';
 	var_dump($css);
 	echo '</pre>';
 	return ob_get_clean();
+}
+
+function css_val_format($css_val)
+{
+	$html = '';
+	foreach ($css_val as $css) {
+		$html .= ':not([value="' . $css . '"])';
+	}
 }
