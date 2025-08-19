@@ -798,7 +798,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
     }
 
     if ($is_price == true) {
-        $placeholder_val = $placeholder[0];
+        $placeholder_val = 'Any';
     } else {
         $placeholder_val = $placeholder;
     }
