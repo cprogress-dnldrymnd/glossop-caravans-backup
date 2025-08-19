@@ -145,7 +145,6 @@ function listing_search()
 		$html .= '<p> No listing found on your search filter. </p>';
 		$html .= '</div>';
 	}
-	$html .= var_dump($args);
 	$response_data = array(
 		'status'  => 'success',
 		'filter_options' => filter_options($args, $field_id, $filter_active),
