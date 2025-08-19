@@ -14,6 +14,7 @@ jQuery(document).ready(function () {
 });
 
 function price_range() {
+    // Script.js
     const rangevalue = document.querySelector(".slider .price-slider");
     const rangeInputvalue = document.querySelectorAll(".range-input input");
 
