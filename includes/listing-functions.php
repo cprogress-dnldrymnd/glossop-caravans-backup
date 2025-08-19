@@ -987,6 +987,9 @@ function get_model_options($make, $category)
             'terms' => $make,
         );
     }
+    if ($tax_query) {
+        $args['tax_query'] = $tax_query;
+    }
     $posts = get_posts($args);
     $model_arr = [];
     foreach ($posts as $post) {
