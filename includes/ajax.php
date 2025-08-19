@@ -220,14 +220,10 @@ function filter_options($args, $field_id)
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
 		$html .= '</style>';
 	}
+	echo $html;
 
 ?>
-	<script>
-		jQuery(document).ready(function() {
-			console.log('<?= $html ?>');
-			//jQuery('<?= $html ?>').appendTo('head');
-		});
-	</script>
+	
 <?php
 
 	echo '<pre>';
