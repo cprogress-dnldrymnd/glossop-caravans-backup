@@ -140,12 +140,9 @@ function listing_search_trigger() {
                 $val_text = 'Any'
             }
 
+            console.log($val_text);
 
-            if ($val_text == 'Any') {
-                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
-            } else {
-                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
-            }
+
 
         } else {
             $val = jQuery(this).val();
