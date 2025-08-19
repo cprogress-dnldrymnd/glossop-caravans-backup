@@ -39,7 +39,7 @@ function listing_search_trigger() {
 
 
             if ($val_text == 'Any') {
-                jQuery(this).parents('.accordion-item').removeAttr('filter-item--active');
+                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
             } else {
                 jQuery(this).parents('.accordion-item').addClass('filter-item--active');
             }
@@ -51,7 +51,7 @@ function listing_search_trigger() {
             if ($val != '') {
                 jQuery(this).parents('.accordion-item').addClass('filter-item--active');
             } else {
-                jQuery(this).parents('.accordion-item').removeAttr('filter-item--active');
+                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
             }
         }
 
