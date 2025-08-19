@@ -17,12 +17,20 @@ function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
 
         $val = jQuery(this).val();
-        $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
-        if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
-            jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+        if (jQuery(this).attr('id') == 'min_price') {
+            $min_price = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
+            $max_price = jQuery('#max_price').val();
+
+            if ($max_price) {
+                $val_text = $min_price + '-' + $max_price;
+            } else {
+                $val_text = 'From' + $min_price;
+            }
+
         } else {
-            
+            $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
         }
+        jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
         category = jQuery('#category').val();
