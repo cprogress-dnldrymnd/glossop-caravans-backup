@@ -294,11 +294,11 @@ $term_slug = $terms[0]->slug;
                                         </li>
                                         <li>
                                             <?= get__theme_icons('whatsapp.svg') ?>
-                                            <span><a href="tel:07525 491 913">07525 491 913</a></span>
+                                            <span><a href="https://wa.me/+44%207984%20975915" target="_blank">07525 491 913</a></span>
                                         </li>
                                         <li>
                                             <?= get__theme_icons('location.svg') ?>
-                                            <span><a href="#">Location</a></span>
+                                            <span><a href="https://www.google.com/maps?q=+Glossop,+Derbyshire,+England" target="_blank">Location</a></span>
                                         </li>
                                     </ul>
                                 </div>
