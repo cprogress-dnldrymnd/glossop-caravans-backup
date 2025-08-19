@@ -777,6 +777,9 @@ function listing_sidebar_filter($category)
                         </h2>
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
                             <div class="accordion-body accordion-body--search-field d-flex gap-1">
+                                <?php
+                                var_dump($_our_price);
+                                ?>
                                 <div class="slider--parent">
                                     <div class="slider">
                                         <div class="price-slider"></div>
