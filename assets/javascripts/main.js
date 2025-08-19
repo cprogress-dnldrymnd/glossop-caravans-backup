@@ -27,8 +27,8 @@ function price_range() {
         priceInputvalue[i].addEventListener("input", e => {
 
             // Parse min and max values of the range input
-            let minp = parseInt(priceInputvalue[0].value);
-            let maxp = parseInt(priceInputvalue[1].value);
+            let minp = parseInt(priceInputvalue[0].getAttribute('min'));
+            let maxp = parseInt(priceInputvalue[1].getAttribute('max'));
             let diff = maxp - minp
 
             if (minp < 0) {
