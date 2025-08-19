@@ -780,7 +780,7 @@ function listing_sidebar_filter($category)
                                 <?php
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 ?>
-                                <div class="price-input d-flex gap-1">
+                                <div class="price-input d-flex">
                                     <div class="price-field">
                                         <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
                                     </div>

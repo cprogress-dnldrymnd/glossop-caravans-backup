@@ -11940,12 +11940,17 @@ input[type="range"]::-webkit-slider-thumb {
 
 .price-input > div {
   flex: 0 0 auto;
-  width: auto;
+  width: 50%;
   flex-grow: 1; }
   .price-input > div input {
     width: auto;
     max-width: 100%;
-    display: flex; }
+    display: flex;
+    padding: 0;
+    border: none;
+    border-radius: 0; }
+  .price-input > div.max-input {
+    text-align: right; }
 
 .container,
 #os-banner .container-fluid,
