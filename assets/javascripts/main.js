@@ -10,10 +10,8 @@ jQuery(document).ready(function () {
     read__more();
     listing_search_trigger();
     price_range();
-    jQuery('.min-range').change(function (e) {
-        console.log(jQuery(this).val());
-        e.preventDefault();
-    });
+    listing_filter_reset();
+
     //jQuery('.listing-search--trigger').select2();
 });
 
