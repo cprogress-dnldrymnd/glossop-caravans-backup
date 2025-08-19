@@ -11890,12 +11890,6 @@ span.icons {
   height: 40px !important;
   /* Adjust to match the selection box height */ }
 
-/* Remove Arrows/Spinners */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
-
 .slider {
   width: 100%; }
 
@@ -11926,22 +11920,6 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   -webkit-appearance: none; }
 
-/* Styles for the range thumb in WebKit browsers */
-input[type="range"]::-webkit-slider-thumb {
-  height: 18px;
-  width: 18px;
-  border-radius: 70%;
-  background: #555;
-  pointer-events: auto;
-  -webkit-appearance: none; }
-
-@media screen and (max-width: 768px) {
-  .price-input {
-    flex-direction: column;
-    align-items: center; }
-
-  .price-field {
-    margin-bottom: 10px; } }
 .container,
 #os-banner .container-fluid,
 #os-banner .container-sm,
