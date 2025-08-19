@@ -25,9 +25,7 @@ function listing_filter_reset() {
             } else {
                 $val_text = 'Any';
             }
-
             jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
-
         });
         $min_range = jQuery('.min-range').attr('min');
         $max_range = jQuery('.max-range').attr('max');
@@ -37,6 +35,7 @@ function listing_filter_reset() {
         jQuery('.price-slider').css('right', '0');
         jQuery(".min-input-html").text($min_range);
         jQuery(".max-input-html").text($max_range);
+        jQuery('.accordion-item--price .selected--option').text('Any');
         jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
