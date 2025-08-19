@@ -220,13 +220,7 @@ function filter_options($args, $field_id)
 		$html .= '</style>';
 	}
 
-?>
-	<script>
-		jQuery(document).ready(function() {
-			console.log("<?= $html ?>");
-		});
-	</script>
-<?php
+	echo $html;
 
 	return ob_get_clean();
 }
