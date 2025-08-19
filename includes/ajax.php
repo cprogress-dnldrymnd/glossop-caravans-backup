@@ -136,7 +136,7 @@ function listing_search()
 	}
 
 	$listings = new WP_Query($args);
-
+	echo filter_options($args);
 	$count = $listings->found_posts;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
@@ -173,6 +173,8 @@ function listing_search()
 
 add_action('wp_ajax_nopriv_model_options', 'model_options'); // for not logged in users
 add_action('wp_ajax_model_options', 'model_options');
+
+/*
 function model_options()
 {
 
@@ -185,4 +187,13 @@ function model_options()
 	$model_options = get_model_options($make, $category);
 	echo accordion__filter('model', 'Model', 'Any', $model_options);
 	die();
+}*/
+
+function filter_options($args)
+{
+	ob_start();
+	unset($args['posts_per_page']);
+	$args['numberposts'] = -1;
+	var_dump($args);
+	return ob_get_clean();
 }

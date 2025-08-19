@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
     fixed_menu_link_mobile();
     read__more();
     listing_search_trigger();
-    model_options_trigger();
+    //filter_options_trigger();
 
     //jQuery('.listing-search--trigger').select2();
 });
@@ -102,14 +102,14 @@ function listing_search(response) {
     jQuery('#results').removeClass('hidden-visibility');
 }
 
-function model_options_trigger() {
+function filter_options_trigger() {
     jQuery('body').on('change', '#make', function (e) {
         make = jQuery('.listing-filter #make').val();
         category = jQuery('#category').val();
         const nonce = posts_vars.nonce;
 
         data = {
-            action: 'model_options',
+            action: 'filter_options',
             nonce: nonce,
             make: make,
             category: category,
@@ -118,7 +118,7 @@ function model_options_trigger() {
     });
 }
 
-function model_options(response) {
+function filter_options(response) {
     console.log(response);
     jQuery('.accordion-item--model').remove();
     jQuery(response).insertAfter('.accordion-item--make')
@@ -136,8 +136,8 @@ function ajax_function(data) {
             if (data.action == 'listing_search') {
                 listing_search(response);
 
-            } else if (data.action == 'model_options') {
-                model_options(response);
+            } else if (data.action == 'filter_options') {
+                filter_options(response);
 
             }
         },

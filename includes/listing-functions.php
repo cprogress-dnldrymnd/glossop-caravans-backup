@@ -906,7 +906,6 @@ function accordion__filter_terms($id, $label, $taxonomy)
 }
 
 
-
 function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
 {
     global $wpdb;
