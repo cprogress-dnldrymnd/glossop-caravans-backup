@@ -21,7 +21,6 @@ function listing_search()
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 	$field_id = isset($_POST['field_id']) ? $_POST['field_id'] : false;
 	$filter_active = isset($_POST['filter_active']) ? $_POST['filter_active'] : false;
-	echo $filter_active;
 
 	$tax_query = [];
 	$meta_query = [];
@@ -132,7 +131,7 @@ function listing_search()
 
 	$listings = new WP_Query($args);
 	$count = $listings->found_posts;
-	$html = '';
+	$html = '' . $filter_active;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
 			$listings->the_post();
