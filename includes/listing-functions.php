@@ -796,6 +796,12 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
     } else {
         $icon = $id;
     }
+
+    if ($is_price == true) {
+        $placeholder_val = $placeholder[0];
+    } else {
+        $placeholder_val = $placeholder;
+    }
 ?>
     <div class="accordion-item">
         <h2 class="accordion-header">
@@ -807,7 +813,7 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
                         <span class="icon"><?= get__theme_icons($icon . '.svg') ?></span>
                         <?= $label ?>
                     </span>
-                    <span class="selected selected--option fs-14 fw-bold"><?= $placeholder ?></span>
+                    <span class="selected selected--option fs-14 fw-bold"><?= $placeholder_val ?></span>
                 </span>
             </button>
         </h2>
