@@ -204,9 +204,11 @@ function filter_options($args, $field_id)
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
 	$manufacturer = get_the_terms($post, 'manufacturer');
+	$manufacturer_arr = [];
 	foreach ($manufacturer as $maker) {
-		$css['#make'][$maker->slug] = $maker->name;
+		$css['#make'][] = $maker->slug;
 	}
+
 	unset($css[$field_id_val]);
 	$html = '<style id="filter--options-style">';
 	foreach ($css as $key => $css_val) {
