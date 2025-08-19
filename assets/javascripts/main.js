@@ -29,11 +29,14 @@ function listing_filter_reset() {
             jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         });
-
-        jQuery('.min-range').val(jQuery('.min-range').attr('min'));
-        jQuery('.max-range').val(jQuery('.max-range').attr('max'));
+        $min_range = jQuery('.min-range').attr('min');
+        $max_range = jQuery('.max-range').attr('max');
+        jQuery('.min-range').val();
+        jQuery('.max-range').val();
         jQuery('.price-slider').css('left', '0');
         jQuery('.price-slider').css('right', '0');
+        jQuery(".min-input-html").text($min_range);
+        jQuery(".max-input-html").text($max_range);
         jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
