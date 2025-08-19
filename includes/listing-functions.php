@@ -738,7 +738,6 @@ function listing_sidebar_filter($category)
     $_year = get__search_field_options('_year', [$category]);
     $_width = get__search_field_options('_width', [$category]);
     $_axle = get__search_field_options('_axle', [$category]);
-    $_layout_type = get__search_field_options('_layout_type', [$category]);
     $_model = get__search_field_options('_model', [$category]);
 ?>
 
@@ -775,7 +774,6 @@ function listing_sidebar_filter($category)
                     echo accordion__filter('model', 'Model', 'Any', $_model);
                     echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo accordion__filter('year', 'Year', 'Any', $_year);
-                    echo accordion__filter('layout_type', 'Layout type', 'Any', $_layout_type);
                     echo accordion__filter('width', 'Width', 'Any', $_width);
                     echo accordion__filter('axle', 'Axles', 'Any', $_axle);
                     ?>
