@@ -788,7 +788,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         $placeholder_val = $placeholder;
     }
 ?>
-    <?php if ($is_accordion == true) { ?>
+    <?php if ($is_accordion) { ?>
         <div class="accordion-item accordion-item--<?= $id ?>">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -832,9 +832,8 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg listing-search--trigger',
-                    'options' => $options
+                    'options' => $options + $available_options
                 );
-               
                 echo form_control($args);
             }
             if ($is_accordion) {
@@ -887,7 +886,6 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                     'class'   => 'form-control-lg listing-search--trigger',
                     'options' => $options
                 );
-
                 echo form_control($args);
                 ?>
             </div>
