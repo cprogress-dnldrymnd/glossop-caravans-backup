@@ -16,6 +16,13 @@ jQuery(document).ready(function () {
     });
     //jQuery('.listing-search--trigger').select2();
 });
+
+function listing_filter_reset() {
+    jQuery('.reset--filter').click(function (e) {
+        jQuery('.listing-filter select').val('');
+        e.preventDefault();
+    });
+}
 function price_range() {
     $ = jQuery;
     const rangevalue = $(".slider .price-slider");
