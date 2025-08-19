@@ -984,4 +984,11 @@ function get_model_options($make, $category)
         ),
     );
     $posts = get_posts($args);
+    $model_arr = [];
+    foreach ($posts as $post) {
+        $model = get__post_meta_by_id($post->ID, 'model');
+        $model_arr[$model] = $model;
+    }
+
+    return $model_arr;
 }

@@ -182,8 +182,10 @@ function model_options()
 		wp_send_json_error('Nonce verification failed.');
 	}
 	$make = isset($_POST['make']) ? $_POST['make'] : false;
+	$category = isset($_POST['make']) ? $_POST['category'] : false;
 
 	echo $make;
+	var_dump(get_model_options($make, $category));
 
 	die();
 }
