@@ -15,9 +15,14 @@ jQuery(document).ready(function () {
 
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
+
         $val = jQuery(this).val();
         $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
-        jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+        if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
+            jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+        } else {
+            
+        }
 
         const nonce = posts_vars.nonce;
         category = jQuery('#category').val();
@@ -66,7 +71,7 @@ function listing_search(response) {
     jQuery('html, body').animate({
         scrollTop: jQuery('#listings').offset().top
     }, 800);
-    
+
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
 }
