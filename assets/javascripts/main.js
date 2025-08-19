@@ -201,8 +201,6 @@ function listing_search(response) {
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
 
-    jQuery('.banner').text(response.data.args);
-
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
 
