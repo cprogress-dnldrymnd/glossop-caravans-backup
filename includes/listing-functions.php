@@ -783,12 +783,10 @@ function listing_sidebar_filter($category)
                                 ?>
                                 <div class="price-input">
                                     <div class="price-field">
-                                        <span>Minimum Price</span>
-                                        <input type="number" class="min-input" value="<?= reset($_our_price) ?>">
+                                        <input type="number" class="min-input" value="<?= reset($_our_price) ?>" readonly>
                                     </div>
                                     <div class="price-field">
-                                        <span>Maximum Price</span>
-                                        <input type="number" class="max-input" value="<?= end($_our_price) ?>">
+                                        <input type="number" class="max-input" value="<?= end($_our_price) ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="slider--parent">
