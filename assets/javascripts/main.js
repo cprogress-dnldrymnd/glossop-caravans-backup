@@ -135,15 +135,7 @@ function listing_search_trigger() {
 
 
             if ($max_price && $min_price) {
-                if ($max_price_val == $min_price_val) {
-                    $val_text = $min_price;
-                } else {
-                    $val_text = $min_price + '-' + $max_price;
-                }
-            } else if ($max_price && !$min_price) {
-                $val_text = 'Up to ' + $max_price;
-            } else if (!$max_price && $min_price) {
-                $val_text = 'From ' + $min_price;
+                $val_text = $min_price + '-' + $max_price;
             } else {
                 $val_text = 'Any'
             }
