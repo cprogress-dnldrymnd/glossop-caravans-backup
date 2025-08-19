@@ -183,9 +183,7 @@ function model_options()
 	}
 	$make = isset($_POST['make']) ? $_POST['make'] : false;
 	$category = isset($_POST['make']) ? $_POST['category'] : false;
-
-	echo $make;
-	var_dump(get_model_options($make, $category));
-	echo 'test2';
+	$model_options = get_model_options($make, $category);
+	echo accordion__filter('model', 'Model', 'Any', $model_options);
 	die();
 }
