@@ -125,11 +125,9 @@ function listing_search(response) {
 
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
-    if (jQuery('#filter--options-style').length == 0) {
-        jQuery(response.data.filter_options).appendTo('head');
-    } else {
-        jQuery('#filter--options-style').html(response.data.filter_options);
-    }
+    jQuery('#filter--options-style').remove();
+    jQuery(response.data.filter_options).appendTo('head');
+
 }
 
 function ajax_function(data) {
