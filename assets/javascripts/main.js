@@ -37,9 +37,22 @@ function listing_search_trigger() {
                 $val_text = 'Any'
             }
 
+
+            if ($val_text == 'Any') {
+                jQuery(this).parents('.accordion-item').removeAttr('filter-item--active');
+            } else {
+                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
+            }
+
         } else {
             $val = jQuery(this).val();
             $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
+
+            if ($val) {
+                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
+            } else {
+                jQuery(this).parents('.accordion-item').removeAttr('filter-item--active');
+            }
         }
 
         if (jQuery(this).attr('id') == 'make') {
@@ -47,11 +60,13 @@ function listing_search_trigger() {
         } else {
             model = jQuery('.listing-filter #model').val();
         }
+
+
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
 
-        if (jQuery('.listing-filter').hasClass('filter--active')) {
+        if (jQuery('.filter-item--active').length > 2) {
             filter_active = 'true';
         } else {
             filter_active = 'false';
