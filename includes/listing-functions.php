@@ -785,7 +785,7 @@ function listing_sidebar_filter($category)
                                     <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
                                     <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
                                 </div>
-                                <div class="d-flex justify-content-between min-max--holder">
+                                <div class="d-flex justify-content-between min-max--holder mb-3">
                                     <div class="min-max--inner">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
                                     <div class="min-max--inner">£ <span class="max-input-html"><?= end($_our_price) ?></span> </div>
                                 </div>

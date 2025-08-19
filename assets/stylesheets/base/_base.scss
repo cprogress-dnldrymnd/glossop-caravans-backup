@@ -1103,22 +1103,3 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
-.price-input {
-    margin-bottom: 10px;
-    > div {
-        flex: 0 0 auto;
-        width: 50%;
-        flex-grow: 1;
-        input {
-            width: auto;
-            max-width: 100%;
-            display: flex;
-            padding: 0;
-            border: none;
-            border-radius: 0;
-            &.max-input {
-                text-align: right;
-            }
-        }
-    }
-}
