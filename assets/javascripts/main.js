@@ -57,7 +57,6 @@ function listing_search_trigger() {
         make = jQuery('.listing-filter #make').val();
         min_price = jQuery('.listing-filter #min_price').val();
         max_price = jQuery('.listing-filter #max_price').val();
-        layout_type = jQuery('#layout_type').val();
         width = jQuery('#width').val();
         year = jQuery('#year').val();
         axle = jQuery('#axle').val();
@@ -73,7 +72,6 @@ function listing_search_trigger() {
             model: model,
             min_price: min_price,
             max_price: max_price,
-            layout_type: layout_type,
             width: width,
             year: year,
             axle: axle,

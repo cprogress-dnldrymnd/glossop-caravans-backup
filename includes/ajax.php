@@ -16,7 +16,6 @@ function listing_search()
 	$model = isset($_POST['model']) ? $_POST['model'] : false;
 	$min_price = isset($_POST['min_price']) ? $_POST['min_price'] : false;
 	$max_price = isset($_POST['max_price']) ? $_POST['max_price'] : false;
-	$layout_type = isset($_POST['layout_type']) ? $_POST['layout_type'] : false;
 	$width = isset($_POST['widthwidth']) ? $_POST['widthwidth'] : false;
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
@@ -46,13 +45,7 @@ function listing_search()
 			'compare' => '='
 		);
 	}
-	if ($layout_type) {
-		$meta_query[] = 	array(
-			'key'     => '_layout_type',
-			'value'   => $layout_type,
-			'compare' => '='
-		);
-	}
+
 	if ($width) {
 		$meta_query[] = 	array(
 			'key'     => '_width',
@@ -198,7 +191,6 @@ function filter_options($args, $field_id)
 		$css['#model'][] = get__post_meta_by_id($post, 'model');
 		$css['#min_price'][] = get__post_meta_by_id($post, 'our_price');
 		$css['#max_price'][] = get__post_meta_by_id($post, 'our_price');
-		$css['#layout_type'][] = get__post_meta_by_id($post, 'layout_type');
 		$css['#width'][] = get__post_meta_by_id($post, 'width');
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
