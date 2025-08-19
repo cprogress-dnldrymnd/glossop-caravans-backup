@@ -31,8 +31,8 @@ function listing_filter_reset() {
         });
         $min_range = jQuery('.min-range').attr('min');
         $max_range = jQuery('.max-range').attr('max');
-        jQuery('.min-range').val();
-        jQuery('.max-range').val();
+        jQuery('.min-range').val($min_range);
+        jQuery('.max-range').val($max_range);
         jQuery('.price-slider').css('left', '0');
         jQuery('.price-slider').css('right', '0');
         jQuery(".min-input-html").text($min_range);
