@@ -579,7 +579,7 @@ function listing_grid_full_details($id, $category = 'caravans')
             </div>
             <div class="row g-3 justify-content-between">
                 <div class="col-md-12">
-                    <h3><?= get_the_title($id) ?></h3>
+                    <h3 class="mb-0"><?= get_the_title($id) ?></h3>
                 </div>
             </div>
         </div>
