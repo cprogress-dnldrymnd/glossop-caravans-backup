@@ -150,7 +150,6 @@ function listing_search()
 		'filter_options' => filter_options($args, $field_id, $filter_active),
 		'listing_count' => $count,
 		'html' => $html,
-		'args' => json_encode($args),
 	);
 
 	// Use wp_send_json_success() to return the JSON object
@@ -204,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 		if ($filter_active > 0) {
 		}
 	}
-	if ($filter_active > 0) {
+	if ($filter_active == 1) {
 		unset($css[$field_id_val]);
 	}
 
