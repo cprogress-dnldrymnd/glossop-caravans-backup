@@ -211,7 +211,6 @@ function filter_options($args, $field_id)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
-	unset($css[$field_id_val]);
 	$html = '';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
