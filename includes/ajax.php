@@ -137,7 +137,6 @@ function listing_search()
 	}
 
 	$listings = new WP_Query($args);
-	echo filter_options($args, $field_id);
 	$count = $listings->found_posts;
 
 	$response_data = array(
