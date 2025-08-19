@@ -197,7 +197,6 @@ function filter_options($args)
 	$args['fields'] = 'ids';
 
 	$posts = get_posts($args);
-
 	echo '<pre>';
 	var_dump($posts);
 	echo '</pre>';

@@ -906,39 +906,48 @@ function accordion__filter_terms($id, $label, $taxonomy)
 }
 
 
-function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
+function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category', $post_ids = [])
 {
     global $wpdb;
-    // Sanitize the input to prevent SQL injection
+
+    // Sanitize input to prevent SQL injection
     $meta_key = sanitize_text_field($meta_key);
     $post_type = sanitize_text_field($post_type);
     $taxonomy = sanitize_text_field($taxonomy);
-    $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
 
-    // Build the query to get post IDs filtered by taxonomy and term slugs
-    $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
+    // Determine the list of post IDs to use
+    if (!empty($post_ids)) {
+        // If an array of post IDs is provided, sanitize and use them directly.
+        $filtered_post_ids = array_map('intval', (array) $post_ids);
+    } else {
+        // Otherwise, build the query to get post IDs filtered by taxonomy and term slugs.
+        $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
+        $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
 
-    $query_post_ids = "
-        SELECT p.ID
-        FROM {$wpdb->posts} AS p
-        INNER JOIN {$wpdb->term_relationships} AS tr ON p.ID = tr.object_id
-        INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-        INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
-        WHERE p.post_type = %s
-        AND p.post_status = 'publish'
-        AND tt.taxonomy = %s
-        AND t.term_id IN ({$sql_in_clause})
-    ";
+        $query_post_ids = "
+            SELECT p.ID
+            FROM {$wpdb->posts} AS p
+            INNER JOIN {$wpdb->term_relationships} AS tr ON p.ID = tr.object_id
+            INNER JOIN {$wpdb->term_taxonomy} AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+            INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
+            WHERE p.post_type = %s
+            AND p.post_status = 'publish'
+            AND tt.taxonomy = %s
+            AND t.term_id IN (
+                SELECT term_id FROM {$wpdb->terms} WHERE slug IN ({$sql_in_clause})
+            )
+        ";
 
-    $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
-    $post_ids = $wpdb->get_col($prepared_post_ids_query);
+        $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
+        $filtered_post_ids = $wpdb->get_col($prepared_post_ids_query);
+    }
 
-    if (empty($post_ids)) {
+    if (empty($filtered_post_ids)) {
         return [];
     }
 
     // Build the query to get unique meta values from the retrieved post IDs
-    $post_ids_in_clause = implode(",", array_map('intval', $post_ids));
+    $post_ids_in_clause = implode(",", $filtered_post_ids);
 
     $query_meta_values = "
         SELECT DISTINCT meta_value
@@ -958,9 +967,9 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
         } else {
             $val = price__format($unique_value);
         }
-
         $unique_values_arr[$unique_value] = $val;
     }
+
     return $unique_values_arr;
 }
 
