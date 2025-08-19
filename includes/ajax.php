@@ -197,6 +197,10 @@ function filter_options($args)
 	$args['fields'] = 'ids';
 
 	$posts = get_posts($args);
+	foreach ($posts as $post) {
+		$year = get__post_meta_by_id($post, 'year');
+		echo $year;
+	}
 	echo '<pre>';
 	var_dump($posts);
 	echo '</pre>';
