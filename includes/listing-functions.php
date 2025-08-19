@@ -760,13 +760,33 @@ function listing_sidebar_filter($category)
                     echo listing__filter_field_terms('make', 'Make', 'manufacturer');
                     echo listing__filter_field('model', 'Model', 'Any', $_model);
                     ?>
-                    <div class="slider">
-                        <div class="price-slider"></div>
-                    </div>
-                    <!-- Slider -->
-                    <div class="range-input">
-                        <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
-                        <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+
+                    <div class="accordion-item accordion-item--price">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-Array" aria-expanded="false" aria-controls="collapseBerths">
+                                <span class="accordion-button-inner">
+                                    <span class="icon-text">
+                                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="28.39" height="28.637" viewBox="0 0 28.39 28.637">
+                                                <path id="Icon_ionic-ios-pricetag" data-name="Icon ionic-ios-pricetag" d="M32.761,3.375H23.343a1.108,1.108,0,0,0-.782.322L7.215,19.282a2.211,2.211,0,0,0,0,3.119l8.967,8.967a2.211,2.211,0,0,0,3.119,0L34.639,15.79a1.108,1.108,0,0,0,.322-.782V5.582A2.2,2.2,0,0,0,32.761,3.375Zm-3.656,8.568a2.452,2.452,0,1,1,2.169-2.169A2.455,2.455,0,0,1,29.106,11.943Z" transform="translate(-6.571 -3.375)" fill="#202020"></path>
+                                            </svg>
+                                        </span>
+                                        Price </span>
+                                    <span class="selected selected--option fs-14 fw-bold">Any</span>
+                                </span>
+                            </button>
+                        </h2>
+                        <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
+                            <div class="accordion-body accordion-body--search-field d-flex gap-1">
+                                <div class="slider">
+                                    <div class="price-slider"></div>
+                                </div>
+                                <!-- Slider -->
+                                <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                                    <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <?php
                     echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
