@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
     read__more();
     listing_search_trigger();
 
-    jQuery('.listing-search--trigger').select2();
+    //jQuery('.listing-search--trigger').select2();
 });
 
 function listing_search_trigger() {
