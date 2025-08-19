@@ -796,7 +796,7 @@ function listing_sidebar_filter($category)
                                     <!-- Slider -->
                                     <div class="range-input">
                                         <input type="range" class="min-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= reset($_our_price) ?>" step="100">
-                                        <input type="range" class="max-range  listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
+                                        <input type="range" class="max-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
                                     </div>
 
                                 </div>
