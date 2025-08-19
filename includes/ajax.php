@@ -196,14 +196,14 @@ function filter_options($args, $field_id, $filter_active)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 
-		if ($filter_active > 1) {
+		if ($filter_active > 0) {
 			$manufacturer = get_the_terms($post, 'manufacturer');
 			foreach ($manufacturer as $maker) {
 				$css['#make'][] = $maker->slug;
 			}
 		}
 	}
-	if ($filter_active = 0) {
+	if ($filter_active == 0) {
 		unset($css[$field_id_val]);
 	}
 
