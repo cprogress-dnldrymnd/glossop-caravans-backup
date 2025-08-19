@@ -211,7 +211,6 @@ function filter_options($args, $field_id)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
-	echo $field_id_val;
 	unset($css[$field_id_val]);
 	$html = '';
 	foreach ($css as $key => $css_val) {
@@ -220,15 +219,16 @@ function filter_options($args, $field_id)
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
 		$html .= '</style>';
 	}
-	echo $html;
+	$html;
 
 ?>
-	
+	<script>
+		jQuery(document).ready(function() {
+			jQuery("<?= $html ?>").appendTo('head');
+		});
+	</script>
 <?php
 
-	echo '<pre>';
-	var_dump($css);
-	echo '</pre>';
 	return ob_get_clean();
 }
 
