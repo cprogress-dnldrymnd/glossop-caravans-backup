@@ -777,17 +777,15 @@ function listing_sidebar_filter($category)
                         </h2>
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
                             <div class="accordion-body accordion-body--search-field d-flex gap-1">
-                                <div class="range-slider-container mb-8">
-                                    <!-- The static gray track background -->
-                                    <div class="slider-track"></div>
-                                    <!-- The blue progress bar that shows the selected range -->
-                                    <div id="slider-progress" class="slider-progress" style="left: 0%; right: 0%;"></div>
-
-                                    <!-- Min price range slider -->
-                                    <input type="range" id="min-slider" min="0" max="1000" value="0">
-                                    <!-- Max price range slider -->
-                                    <input type="range" id="max-slider" min="0" max="1000" value="1000">
+                                <div class="slider">
+                                    <div class="price-slider"></div>
                                 </div>
+                                <!-- Slider -->
+                                <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                                    <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                                </div>
+
                             </div>
                         </div>
                     </div>
