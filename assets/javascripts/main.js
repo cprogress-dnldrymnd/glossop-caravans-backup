@@ -18,6 +18,7 @@ jQuery(document).ready(function () {
 function listing_filter_reset() {
     jQuery('.reset--filter').click(function (e) {
         jQuery('.listing-filter select').val('');
+        jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
 }
