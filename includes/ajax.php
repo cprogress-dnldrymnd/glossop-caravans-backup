@@ -196,8 +196,8 @@ function filter_options($args, $field_id)
 		$css['#berths'][] = get__post_meta_by_id($post, 'berths');
 		$css['#new_used'][] = get__post_meta_by_id($post, 'new_used');
 		$css['#model'][] = get__post_meta_by_id($post, 'model');
-		$css['#min_price'][] = get__post_meta_by_id($post, 'min_price');
-		$css['#max_price'][] = get__post_meta_by_id($post, 'max_price');
+		$css['#min_price'][] = get__post_meta_by_id($post, 'our_price');
+		$css['#max_price'][] = get__post_meta_by_id($post, 'our_price');
 		$css['#layout_type'][] = get__post_meta_by_id($post, 'layout_type');
 		$css['#width'][] = get__post_meta_by_id($post, 'width');
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
