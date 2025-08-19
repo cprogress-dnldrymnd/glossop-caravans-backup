@@ -20,6 +20,7 @@ function listing_search()
 	$width = isset($_POST['widthwidth']) ? $_POST['widthwidth'] : false;
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
+	$field_id = isset($_POST['field_id']) ? $_POST['field_id'] : false;
 
 	$tax_query = [];
 	$meta_query = [];
@@ -136,7 +137,7 @@ function listing_search()
 	}
 
 	$listings = new WP_Query($args);
-	echo filter_options($args);
+	echo filter_options($args, $field_id);
 	$count = $listings->found_posts;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
@@ -189,7 +190,7 @@ function model_options()
 	die();
 }*/
 
-function filter_options($args)
+function filter_options($args, $field_id)
 {
 	ob_start();
 	unset($args['posts_per_page']);
@@ -209,6 +210,7 @@ function filter_options($args)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
+	unset($css[$field_id]);
 	echo '<style>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);

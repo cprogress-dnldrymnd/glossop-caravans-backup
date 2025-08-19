@@ -63,6 +63,7 @@ function listing_search_trigger() {
         width = jQuery('#width').val();
         year = jQuery('#year').val();
         axle = jQuery('#axle').val();
+        field_id = jQuery(this).attr('id');
         data = {
             action: 'listing_search',
             nonce: nonce,
@@ -78,6 +79,7 @@ function listing_search_trigger() {
             width: width,
             year: year,
             axle: axle,
+            field_id: axle,
         };
         jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
