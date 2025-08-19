@@ -28,6 +28,8 @@ function listing_search_trigger() {
                 $val_text = 'Up to ' + $max_price;
             } else if (!$max_price_val && $min_price_val) {
                 $val_text = 'From ' + $min_price;
+            } else if ($max_price_val == $min_price_val) {
+                $val_text = $min_price;
             }
 
             else {
