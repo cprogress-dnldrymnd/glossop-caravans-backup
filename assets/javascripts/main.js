@@ -10,6 +10,10 @@ jQuery(document).ready(function () {
     read__more();
     listing_search_trigger();
     price_range();
+    jQuery('.min-range').change(function (e) {
+        console.log('xxx');
+        e.preventDefault();
+    });
     //jQuery('.listing-search--trigger').select2();
 });
 function price_range() {
@@ -88,7 +92,6 @@ function price_range() {
             max_input_html.text(maxVal);
             rangevalue.css('left', `${((minVal - minPossible) / rangeTotal) * 100}%`);
             rangevalue.css('right', `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`);
-
         }
     });
 }
