@@ -88,7 +88,7 @@ function price_range() {
             max_input_html.text(maxVal);
             rangevalue.css('left', `${((minVal - minPossible) / rangeTotal) * 100}%`);
             rangevalue.css('right', `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`);
-            listing_search_function();
+            //listing_search_function();
         }
     });
 }
