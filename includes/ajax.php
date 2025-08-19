@@ -203,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	if (count($filter_active_arr) == 1) {
+	if (count($filter_active_arr) == 2) {
 		unset($css[$filter_active_arr[0]]);
 	}
 
