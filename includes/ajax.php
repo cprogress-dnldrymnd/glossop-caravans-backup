@@ -204,7 +204,7 @@ function filter_options($args, $field_id, $filter_active)
 			}
 		}
 	}
-	if ($filter_active > 1) {
+	if ($filter_active > 0) {
 		unset($css[$field_id_val]);
 	}
 
