@@ -1075,7 +1075,7 @@ input::-webkit-inner-spin-button {
     right: 0;
     position: absolute;
     border-radius: 5px;
-    background: #01940b;
+    background: var(--orange-color);
 }
 
 .range-input {
@@ -1102,4 +1102,3 @@ input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -webkit-appearance: none;
 }
-
