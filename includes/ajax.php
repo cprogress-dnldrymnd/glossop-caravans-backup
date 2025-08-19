@@ -212,7 +212,7 @@ function filter_options($args)
 	echo '<style>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
-		echo $key . " option$css_val_format{display: none !important}";
+		echo $key . " option:not([value=''])$css_val_format{display: none !important}";
 	}
 	echo '</style>';
 
