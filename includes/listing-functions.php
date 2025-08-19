@@ -780,6 +780,7 @@ function listing_sidebar_filter($category)
                                 <?php
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 ?>
+
                                 <div>
                                     <div class="price-input row g-0">
                                         <div class="price-field col-auto">
@@ -789,6 +790,10 @@ function listing_sidebar_filter($category)
                                             <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="d-flex justify-content-between min-max--holder">
+                                    <div class="min-input form-control"><?= reset($_our_price) ?></div>
+                                    <div class="max-input form-control"><?= end($_our_price) ?> </div>
                                 </div>
                                 <div class="slider--parent">
                                     <div class="slider">
