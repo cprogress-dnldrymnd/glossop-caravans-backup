@@ -13,6 +13,7 @@ jQuery(document).ready(function () {
     //jQuery('.listing-search--trigger').select2();
 });
 function price_range() {
+    $ = jQuery;
     const rangevalue = $(".slider .price-slider");
     const min_input_html = $(".min-input-html");
     const max_input_html = $(".max-input-html");
