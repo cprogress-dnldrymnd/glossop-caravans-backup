@@ -1116,9 +1116,9 @@ input[type="range"]::-webkit-slider-thumb {
             padding: 0;
             border: none;
             border-radius: 0;
-        }
-        &.max-input {
-            text-align: right;
+            &.max-input {
+                text-align: right;
+            }
         }
     }
 }
