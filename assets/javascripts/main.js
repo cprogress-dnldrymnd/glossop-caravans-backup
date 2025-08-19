@@ -22,10 +22,16 @@ function listing_search_trigger() {
             $max_price_val = jQuery('#max_price').val();
             $min_price = jQuery(this).parents('.accordion-item').find('select#min_price option[value="' + $min_price_val + '"]').text();
             $max_price = jQuery(this).parents('.accordion-item').find('select#max_price option[value="' + $max_price_val + '"]').text();
-            if ($max_price_val) {
+            if ($max_price_val && $min_price_val) {
                 $val_text = $min_price + '-' + $max_price;
-            } else {
+            } else if ($max_price_val && !$min_price_val) {
+                $val_text = 'Up to ' + $max_price;
+            } else if (!$max_price_val && $min_price_val) {
                 $val_text = 'From ' + $min_price;
+            }
+
+            else {
+                $val_text = 'Any'
             }
 
         } else {
