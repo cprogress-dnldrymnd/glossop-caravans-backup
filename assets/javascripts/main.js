@@ -135,14 +135,25 @@ function listing_search_trigger() {
 
 
             if ($max_price && $min_price) {
-                $val_text = $min_price + '-' + $max_price;
+                if ($max_price == $min_price) {
+                    $val_text = $min_price;
+                } else {
+                    $val_text = $min_price + '-' + $max_price;
+                }
+            } else if ($max_price && !$min_price) {
+                $val_text = 'Up to ' + $max_price;
+            } else if (!$max_price && $min_price) {
+                $val_text = 'From ' + $min_price;
             } else {
                 $val_text = 'Any'
             }
 
-            console.log($val_text);
 
-
+            if ($val_text == 'Any') {
+                jQuery(this).parents('.accordion-item').removeClass('filter-item--active');
+            } else {
+                jQuery(this).parents('.accordion-item').addClass('filter-item--active');
+            }
 
         } else {
             $val = jQuery(this).val();
