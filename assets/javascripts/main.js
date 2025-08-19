@@ -95,6 +95,7 @@ function listing_search(response) {
 
 function model_options_trigger() {
     jQuery('body').on('change', '#make', function (e) {
+        jQuery('#model').val('');
         make = jQuery('.listing-filter #make').val();
         category = jQuery('#category').val();
         const nonce = posts_vars.nonce;
