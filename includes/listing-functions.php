@@ -781,7 +781,7 @@ function listing_sidebar_filter($category)
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 ?>
 
-                                <div class="d-none">
+                                <div class="price-input d-none">
                                     <input name="min_price" id="min_price" type="number" class="min-input form-control listing-search--trigger" value="<?= reset($_our_price) ?>" readonly>
                                     <input name="max_price" id="max_price" type="number" class="max-input form-control listing-search--trigger" value="<?= end($_our_price) ?>" readonly>
                                 </div>
