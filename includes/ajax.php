@@ -145,7 +145,7 @@ function listing_search()
 		$html .= '<p> No listing found on your search filter. </p>';
 		$html .= '</div>';
 	}
-
+	$html .= var_dump($args);
 	$response_data = array(
 		'status'  => 'success',
 		'filter_options' => filter_options($args, $field_id, $filter_active),
@@ -196,7 +196,7 @@ function filter_options($args, $field_id, $filter_active)
 		$css['#width'][] = get__post_meta_by_id($post, 'width');
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
-		
+
 		$manufacturer = get_the_terms($post, 'manufacturer');
 		foreach ($manufacturer as $maker) {
 			$css['#make'][] = $maker->slug;
