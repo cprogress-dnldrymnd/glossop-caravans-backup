@@ -203,6 +203,15 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
+	/*
+	if (count($filter_active_arr) == 2) {
+		unset($css[$filter_active_arr[0]]);
+	} else if (count($filter_active_arr) == 3) {
+		if (in_array("#make", $filter_active_arr) && !in_array("#model", $filter_active_arr)) {
+			unset($css['#make']);
+		}
+	} else {
+	}*/
 	unset($css[$field_id_val]);
 
 	$html = '<style id="filter--options-style" ' . (count($filter_active_arr) - 1) . '>';
