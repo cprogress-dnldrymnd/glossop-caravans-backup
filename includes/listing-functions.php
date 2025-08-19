@@ -782,10 +782,10 @@ function listing_sidebar_filter($category)
                                 ?>
                                 <div class="price-input d-flex gap-1">
                                     <div class="price-field">
-                                        <input type="number" class="min-input" value="<?= reset($_our_price) ?>" readonly>
+                                        <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
                                     </div>
                                     <div class="price-field">
-                                        <input type="number" class="max-input" value="<?= end($_our_price) ?>" readonly>
+                                        <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="slider--parent">
