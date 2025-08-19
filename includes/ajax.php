@@ -131,7 +131,7 @@ function listing_search()
 
 	$listings = new WP_Query($args);
 	$count = $listings->found_posts;
-	$html = '';
+	$html = '' . $filter_active;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
 			$listings->the_post();
@@ -211,6 +211,7 @@ function filter_options($args, $field_id, $filter_active)
 		}
 	} else {
 	}
+	//unset($css[$filter_active_arr[count($filter_active_arr) - 1]]);
 
 	$html = '<style id="filter--options-style" ' . (count($filter_active_arr) - 1) . '>';
 	foreach ($css as $key => $css_val) {
