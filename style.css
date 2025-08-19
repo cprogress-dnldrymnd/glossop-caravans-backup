@@ -11941,6 +11941,13 @@ input[type="range"]::-webkit-slider-thumb {
 .reset-filter-holder {
   padding: 20px 20px 0 20px;
   text-align: right; }
+  .reset-filter-holder button {
+    margin: 20px 20px 0;
+    padding: 0;
+    border: none;
+    background: none;
+    border-bottom: 1px solid;
+    cursor: pointer; }
 
 .container,
 #os-banner .container-fluid,
