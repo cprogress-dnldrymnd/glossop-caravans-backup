@@ -967,22 +967,26 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
 
 function get_model_options($make, $category)
 {
+    $tax_query = [];
+
     $args = array(
         'post_type' => 'caravan',
         'numberposts' => -1,
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'listing_category',
-                'field' => 'term_id',
-                'terms' => $category,
-            ),
-            array(
-                'taxonomy' => 'manufacturer',
-                'field' => 'slug',
-                'terms' => $make,
-            ),
-        ),
     );
+    if ($category) {
+        $tax_query[] = array(
+            'taxonomy' => 'listing_category',
+            'field' => 'term_id',
+            'terms' => $category,
+        );
+    }
+    if ($make) {
+        $tax_query[] = array(
+            'taxonomy' => 'manufacturer',
+            'field' => 'slug',
+            'terms' => $make,
+        );
+    }
     $posts = get_posts($args);
     $model_arr = [];
     foreach ($posts as $post) {
