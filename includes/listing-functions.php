@@ -778,7 +778,8 @@ function listing_sidebar_filter($category)
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
                             <div class="accordion-body accordion-body--search-field d-flex gap-1">
                                 <?php
-                                var_dump($_our_price);
+                                $_our_price = get__search_field_options('_our_price', [$category]);
+                                $our_price_count = count($_our_price);
                                 ?>
                                 <div class="slider--parent">
                                     <div class="slider">
@@ -786,8 +787,8 @@ function listing_sidebar_filter($category)
                                     </div>
                                     <!-- Slider -->
                                     <div class="range-input">
-                                        <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
-                                        <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                                        <input type="range" class="min-range" min="0" max="10000" value="<?= $_our_price[0] ?>" step="1">
+                                        <input type="range" class="max-range" min="0" max="10000" value="<?= $_our_price[0] ?>" step="1">
                                     </div>
 
                                 </div>
