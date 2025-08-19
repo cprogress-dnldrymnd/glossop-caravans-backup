@@ -65,12 +65,8 @@ function listing_search_trigger() {
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
-        console.log(jQuery('.filter-item--active').length);
-        if (jQuery('.filter-item--active').length > 0) {
-            filter_active = 'true';
-        } else {
-            filter_active = 'false';
-        }
+
+        filter_active = jQuery('.filter-item--active').length;
 
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();

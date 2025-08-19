@@ -131,7 +131,7 @@ function listing_search()
 
 	$listings = new WP_Query($args);
 	$count = $listings->found_posts;
-	$html = '';
+	$html = '' . $filter_active;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
 			$listings->the_post();
