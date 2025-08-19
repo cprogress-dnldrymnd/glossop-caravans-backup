@@ -213,12 +213,20 @@ function filter_options($args, $field_id)
 	}
 	echo $field_id_val;
 	unset($css[$field_id_val]);
-	echo '<style>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
-		echo $key . " option:not([value=''])$css_val_format{display: none !important}";
+		$html = '<style style_id="' . $key . '">';
+		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
+		$html .= '</style>';
 	}
-	echo '</style>';
+
+?>
+	<script>
+		jQuery(document).ready(function() {
+			jQuery('<?= $html ?>').appendTo('head');
+		});
+	</script>
+<?php
 
 	echo '<pre>';
 	var_dump($css);
