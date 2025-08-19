@@ -186,6 +186,7 @@ function filter_options($args, $field_id, $filter_active)
 
 	$posts = get_posts($args);
 	$css = [];
+	$filter_active = intval($filter_active);
 	foreach ($posts as $post) {
 		$css['#berths'][] = get__post_meta_by_id($post, 'berths');
 		$css['#new_used'][] = get__post_meta_by_id($post, 'new_used');
