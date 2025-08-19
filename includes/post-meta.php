@@ -121,6 +121,11 @@ Container::make('post_meta', __('Year'))
     ->add_fields(array(
         Field::make('text', 'year', __('')),
     ));
+Container::make('post_meta', __('Layout Type'))
+    ->where('post_type', '=', 'caravan')
+    ->add_fields(array(
+        Field::make('text', 'layout_type', __('')),
+    ));
 
 Container::make('post_meta', __('Warranty'))
     ->where('post_type', '=', 'caravan')

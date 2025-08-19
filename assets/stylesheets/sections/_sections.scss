@@ -567,11 +567,16 @@
     }
 }
 
-
 .ajax--section-js {
     &.is--doing-ajax {
         .listing-search--trigger {
             pointer-events: none;
         }
     }
+}
+
+.no-found-listing {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
 }
