@@ -29,6 +29,9 @@ function listing_filter_reset() {
             jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         });
+
+        jQuery('.min-range').val(jQuery('.min-range').attr('min'));
+        jQuery('.max-range').val(jQuery('.max-range').attr('max'));
         jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
