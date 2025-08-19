@@ -219,12 +219,11 @@ function filter_options($args, $field_id)
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
 		$html .= '</style>';
 	}
-	$html;
 
 ?>
 	<script>
 		jQuery(document).ready(function() {
-			jQuery("<?= $html ?>").appendTo('head');
+			console.log('xxx');
 		});
 	</script>
 <?php
