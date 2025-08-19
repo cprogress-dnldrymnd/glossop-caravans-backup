@@ -13,7 +13,7 @@ jQuery(document).ready(function () {
 });
 
 function listing_search_trigger() {
-    var listing_filter = '';
+    var filter_active = '';
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
