@@ -201,8 +201,9 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	
-	unset($css[$field_id_val]);
+	if ($filter_active == 'false') {
+		unset($css[$field_id_val]);
+	}
 	$html = '<style id="filter--options-style">';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
