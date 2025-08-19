@@ -185,7 +185,9 @@ function filter_options($args, $field_id, $filter_active)
 
 	$posts = get_posts($args);
 	$css = [];
-	$filter_active = intval($filter_active);
+
+	$filter_active_arr = explode("|", $filter_active);
+
 	foreach ($posts as $post) {
 		$css['#berths'][] = get__post_meta_by_id($post, 'berths');
 		$css['#new_used'][] = get__post_meta_by_id($post, 'new_used');
@@ -200,11 +202,9 @@ function filter_options($args, $field_id, $filter_active)
 		foreach ($manufacturer as $maker) {
 			$css['#make'][] = $maker->slug;
 		}
-		if ($filter_active > 0) {
-		}
 	}
-	if ($filter_active == 1) {
-		unset($css[$field_id_val]);
+	if (count($filter_active_arr) == 1) {
+		unset($css[$filter_active_arr[0]]);
 	}
 
 	$html = '<style id="filter--options-style">';
