@@ -19,19 +19,6 @@ function listings_fields()
         ),
     ));
 
-    $listing_fields['type'] = form_control(array(
-        'type'    => 'select',
-        'name'    => 'new_used',
-        'id'      => 'new_used',
-        'label'   => 'New-Used',
-        'class'   => 'form-control-lg',
-        'options' => array(
-            ''     => 'New or Used?',
-            'New'  => 'New',
-            'Used' => 'Used',
-            'Both' => 'Both',
-        ),
-    ));
 
     $listing_fields['berths'] = form_control(array(
         'type'    => 'select',
@@ -768,14 +755,14 @@ function listing_sidebar_filter($category)
                         </div>
                     </div>
                     <?php
-                    echo accordion__filter('new_used', 'New-Used', 'Any', $_new_used);
-                    echo accordion__filter('berths', 'Berths', 'Any', $_berths);
-                    echo accordion__filter_terms('make', 'Make', 'manufacturer');
-                    echo accordion__filter('model', 'Model', 'Any', $_model);
-                    echo accordion__filter(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
-                    echo accordion__filter('year', 'Year', 'Any', $_year);
-                    echo accordion__filter('width', 'Width', 'Any', $_width);
-                    echo accordion__filter('axle', 'Axles', 'Any', $_axle);
+                    echo listing__filter_field('new_used', 'New-Used', 'Any', $_new_used);
+                    echo listing__filter_field('berths', 'Berths', 'Any', $_berths);
+                    echo listing__filter_field_terms('make', 'Make', 'manufacturer');
+                    echo listing__filter_field('model', 'Model', 'Any', $_model);
+                    echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
+                    echo listing__filter_field('year', 'Year', 'Any', $_year);
+                    echo listing__filter_field('width', 'Width', 'Any', $_width);
+                    echo listing__filter_field('axle', 'Axles', 'Any', $_axle);
                     ?>
                 </div>
             </div>
@@ -786,7 +773,7 @@ function listing_sidebar_filter($category)
     return ob_get_clean();
 }
 
-function accordion__filter($id, $label, $placeholder = '', $available_options, $is_price = false)
+function listing__filter_field($id, $label, $placeholder = '', $available_options, $is_price = false, $is_accordion = true)
 {
     ob_start();
     if ($is_price == true) {
@@ -801,75 +788,78 @@ function accordion__filter($id, $label, $placeholder = '', $available_options, $
         $placeholder_val = $placeholder;
     }
 ?>
-    <div class="accordion-item accordion-item--<?= $id ?>">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-<?= $id ?>" aria-expanded="false"
-                aria-controls="collapseBerths">
-                <span class="accordion-button-inner">
-                    <span class="icon-text">
-                        <span class="icon"><?= get__theme_icons($icon . '.svg') ?></span>
-                        <?= $label ?>
+    <?php if ($is_accordion) { ?>
+        <div class="accordion-item accordion-item--<?= $id ?>">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse-<?= $id ?>" aria-expanded="false"
+                    aria-controls="collapseBerths">
+                    <span class="accordion-button-inner">
+                        <span class="icon-text">
+                            <span class="icon"><?= get__theme_icons($icon . '.svg') ?></span>
+                            <?= $label ?>
+                        </span>
+                        <span class="selected selected--option fs-14 fw-bold"><?= $placeholder_val ?></span>
                     </span>
-                    <span class="selected selected--option fs-14 fw-bold"><?= $placeholder_val ?></span>
-                </span>
-            </button>
-        </h2>
-        <div id="collapse-<?= $id ?>" class="accordion-collapse collapse"
-            data-bs-parent="#accordionFilter">
-            <div class="accordion-body accordion-body--search-field d-flex gap-1">
+                </button>
+            </h2>
+            <div id="collapse-<?= $id ?>" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFilter">
+                <div class="accordion-body accordion-body--search-field d-flex gap-1">
                 <?php
-                if ($is_price == true) {
-                    $options_min[''] = $placeholder[0];
-                    echo form_control(array(
-                        'type'    => 'select',
-                        'name'    => $id[0],
-                        'id'      => $id[0],
-                        'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => $options_min + $available_options
-                    ));
-                    $options_max[''] = $placeholder[1];
-                    echo form_control(array(
-                        'type'    => 'select',
-                        'name'    => $id[1],
-                        'id'      => $id[1],
-                        'class'   => 'w-100 form-control-lg listing-search--trigger',
-                        'options' => $options_max + $available_options
-                    ));
-                } else {
-                    $options[''] = $placeholder;
-                    echo form_control(array(
-                        'type'    => 'select',
-                        'name'    => $id,
-                        'id'      => $id,
-                        'class'   => 'form-control-lg listing-search--trigger',
-                        'options' => $options + $available_options
-                    ));
-                }
-
+            }
+            if ($is_price == true) {
+                $options_min[''] = $placeholder[0];
+                echo form_control(array(
+                    'type'    => 'select',
+                    'name'    => $id[0],
+                    'id'      => $id[0],
+                    'class'   => 'w-100 form-control-lg listing-search--trigger',
+                    'options' => $options_min + $available_options
+                ));
+                $options_max[''] = $placeholder[1];
+                echo form_control(array(
+                    'type'    => 'select',
+                    'name'    => $id[1],
+                    'id'      => $id[1],
+                    'class'   => 'w-100 form-control-lg listing-search--trigger',
+                    'options' => $options_max + $available_options
+                ));
+            } else {
+                $options[''] = $placeholder;
+                echo form_control(array(
+                    'type'    => 'select',
+                    'name'    => $id,
+                    'id'      => $id,
+                    'class'   => 'form-control-lg listing-search--trigger',
+                    'options' => $options + $available_options
+                ));
+            }
+            if ($is_accordion) {
                 ?>
+                </div>
             </div>
         </div>
-    </div>
-<?php
-    return ob_get_clean();
-}
+    <?php
+            }
+            return ob_get_clean();
+        }
 
 
-function accordion__filter_terms($id, $label, $taxonomy)
-{
-    ob_start();
-    $terms = get_terms(array(
-        'taxonomy' => $taxonomy,
-        'hide_empty' => true
-    ));
-    $options[''] = 'Any';
+        function listing__filter_field_terms($id, $label, $taxonomy)
+        {
+            ob_start();
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'hide_empty' => true
+            ));
+            $options[''] = 'Any';
 
-    foreach ($terms as $term) {
-        $options[$term->slug] = $term->name;
-    }
+            foreach ($terms as $term) {
+                $options[$term->slug] = $term->name;
+            }
 
-?>
+    ?>
     <div class="accordion-item accordion-item--<?= $id ?>">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -900,23 +890,23 @@ function accordion__filter_terms($id, $label, $taxonomy)
         </div>
     </div>
 <?php
-    return ob_get_clean();
-}
+            return ob_get_clean();
+        }
 
 
-function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
-{
-    global $wpdb;
-    // Sanitize the input to prevent SQL injection
-    $meta_key = sanitize_text_field($meta_key);
-    $post_type = sanitize_text_field($post_type);
-    $taxonomy = sanitize_text_field($taxonomy);
-    $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
+        function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
+        {
+            global $wpdb;
+            // Sanitize the input to prevent SQL injection
+            $meta_key = sanitize_text_field($meta_key);
+            $post_type = sanitize_text_field($post_type);
+            $taxonomy = sanitize_text_field($taxonomy);
+            $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
 
-    // Build the query to get post IDs filtered by taxonomy and term slugs
-    $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
+            // Build the query to get post IDs filtered by taxonomy and term slugs
+            $sql_in_clause = "'" . implode("','", $term_slugs) . "'";
 
-    $query_post_ids = "
+            $query_post_ids = "
         SELECT p.ID
         FROM {$wpdb->posts} AS p
         INNER JOIN {$wpdb->term_relationships} AS tr ON p.ID = tr.object_id
@@ -928,17 +918,17 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
         AND t.term_id IN ({$sql_in_clause})
     ";
 
-    $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
-    $post_ids = $wpdb->get_col($prepared_post_ids_query);
+            $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
+            $post_ids = $wpdb->get_col($prepared_post_ids_query);
 
-    if (empty($post_ids)) {
-        return [];
-    }
+            if (empty($post_ids)) {
+                return [];
+            }
 
-    // Build the query to get unique meta values from the retrieved post IDs
-    $post_ids_in_clause = implode(",", array_map('intval', $post_ids));
+            // Build the query to get unique meta values from the retrieved post IDs
+            $post_ids_in_clause = implode(",", array_map('intval', $post_ids));
 
-    $query_meta_values = "
+            $query_meta_values = "
         SELECT DISTINCT meta_value
         FROM {$wpdb->postmeta}
         WHERE meta_key = %s
@@ -946,53 +936,53 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
         ORDER BY meta_value ASC
     ";
 
-    $prepared_meta_values_query = $wpdb->prepare($query_meta_values, $meta_key);
-    $unique_values = $wpdb->get_col($prepared_meta_values_query);
+            $prepared_meta_values_query = $wpdb->prepare($query_meta_values, $meta_key);
+            $unique_values = $wpdb->get_col($prepared_meta_values_query);
 
-    $unique_values_arr = [];
-    foreach ($unique_values as $unique_value) {
-        if ($format == 'default') {
-            $val = $unique_value;
-        } else {
-            $val = price__format($unique_value);
+            $unique_values_arr = [];
+            foreach ($unique_values as $unique_value) {
+                if ($format == 'default') {
+                    $val = $unique_value;
+                } else {
+                    $val = price__format($unique_value);
+                }
+
+                $unique_values_arr[$unique_value] = $val;
+            }
+            return $unique_values_arr;
         }
 
-        $unique_values_arr[$unique_value] = $val;
-    }
-    return $unique_values_arr;
-}
+        function get_model_options($make, $category)
+        {
+            $tax_query = [];
 
-function get_model_options($make, $category)
-{
-    $tax_query = [];
+            $args = array(
+                'post_type' => 'caravan',
+                'numberposts' => -1,
+            );
+            if ($category) {
+                $tax_query[] = array(
+                    'taxonomy' => 'listing_category',
+                    'field' => 'term_id',
+                    'terms' => $category,
+                );
+            }
+            if ($make) {
+                $tax_query[] = array(
+                    'taxonomy' => 'manufacturer',
+                    'field' => 'slug',
+                    'terms' => $make,
+                );
+            }
+            if ($tax_query) {
+                $args['tax_query'] = $tax_query;
+            }
+            $posts = get_posts($args);
+            $model_arr = [];
+            foreach ($posts as $post) {
+                $model = get__post_meta_by_id($post->ID, 'model');
+                $model_arr[$model] = $model;
+            }
 
-    $args = array(
-        'post_type' => 'caravan',
-        'numberposts' => -1,
-    );
-    if ($category) {
-        $tax_query[] = array(
-            'taxonomy' => 'listing_category',
-            'field' => 'term_id',
-            'terms' => $category,
-        );
-    }
-    if ($make) {
-        $tax_query[] = array(
-            'taxonomy' => 'manufacturer',
-            'field' => 'slug',
-            'terms' => $make,
-        );
-    }
-    if ($tax_query) {
-        $args['tax_query'] = $tax_query;
-    }
-    $posts = get_posts($args);
-    $model_arr = [];
-    foreach ($posts as $post) {
-        $model = get__post_meta_by_id($post->ID, 'model');
-        $model_arr[$model] = $model;
-    }
-
-    return $model_arr;
-}
+            return $model_arr;
+        }

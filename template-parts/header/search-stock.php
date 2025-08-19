@@ -1,5 +1,6 @@
 <?php
 global $listing_fields;
+$_new_used = get__search_field_options('_new_used', [$category]);
 ?>
 <div class="seach-stock-holder">
     <?php if (is_page(186) || is_page(192)) { ?>
