@@ -11890,6 +11890,9 @@ span.icons {
   height: 40px !important;
   /* Adjust to match the selection box height */ }
 
+.slider--parent {
+  position: relative; }
+
 /* Remove Arrows/Spinners */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

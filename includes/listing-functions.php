@@ -777,15 +777,17 @@ function listing_sidebar_filter($category)
                         </h2>
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
                             <div class="accordion-body accordion-body--search-field d-flex gap-1">
-                                <div class="slider">
-                                    <div class="price-slider"></div>
-                                </div>
-                                <!-- Slider -->
-                                <div class="range-input">
-                                    <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
-                                    <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
-                                </div>
+                                <div class="slider--parent">
+                                    <div class="slider">
+                                        <div class="price-slider"></div>
+                                    </div>
+                                    <!-- Slider -->
+                                    <div class="range-input">
+                                        <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                                        <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
