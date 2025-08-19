@@ -1,6 +1,5 @@
 <?php
 global $listing_fields;
-$_new_used = get__search_field_options('_new_used', [$category]);
 ?>
 <div class="seach-stock-holder">
     <?php if (is_page(186) || is_page(192)) { ?>
@@ -42,7 +41,7 @@ $_new_used = get__search_field_options('_new_used', [$category]);
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
                             <div class="col-6 col-md-4 col-lg">
-                                <?= listing__filter_field('new_used', 'New-Used', 'Any', $_new_used, false, false) ?>
+                                <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
                                 <?= $listing_fields['berths'] ?>
