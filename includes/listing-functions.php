@@ -834,6 +834,9 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                     'class'   => 'form-control-lg listing-search--trigger',
                     'options' => $options + $available_options
                 );
+                if($is_accordion==false) {
+                    $args['label'] = $label;
+                }
                 echo form_control($args);
             }
             if ($is_accordion) {
