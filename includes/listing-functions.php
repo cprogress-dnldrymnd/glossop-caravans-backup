@@ -759,6 +759,13 @@ function listing_sidebar_filter($category)
                     echo listing__filter_field('berths', 'Berths', 'Any', $_berths);
                     echo listing__filter_field_terms('make', 'Make', 'manufacturer');
                     echo listing__filter_field('model', 'Model', 'Any', $_model);
+                    ?>
+                    <!-- Slider -->
+                    <div class="range-input">
+                        <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                        <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                    </div>
+                    <?php
                     echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo listing__filter_field('year', 'Year', 'Any', $_year);
                     echo listing__filter_field('width', 'Width', 'Any', $_width);
