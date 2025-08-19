@@ -827,13 +827,17 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                 ));
             } else {
                 $options[''] = $placeholder;
-                echo form_control(array(
+                $args = array(
                     'type'    => 'select',
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg listing-search--trigger',
-                    'options' => $options + $available_options
-                ));
+                    'options' => $options
+                );
+                if ($is_accordion == false) {
+                    $args['label'] = $label;
+                }
+                echo form_control($args);
             }
             if ($is_accordion) {
                 ?>
@@ -878,13 +882,15 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
             data-bs-parent="#accordionFilter">
             <div class="accordion-body">
                 <?php
-                echo form_control(array(
+                $args = array(
                     'type'    => 'select',
                     'name'    => $id,
                     'id'      => $id,
                     'class'   => 'form-control-lg listing-search--trigger',
                     'options' => $options
-                ));
+                );
+
+                echo form_control($args);
                 ?>
             </div>
         </div>
