@@ -203,6 +203,10 @@ function filter_options($args, $field_id)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
+	$manufacturer = get_the_terms($post, 'manufacturer');
+	foreach ($manufacturer as $maker) {
+		$css['#make'][$maker->slug] = $maker->name;
+	}
 	unset($css[$field_id_val]);
 	$html = '<style id="filter--options-style">';
 	foreach ($css as $key => $css_val) {
