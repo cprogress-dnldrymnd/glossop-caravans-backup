@@ -20,9 +20,16 @@ function listing_filter_reset() {
 
         jQuery('.listing-filter select').each(function (index, element) {
             jQuery(this).val('');
-            jQuery(this).trigger('change');
-  
+            if (jQuery(this).attr('id') == 'price_sort') {
+                $val_text = 'Default';
+            } else {
+                $val_text = 'Any';
+            }
+
+            jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+
         });
+        jQuery('.accordion-item--sortby select').trigger('change');
         e.preventDefault();
     });
 }
