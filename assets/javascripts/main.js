@@ -13,96 +13,78 @@ jQuery(document).ready(function () {
     //jQuery('.listing-search--trigger').select2();
 });
 function price_range() {
-    const rangevalue = document.querySelector(".slider .price-slider");
-    const rangeInputvalue = document.querySelectorAll(".range-input input");
-
-    // Set the price gap
-    let priceGap = 500;
+    const rangevalue = $(".slider .price-slider");
+    const rangeInputvalue = $(".range-input input");
+    const priceInputvalue = $(".price-input input");
+    const priceGap = 500;
 
     // Get the minimum and maximum possible values from the range inputs
-    // This makes the code dynamic and not hard-coded to 0 and 10000
-    const minPossible = parseInt(rangeInputvalue[0].min);
-    const maxPossible = parseInt(rangeInputvalue[0].max);
+    const minPossible = parseInt(rangeInputvalue.eq(0).attr('min'));
+    const maxPossible = parseInt(rangeInputvalue.eq(0).attr('max'));
     const rangeTotal = maxPossible - minPossible;
 
     // Adding event listeners to price input elements
-    const priceInputvalue = document.querySelectorAll(".price-input input");
-    for (let i = 0; i < priceInputvalue.length; i++) {
-        priceInputvalue[i].addEventListener("input", e => {
+    priceInputvalue.on("input", function(e) {
+        let minp = parseInt(priceInputvalue.eq(0).val());
+        let maxp = parseInt(priceInputvalue.eq(1).val());
+        let diff = maxp - minp;
 
-            // Parse min and max values of the range input
-            let minp = parseInt(priceInputvalue[0].value);
-            let maxp = parseInt(priceInputvalue[1].value);
-            let diff = maxp - minp
+        // Validate the input values against the range's min and max
+        if (minp < minPossible) {
+            alert(`minimum price cannot be less than ${minPossible}`);
+            priceInputvalue.eq(0).val(minPossible);
+            minp = minPossible;
+        }
 
-            // Validate the input values against the range's min and max
+        if (maxp > maxPossible) {
+            alert(`maximum price cannot be greater than ${maxPossible}`);
+            priceInputvalue.eq(1).val(maxPossible);
+            maxp = maxPossible;
+        }
+
+        if (minp > maxp - priceGap) {
+            priceInputvalue.eq(0).val(maxp - priceGap);
+            minp = maxp - priceGap;
             if (minp < minPossible) {
-                alert(`minimum price cannot be less than ${minPossible}`);
-                priceInputvalue[0].value = minPossible;
+                priceInputvalue.eq(0).val(minPossible);
                 minp = minPossible;
             }
-
-            if (maxp > maxPossible) {
-                alert(`maximum price cannot be greater than ${maxPossible}`);
-                priceInputvalue[1].value = maxPossible;
-                maxp = maxPossible;
-            }
-
-            if (minp > maxp - priceGap) {
-                priceInputvalue[0].value = maxp - priceGap;
-                minp = maxp - priceGap;
-
-                if (minp < minPossible) {
-                    priceInputvalue[0].value = minPossible;
-                    minp = minPossible;
-                }
-            }
-
-            // Check if the price gap is met and max price is within the range
-            if (diff >= priceGap && maxp <= maxPossible) {
-                if (e.target.className === "min-input") {
-                    rangeInputvalue[0].value = minp;
-                    // Corrected calculation for `left` position based on the minPossible value
-                    rangevalue.style.left = `${((minp - minPossible) / rangeTotal) * 100}%`;
-                }
-                else {
-                    rangeInputvalue[1].value = maxp;
-                    // Corrected calculation for `right` position based on the minPossible value
-                    rangevalue.style.right = `${100 - (((maxp - minPossible) / rangeTotal) * 100)}%`;
-                }
-            }
-        });
-
-        // Add event listeners to range input elements
-        for (let i = 0; i < rangeInputvalue.length; i++) {
-            rangeInputvalue[i].addEventListener("input", e => {
-                let minVal = parseInt(rangeInputvalue[0].value);
-                let maxVal = parseInt(rangeInputvalue[1].value);
-
-                let diff = maxVal - minVal
-
-                // Check if the price gap is exceeded
-                if (diff < priceGap) {
-                    // Check if the input is the min range input
-                    if (e.target.className === "min-range") {
-                        rangeInputvalue[0].value = maxVal - priceGap;
-                    }
-                    else {
-                        rangeInputvalue[1].value = minVal + priceGap;
-                    }
-                }
-                else {
-                    // Update price inputs and range progress
-                    priceInputvalue[0].value = minVal;
-                    priceInputvalue[1].value = maxVal;
-                    // Corrected calculation for `left` position
-                    rangevalue.style.left = `${((minVal - minPossible) / rangeTotal) * 100}%`;
-                    // Corrected calculation for `right` position
-                    rangevalue.style.right = `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`;
-                }
-            });
         }
-    }
+
+        // Check if the price gap is met and max price is within the range
+        if (diff >= priceGap && maxp <= maxPossible) {
+            if ($(this).hasClass("min-input")) {
+                rangeInputvalue.eq(0).val(minp);
+                rangevalue.css('left', `${((minp - minPossible) / rangeTotal) * 100}%`);
+            } else {
+                rangeInputvalue.eq(1).val(maxp);
+                rangevalue.css('right', `${100 - (((maxp - minPossible) / rangeTotal) * 100)}%`);
+            }
+        }
+    });
+
+    // Add event listeners to range input elements
+    rangeInputvalue.on("input", function(e) {
+        let minVal = parseInt(rangeInputvalue.eq(0).val());
+        let maxVal = parseInt(rangeInputvalue.eq(1).val());
+        let diff = maxVal - minVal;
+
+        // Check if the price gap is exceeded
+        if (diff < priceGap) {
+            // Check if the input is the min range input
+            if ($(this).hasClass("min-range")) {
+                rangeInputvalue.eq(0).val(maxVal - priceGap);
+            } else {
+                rangeInputvalue.eq(1).val(minVal + priceGap);
+            }
+        } else {
+            // Update price inputs and range progress
+            priceInputvalue.eq(0).val(minVal);
+            priceInputvalue.eq(1).val(maxVal);
+            rangevalue.css('left', `${((minVal - minPossible) / rangeTotal) * 100}%`);
+            rangevalue.css('right', `${100 - (((maxVal - minPossible) / rangeTotal) * 100)}%`);
+        }
+    });
 }
 function listing_search_trigger() {
 

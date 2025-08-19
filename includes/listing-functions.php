@@ -792,8 +792,8 @@ function listing_sidebar_filter($category)
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between min-max--holder">
-                                    <div class="min-input form-control">£ <?= reset($_our_price) ?></div>
-                                    <div class="max-input form-control">£ <?= end($_our_price) ?> </div>
+                                    <div class="min-input form-control">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
+                                    <div class="max-input form-control">£ <span class="max-input-html"><?= end($_our_price) ?></span> </div>
                                 </div>
                                 <div class="slider--parent">
                                     <div class="slider">
