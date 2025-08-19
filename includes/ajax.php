@@ -194,6 +194,7 @@ function filter_options($args, $field_id)
 {
 	ob_start();
 	unset($args['posts_per_page']);
+	$field_id_val = '#' . $field_id;
 	$args['numberposts'] = -1;
 	$args['fields'] = 'ids';
 
@@ -210,7 +211,8 @@ function filter_options($args, $field_id)
 		$css['#year'][] = get__post_meta_by_id($post, 'year');
 		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
 	}
-	unset($css['#' . $field_id]);
+	echo $field_id_val;
+	unset($css['#' . $field_id_val]);
 	echo '<style>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
