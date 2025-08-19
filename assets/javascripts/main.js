@@ -89,7 +89,9 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-
+    console.log(response.listing_count);
+    console.log(response.html);
+    console.log(response.filter_options);
     jQuery('#results .listings > div').remove();
     jQuery('#results .listings').html(response.html);
 
