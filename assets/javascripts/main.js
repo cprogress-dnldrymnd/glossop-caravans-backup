@@ -19,7 +19,7 @@ function price_range() {
     const rangeInputvalue = document.querySelectorAll(".range-input input");
 
     // Set the price gap
-    let priceGap = 500;
+    let priceGap = 100;
 
     // Adding event listeners to price input elements
     const priceInputvalue = document.querySelectorAll(".price-input input");
