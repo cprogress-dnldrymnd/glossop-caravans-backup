@@ -39,6 +39,12 @@ function listing_search_trigger() {
             $val = jQuery(this).val();
             $val_text = jQuery(this).parents('.accordion-item').find('select option[value="' + $val + '"]').text();
         }
+
+        if (jQuery(this).attr('id') == 'make') {
+            model = '';
+        } else {
+            model = jQuery('.listing-filter #model').val();
+        }
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
 
         const nonce = posts_vars.nonce;
@@ -47,7 +53,6 @@ function listing_search_trigger() {
         new_used = jQuery('.listing-filter #new_used').val();
         berths = jQuery('#berths').val();
         make = jQuery('.listing-filter #make').val();
-        model = jQuery('.listing-filter #model').val();
         min_price = jQuery('.listing-filter #min_price').val();
         max_price = jQuery('.listing-filter #max_price').val();
         layout_type = jQuery('#layout_type').val();
@@ -95,7 +100,6 @@ function listing_search(response) {
 
 function model_options_trigger() {
     jQuery('body').on('change', '#make', function (e) {
-        jQuery('#model').val('');
         make = jQuery('.listing-filter #make').val();
         category = jQuery('#category').val();
         const nonce = posts_vars.nonce;
