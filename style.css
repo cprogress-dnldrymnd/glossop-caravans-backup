@@ -13257,6 +13257,11 @@ h5, .h5 {
 .ajax--section-js.is--doing-ajax .listing-search--trigger {
   pointer-events: none; }
 
+.no-found-listing {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px; }
+
 .static-page-content {
   padding-top: var(--md-spacing);
   padding-bottom: var(--md-spacing); }

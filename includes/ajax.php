@@ -170,3 +170,20 @@ function listing_search()
 
 	die();
 }
+
+
+add_action('wp_ajax_nopriv_model_options', 'model_options'); // for not logged in users
+add_action('wp_ajax_model_options', 'model_options');
+function model_options()
+{
+
+	// Verify nonce for security.
+	if (! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'my_ajax_nonce')) {
+		wp_send_json_error('Nonce verification failed.');
+	}
+	$make = isset($_POST['make']) ? $_POST['make'] : false;
+
+	echo $make;
+
+	die();
+}

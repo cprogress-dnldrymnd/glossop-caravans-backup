@@ -15,8 +15,6 @@ jQuery(document).ready(function () {
 
 function listing_search_trigger() {
     jQuery('body').on('change', '.listing-search--trigger', function (e) {
-
-
         if (jQuery(this).attr('id') == 'min_price' || jQuery(this).attr('id') == 'max_price') {
             $min_price_val = jQuery('#min_price').val();
             $max_price_val = jQuery('#max_price').val();
@@ -94,6 +92,22 @@ function listing_search(response) {
     jQuery('#results').removeClass('hidden-visibility');
 }
 
+function model_options_trigger() {
+    jQuery('body').on('change', '#make', function (e) {
+        make = jQuery('.listing-filter #make').val();
+        data = {
+            action: 'model_options',
+            nonce: nonce,
+            make: make,
+        };
+        ajax_function(data);
+    });
+}
+
+function model_options(response) {
+    console.log(response);
+}
+
 
 
 function ajax_function(data) {
@@ -105,6 +119,9 @@ function ajax_function(data) {
         success: function (response) {
             if (data.action == 'listing_search') {
                 listing_search(response);
+
+            } else if (data.action == 'model_options') {
+                model_options(response);
 
             }
         },
