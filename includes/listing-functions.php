@@ -662,10 +662,10 @@ function listing_grid($id, $category = 'caravan', $style = 'style-2')
 {
     ob_start();
     $images = carbon_get_post_meta($id, 'images');
-    if (!$images || empty($images)) {
-        $images = array(
-            array('image_url' => '/wp-content/uploads/2025/08/glossop-placeholder.jpg')
-        );
+    $images_arr = explode("|", $images);
+    $finance_available = get__post_meta_by_id($id, 'finance_available');
+    if (!$images) {
+        $images_arr = array('/wp-content/uploads/2025/08/glossop-placeholder.jpg');
     }
     $finance_available = get__post_meta_by_id($id, 'finance_available');
 ?>
@@ -703,7 +703,7 @@ function listing_grid($id, $category = 'caravan', $style = 'style-2')
                 ?>
             </div>
             <div class="listing-grid__image image-style">
-                <img src="<?= $images['0']['image_url'] ?>" alt="Listing Imae">
+                <img src="<?= $images['0'] ?>" alt="Listing Imae">
             </div>
         </div>
         <div class="listing-grid-item__bottom">
