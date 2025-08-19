@@ -58,12 +58,15 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-    console.log(response);
-
     jQuery('#results .listings > div').remove();
     jQuery('#results .listings').html(response);
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
+
+    jQuery('html, body').animate({
+        scrollTop: jQuery('#listings').offset().top
+    }, 800);
+    
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
 }
