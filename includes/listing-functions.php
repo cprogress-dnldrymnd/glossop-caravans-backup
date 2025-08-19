@@ -776,7 +776,7 @@ function listing_sidebar_filter($category)
                             </button>
                         </h2>
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
-                            <div class="accordion-body accordion-body--search-field d-flex gap-1">
+                            <div class="accordion-body accordion-body--search-field">
                                 <?php
                                 $_our_price = get__search_field_options('_our_price', [$category]);
                                 $our_price_count = count($_our_price);
