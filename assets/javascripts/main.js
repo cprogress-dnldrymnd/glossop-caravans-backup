@@ -11,7 +11,7 @@ jQuery(document).ready(function () {
     listing_search_trigger();
     price_range();
     jQuery('.min-range').change(function (e) {
-        console.log(jQuery(this.val()));
+        console.log(jQuery(this).val());
         e.preventDefault();
     });
     //jQuery('.listing-search--trigger').select2();
