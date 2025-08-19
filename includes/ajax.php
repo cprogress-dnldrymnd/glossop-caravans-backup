@@ -186,6 +186,6 @@ function model_options()
 
 	echo $make;
 	var_dump(get_model_options($make, $category));
-
+	echo 'test2';
 	die();
 }
