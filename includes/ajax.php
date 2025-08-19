@@ -207,7 +207,7 @@ function filter_options($args, $field_id, $filter_active)
 		unset($css[$filter_active_arr[0]]);
 	}
 
-	$html = '<style id="filter--options-style" ' .count($filter_active_arr) . '>';
+	$html = '<style id="filter--options-style" ' . count($filter_active_arr) . '>';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
