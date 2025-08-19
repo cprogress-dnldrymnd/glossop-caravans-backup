@@ -17,7 +17,6 @@ jQuery(document).ready(function () {
 
 function listing_filter_reset() {
     jQuery('.reset--filter').click(function (e) {
-
         jQuery('.listing-filter select').each(function (index, element) {
             jQuery(this).val('');
             if (jQuery(this).attr('id') == 'price_sort') {
@@ -37,6 +36,7 @@ function listing_filter_reset() {
         jQuery(".max-input-html").text($max_range);
         jQuery('.accordion-item--price .selected--option').text('Any');
         jQuery('.accordion-item--sortby select').trigger('change');
+        jQuery(this).parent().addClass('hidden-visibility');
         e.preventDefault();
     });
 }
@@ -177,7 +177,12 @@ function listing_search_trigger() {
         }
 
 
+
         jQuery(this).parents('.accordion-item').find('.selected--option').text($val_text);
+
+        if (jQuery('.filter-item--active').length > 0) {
+            jQuery('.reset-filter-holder').removeClass('hidden-visibility');
+        }
 
         const nonce = posts_vars.nonce;
 
