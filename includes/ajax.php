@@ -137,6 +137,8 @@ function listing_search()
 	}
 
 	$listings = new WP_Query($args);
+
+	$count = $listings->found_posts;
 	if ($listings->have_posts()) {
 		while ($listings->have_posts()) {
 			$listings->the_post();
@@ -156,8 +158,15 @@ function listing_search()
 				No listing found on your search filter.
 			</p>
 		</div>
-<?php
+	<?php
 	}
+	?>
+	<script>
+		jQuery(document).ready(function() {
+			jQuery('.listing--count').text('<?= $count ?>');
+		});
+	</script>
+<?php
 
 	die();
 }

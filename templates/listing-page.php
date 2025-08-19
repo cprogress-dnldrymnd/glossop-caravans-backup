@@ -32,7 +32,7 @@ $listings = new WP_Query($args);
 <div class="site-content listings ajax--section-js background-lightgray" id="listings">
     <div class="container md-padding-top md-padding-bottom">
         <div class="listings-holder">
-            <h2 class="mb-5">We found <span class="text-orange"><?= $listings->found_posts; ?></span> <?php the_title() ?> for you</h2>
+            <h2 class="mb-5">We found <span class="text-orange listing--count"><?= $listings->found_posts; ?></span> <?php the_title() ?> for you</h2>
 
             <div class="filter--mobile d-block d-lg-none fw-semibold">
                 <div class="row g-xxs">
