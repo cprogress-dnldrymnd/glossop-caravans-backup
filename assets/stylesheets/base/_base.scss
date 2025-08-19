@@ -1047,37 +1047,66 @@ span.icons {
 .select2-selection__arrow {
     height: 40px !important; /* Adjust to match the selection box height */
 }
-.slider {
+/* Custom styles for the double-ended range slider */
+.range-slider-container {
+    position: relative;
     width: 100%;
 }
 
-.slider {
-    height: 6px;
-    position: relative;
-    background: #e4e4e4;
-    border-radius: 5px;
-}
-
-.slider .price-slider {
-    height: 100%;
-    left: 25%;
-    right: 15%;
-    position: absolute;
-    border-radius: 5px;
-    background: #01940b;
-}
-
-.range-input {
-    position: relative;
-}
-
-.range-input input {
-    position: absolute;
+.range-slider-container input[type="range"] {
+    -webkit-appearance: none;
     width: 100%;
     height: 5px;
-    background: none;
-    top: -5px;
-    pointer-events: none;
-    cursor: pointer;
+    background: transparent;
+    pointer-events: none; /* Allow events to pass through */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Thumb styles for WebKit browsers (Chrome, Safari) */
+.range-slider-container input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background-color: #3b82f6; /* Blue-500 */
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto; /* Make thumb interactive */
+    border: 2px solid #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.range-slider-container input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #2563eb; /* Blue-600 */
+}
+
+/* Track styles for WebKit browsers */
+.range-slider-container input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: transparent;
+    border-radius: 3px;
+}
+
+/* General styles for the visual track and progress bar */
+.slider-track {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+    background-color: #e5e7eb; /* Gray-200 */
+    border-radius: 3px;
+}
+
+.slider-progress {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5px;
+    background-color: #3b82f6; /* Blue-500 */
+    border-radius: 3px;
 }
