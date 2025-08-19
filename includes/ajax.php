@@ -203,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 		if ($filter_active > 0) {
 		}
 	}
-	if ($filter_active == 2) {
+	if ($filter_active == 1) {
 		unset($css[$field_id_val]);
 	}
 
