@@ -199,7 +199,7 @@ function filter_options($args)
 	$posts = get_posts($args);
 	$css = [];
 	foreach ($posts as $post) {
-		$css['year'] = get__post_meta_by_id($post, 'year');
+		$css['year'][] = get__post_meta_by_id($post, 'year');
 	}
 	echo '<style>';
 	echo '</style>';
