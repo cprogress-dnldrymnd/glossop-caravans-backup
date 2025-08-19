@@ -213,9 +213,10 @@ function filter_options($args, $field_id)
 	}
 	echo $field_id_val;
 	unset($css[$field_id_val]);
+	$html = '';
 	foreach ($css as $key => $css_val) {
 		$css_val_format = css_val_format($css_val);
-		$html = '<style style_id="' . $key . '">';
+		$html .= '<style style_id="' . $key . '">';
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
 		$html .= '</style>';
 	}
