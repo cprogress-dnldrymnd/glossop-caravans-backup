@@ -779,9 +779,8 @@ function listing_sidebar_filter($category)
                             <div class="accordion-body accordion-body--search-field">
                                 <?php
                                 $_our_price = get__search_field_options('_our_price', [$category]);
-                                $our_price_count = count($_our_price);
                                 ?>
-                                <div class="price-input">
+                                <div class="price-input d-flex gap-1">
                                     <div class="price-field">
                                         <input type="number" class="min-input" value="<?= reset($_our_price) ?>" readonly>
                                     </div>
