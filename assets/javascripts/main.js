@@ -89,12 +89,12 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-    console.log(response);
-    console.log(response.listing_count);
-    console.log(response.html);
-    console.log(response.filter_options);
+    console.log(response.data.listing_count);
+    console.log(response.data.listing_count);
+    console.log(response.data.html);
+    console.log(response.data.filter_options);
     jQuery('#results .listings > div').remove();
-    jQuery('#results .listings').html(response.html);
+    jQuery('#results .listings').html(response.data.html);
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
 
