@@ -137,14 +137,26 @@ function listing_search()
 
 	$listings = new WP_Query($args);
 	$count = $listings->found_posts;
+	$html = '';
+	if ($listings->have_posts()) {
+		while ($listings->have_posts()) {
+			$listings->the_post();
+			$html .= '<div class="listing-item" id="swiper-gallery-1">';
+			$html .=  listing_grid_full_details(get_the_ID(), $category);
+			$html .= '</div>';
+		}
+		wp_reset_postdata();
+	} else {
+		$html .= '<div class="no-found-listing">';
+		$html .= '<p> No listing found on your search filter. </p>';
+		$html .= '</div>';
+	}
 
 	$response_data = array(
 		'status'  => 'success',
-		'message' => 'Data received successfully!',
-		'items'   => array(
-			'item1' => 'value1',
-			'item2' => 'value2'
-		)
+		'filter_options' => filter_options($args, $field_id),
+		'listing_count' => $count,
+		'html' => $html
 	);
 
 	// Use wp_send_json_success() to return the JSON object
