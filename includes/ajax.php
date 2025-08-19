@@ -209,7 +209,7 @@ function filter_options($args, $field_id)
 		$css_val_format = css_val_format($css_val);
 		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
 	}
-	$html = '<style>';
+	$html .= '<style>';
 
 	echo $html;
 
