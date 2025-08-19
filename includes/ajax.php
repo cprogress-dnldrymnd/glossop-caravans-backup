@@ -203,7 +203,7 @@ function filter_options($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	unset($css[$field_id]);
+	unset($css[$field_id_val]);
 
 	$html = '<style id="filter--options-style" ' . (count($filter_active_arr) - 1) . '>';
 	foreach ($css as $key => $css_val) {
