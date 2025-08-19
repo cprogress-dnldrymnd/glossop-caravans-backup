@@ -964,3 +964,24 @@ function get__search_field_options($meta_key, $terms = 'caravans', $format = 'de
     }
     return $unique_values_arr;
 }
+
+function get_model_options($make, $category)
+{
+    $args = array(
+        'post_type' => 'caravan',
+        'numberposts' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'listing_category',
+                'field' => 'term_id',
+                'terms' => $category,
+            ),
+            array(
+                'taxonomy' => 'manufacturer',
+                'field' => 'slug',
+                'terms' => $make,
+            ),
+        ),
+    );
+    $posts = get_posts($args);
+}
