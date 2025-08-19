@@ -194,6 +194,9 @@ function filter_options($args)
 	ob_start();
 	unset($args['posts_per_page']);
 	$args['numberposts'] = -1;
+	echo '<pre>';
 	var_dump($args);
+	echo '</pre>';
+
 	return ob_get_clean();
 }
