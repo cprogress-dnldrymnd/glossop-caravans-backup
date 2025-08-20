@@ -231,7 +231,7 @@ function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
     $.each($selectors, function (i) {
         var $selector = $selectors[i] + ":not(.dont-hide)";
-        jQuery('.listing-filter select option').removeClass('hidden dont-hide');
+        jQuery('.listing-filter select option').removeClass('hidden');
         setTimeout(function () {
             jQuery($selector).addClass('hidden');
         }, 100);
