@@ -1,5 +1,12 @@
 <?php
 global $listing_fields;
+$_new_used = get__search_field_options('_new_used', 'caravans');
+$_berths = get__search_field_options('_berths', 'caravans');
+$_our_price = get__search_field_options('_our_price', 'caravans', 'price');
+$_year = get__search_field_options('_year', 'caravans');
+$_width = get__search_field_options('_width', 'caravans');
+$_axle = get__search_field_options('_axle', 'caravans');
+$_model = get__search_field_options('_model', 'caravans');
 ?>
 <div class="seach-stock-holder">
     <?php if (is_page(186) || is_page(192)) { ?>
@@ -41,7 +48,7 @@ global $listing_fields;
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
                             <div class="col-6 col-md-4 col-lg">
-                                <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
+                                <?= listing__filter_field('new_used', 'New-Used', 'Any', $_new_used, false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
 
