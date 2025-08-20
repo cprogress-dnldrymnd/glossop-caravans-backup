@@ -233,7 +233,7 @@ function listing_search(response) {
             jQuery('.listing-filter select option').removeClass('dont-hide');
         }, 200);
     });
-
+    console.log(jQuery('.filter-item--active').length);
     if (jQuery('.filter-item--active').length == 1) {
         jQuery('.listing-filter select option').removeClass('hidden');
     }
