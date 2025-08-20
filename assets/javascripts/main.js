@@ -128,6 +128,9 @@ function listing_search_trigger() {
 
             console.log("Value: " + optionValue + ", Text: " + optionText);
         });
+
+
+        var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
         }, 800);
