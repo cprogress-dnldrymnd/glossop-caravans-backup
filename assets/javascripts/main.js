@@ -125,7 +125,6 @@ function listing_search_trigger() {
         jQuery(this).find('option:not(.hidden)').each(function () {
             jQuery(this).addClass('dont-hide');
         });
-        var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
         }, 800);
@@ -247,9 +246,6 @@ function listing_search(response) {
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
 
-    jQuery('html, body').animate({
-        scrollTop: jQuery('#listings').offset().top
-    }, 800);
 
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
