@@ -205,7 +205,7 @@ function filter_options_script($args, $field_id, $filter_active)
 	$html = [];
 	foreach ($css as $key => $css_val) {
 		$selector_val_format = selector_val_format($css_val);
-		$html[] = $key . " option:not([value=''])$selector_val_format{display: none !important}";
+		$html[] = $key . " option:not([value=''])$selector_val_format";
 	}
 
 	echo json_encode($html);
@@ -272,3 +272,5 @@ function selector_val_format($css_val)
 	}
 	return $html;
 }
+
+
