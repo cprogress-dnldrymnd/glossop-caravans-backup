@@ -147,7 +147,6 @@ function listing_search()
 	}
 	$response_data = array(
 		'status'  => 'success',
-		'filter_options' => filter_options($args, $field_id, $filter_active),
 		'filter_options_script' => filter_options_script($args, $field_id, $filter_active),
 		'listing_count' => $count,
 		'html' => $html,

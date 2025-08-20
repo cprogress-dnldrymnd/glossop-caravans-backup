@@ -229,7 +229,7 @@ function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
 
     $.each($selectors, function (i) {
-        jQuery($selectors[i]).addClass('dsdsdsdsx');
+        jQuery($selectors[i]).addClass('hidden');
     });
 
     jQuery('#results .listings > div').remove();
@@ -244,9 +244,6 @@ function listing_search(response) {
 
     jQuery('.loading').addClass('hidden');
     jQuery('#results').removeClass('hidden-visibility');
-    jQuery('#filter--options-style').remove();
-    jQuery(response.data.filter_options).appendTo('head');
-
 }
 
 function ajax_function(data) {
