@@ -238,7 +238,6 @@ function listing_search(response) {
     setTimeout(function () {
         if (jQuery('.filter-item--active').length == 1) {
             jQuery('.filter-item--active select option').removeClass('hidden');
-            console.log(jQuery('.mama mo').length);
         }
     }, 300);
 
