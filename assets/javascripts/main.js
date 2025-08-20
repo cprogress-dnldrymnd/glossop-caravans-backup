@@ -234,7 +234,6 @@ function listing_search_trigger() {
 function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
     $.each($selectors, function (i) {
-        //jQuery('.listing-filter select option').removeClass('hidden');
         jQuery($selectors[i]).addClass('hidden');
     });
     jQuery('#results .listings > div').remove();
