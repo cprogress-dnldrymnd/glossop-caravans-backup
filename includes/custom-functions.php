@@ -10,7 +10,13 @@ function form_control($args)
     if ($args['type'] == 'select') {
         $html .= '<select ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control listing-search--trigger ' . $args['class'] . '">';
         foreach ($args['options'] as $key => $value) {
-            $html .= '<option value="' . $key . '">' . $value . '</option>';
+            if (isset($_GET[$args['id']]) && $_GET[$args['id']] != '') {
+                $selected = 'selected';
+            } else {
+                $selected = '';
+            }
+
+            $html .= '<option ' . $selected . ' value="' . $key . '">' . $value . '</option>';
         }
         $html .= '</select>';
     } elseif ($args['type'] == 'textarea') {
