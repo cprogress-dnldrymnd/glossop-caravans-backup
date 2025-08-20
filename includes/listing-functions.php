@@ -809,8 +809,10 @@ function listing_sidebar_filter($category)
                     <?php
                     //echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo listing__filter_field('year', 'Year', 'Any', $_year);
-                    echo listing__filter_field('width', 'Width', 'Any', $_width);
-                    echo listing__filter_field('axle', 'Axles', 'Any', $_axle);
+                    if ($category == 'caravans') {
+                        echo listing__filter_field('width', 'Width', 'Any', $_width);
+                        echo listing__filter_field('axle', 'Axles', 'Any', $_axle);
+                    }
                     ?>
                 </div>
             </div>
