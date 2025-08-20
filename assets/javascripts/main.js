@@ -225,7 +225,6 @@ function listing_search(response) {
     setTimeout(function () {
         $.each($selectors, function (i) {
             $selector = $selectors[i] + ":not(.dont-hide)";
-            console.log($selector);
             jQuery($selector).addClass('hidden');
 
         });
@@ -310,7 +309,6 @@ function fixed_menu_link_mobile() {
     jQuery('li.wp-block-navigation-item:not(.has-custom-submenu) .wp-block-navigation-item__content').click(function (e) {
         $href = jQuery(this).attr('href');
         window.location.href = $href;
-        console.log($href);
         e.preventDefault();
     });
 }
