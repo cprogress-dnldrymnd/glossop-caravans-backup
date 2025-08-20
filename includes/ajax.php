@@ -148,6 +148,7 @@ function listing_search()
 	$response_data = array(
 		'status'  => 'success',
 		'filter_options' => filter_options($args, $field_id, $filter_active),
+		'filter_options_script' => filter_options_script($args, $field_id, $filter_active),
 		'listing_count' => $count,
 		'html' => $html,
 	);
@@ -174,6 +175,43 @@ function model_options()
 	echo listing__filter_field('model', 'Model', 'Any', $model_options);
 	die();
 }*/
+
+
+function filter_options_script($args, $field_id, $filter_active)
+{
+	ob_start();
+	unset($args['posts_per_page']);
+	$args['numberposts'] = -1;
+	$args['fields'] = 'ids';
+
+	$posts = get_posts($args);
+	$css = [];
+
+	foreach ($posts as $post) {
+		$css['#berths'][] = get__post_meta_by_id($post, 'berths');
+		$css['#new_used'][] = get__post_meta_by_id($post, 'new_used');
+		$css['#model'][] = get__post_meta_by_id($post, 'model');
+		$css['#min_price'][] = get__post_meta_by_id($post, 'our_price');
+		$css['#max_price'][] = get__post_meta_by_id($post, 'our_price');
+		$css['#width'][] = get__post_meta_by_id($post, 'width');
+		$css['#year'][] = get__post_meta_by_id($post, 'year');
+		$css['#axle'][] = get__post_meta_by_id($post, 'axle');
+
+		$manufacturer = get_the_terms($post, 'manufacturer');
+		foreach ($manufacturer as $maker) {
+			$css['#make'][] = $maker->slug;
+		}
+	}
+	$html = [];
+	foreach ($css as $key => $css_val) {
+		$selector_val_format = selector_val_format($css_val);
+		$html[] = $key . " option:not([value=''])$selector_val_format{display: none !important}";
+	}
+
+	echo json_encode($html);
+	return ob_get_clean();
+}
+
 
 function filter_options($args, $field_id, $filter_active)
 {
@@ -216,8 +254,8 @@ function filter_options($args, $field_id, $filter_active)
 */
 	$html = '<style id="filter--options-style" ' . (count($filter_active_arr) - 1) . '>';
 	foreach ($css as $key => $css_val) {
-		$css_val_format = css_val_format($css_val);
-		$html .= $key . " option:not([value=''])$css_val_format{display: none !important}";
+		$selector_val_format = selector_val_format($css_val);
+		$html .= $key . " option:not([value=''])$selector_val_format{display: none !important}";
 	}
 	$html .= '<style>';
 
@@ -226,7 +264,7 @@ function filter_options($args, $field_id, $filter_active)
 	return ob_get_clean();
 }
 
-function css_val_format($css_val)
+function selector_val_format($css_val)
 {
 	$html = '';
 	foreach ($css_val as $css) {
