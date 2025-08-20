@@ -225,6 +225,7 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
+    
     console.log(response.data.filter_options_script);
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
