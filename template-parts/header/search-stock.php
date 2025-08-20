@@ -41,6 +41,7 @@ global $listing_fields;
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
                             <form action="<?= get_the_permalink(3554) ?>" method="GET">
+                                <input type="hidden" name="filter" value="active">
                                 <div class="col-6 col-md-4 col-lg">
                                     <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 26), false, false) ?>
                                 </div>
