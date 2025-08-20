@@ -122,9 +122,9 @@ function price_range() {
 function listing_search_trigger() {
 
     jQuery('body').on('change', '.listing-filter .listing-search--trigger', function (e) {
-        $id = '#' + jQuery(this).attr('id');
+        $id = '#' + jQuery(this).attr('id') + ' option';
         console.log($id);
-        jQuery($id).find('option').attr('value')
+        jQuery($id).attr('value')
         var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
