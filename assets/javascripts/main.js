@@ -234,7 +234,11 @@ function listing_search_trigger() {
 function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
     $.each($selectors, function (i) {
-        jQuery($selectors[i]).addClass('hidden');
+        var $selector = $selectors[i];
+        jQuery('.listing-filter select option').removeClass('hidden');
+        setTimeout(function () {
+            jQuery($selector).addClass('hidden');
+        }, 100);
     });
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);

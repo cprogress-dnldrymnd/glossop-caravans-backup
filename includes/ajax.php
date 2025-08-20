@@ -204,7 +204,7 @@ function filter_options_script($args, $field_id, $filter_active)
 	$array = [];
 	foreach ($css as $key => $css_val) {
 		$selector_val_format = selector_val_format($css_val);
-		$array[] = $key . " option:not([value=''])$selector_val_format";
+		$array[] = $key . " option:not([value=''])$";
 	}
 
 
