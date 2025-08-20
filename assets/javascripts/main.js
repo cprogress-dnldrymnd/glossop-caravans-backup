@@ -168,10 +168,6 @@ function listing_search_trigger() {
             }
 
         }
-        jQuery('.filter-item--active:not(.accordion-item--sortby) select').each(function (index, element) {
-            filter_active += '#' + jQuery(this).attr('id') + '|';
-        });
-
 
         if (jQuery(this).attr('id') == 'make') {
             model = '';
@@ -199,7 +195,6 @@ function listing_search_trigger() {
         width = jQuery('.listing-filter #width').val();
         year = jQuery('.listing-filter #year').val();
         axle = jQuery('.listing-filter #axle').val();
-        field_id = jQuery(this).attr('id');
         data = {
             action: 'listing_search',
             nonce: nonce,
@@ -214,8 +209,6 @@ function listing_search_trigger() {
             width: width,
             year: year,
             axle: axle,
-            field_id: field_id,
-            filter_active: filter_active,
         };
         jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
