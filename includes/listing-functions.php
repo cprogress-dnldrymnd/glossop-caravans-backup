@@ -956,13 +956,15 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         }
 
 
-        function get__search_field_options($meta_key, $terms = 'caravans', $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
+        function get__search_field_options($meta_key, $terms, $format = 'default', $post_type = 'caravan', $taxonomy = 'listing_category')
         {
             global $wpdb;
-            // Sanitize the input to prevent SQL injection
+
+            // Sanitize the input
             $meta_key = sanitize_text_field($meta_key);
             $post_type = sanitize_text_field($post_type);
             $taxonomy = sanitize_text_field($taxonomy);
+            // Sanitize term slugs for use in the query
             $term_slugs = array_map('sanitize_title_for_query', (array) $terms);
 
             // Build the query to get post IDs filtered by taxonomy and term slugs
@@ -977,7 +979,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         WHERE p.post_type = %s
         AND p.post_status = 'publish'
         AND tt.taxonomy = %s
-        AND t.term_id IN ({$sql_in_clause})
+        AND t.slug IN ({$sql_in_clause})
     ";
 
             $prepared_post_ids_query = $wpdb->prepare($query_post_ids, $post_type, $taxonomy);
@@ -1006,11 +1008,13 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                 if ($format == 'default') {
                     $val = $unique_value;
                 } else {
+                    // Assuming price__format is defined elsewhere
                     $val = price__format($unique_value);
                 }
 
                 $unique_values_arr[$unique_value] = $val;
             }
+
             return $unique_values_arr;
         }
 
@@ -1025,7 +1029,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
             if ($category) {
                 $tax_query[] = array(
                     'taxonomy' => 'listing_category',
-                    'field' => 'term_id',
+                    'field' => 'slug',
                     'terms' => $category,
                 );
             }

@@ -104,7 +104,7 @@ function listing_search()
 
 	$tax_query[] = array(
 		'taxonomy' => 'listing_category',
-		'field' => 'term_id',
+		'field' => 'slug',
 		'terms' => $category,
 	);
 	if ($make) {

@@ -7,10 +7,9 @@
 <?php
 $category = carbon_get_the_post_meta('select_category');
 $category_slug = get_term_by('term_id', $category[0]['id'], 'listing_category')->slug;
-echo $category_slug;
 $term_ids = [];
 
-$term_ids[] = $category['0']['id'];
+$term_ids[] = $category_slug;
 
 $args = array(
     'post_type' => 'caravan',
@@ -55,8 +54,8 @@ $listings = new WP_Query($args);
 
             <div class="row g-4">
                 <div class="col-lg-3 position-relative" style="z-index: 3">
-                    <input type="hidden" id="category" value="<?= $category['0']['id'] ?>">
-                    <?= listing_sidebar_filter($category['0']['id']) ?>
+                    <input type="hidden" id="category" value="<?= $category_slug ?>">
+                    <?= listing_sidebar_filter($category_slug) ?>
                 </div>
                 <div class="col-lg-9">
                     <div class="banner mb-20">
@@ -73,7 +72,7 @@ $listings = new WP_Query($args);
                             ?>
                                 <div class="listing-item" id="swiper-gallery-1">
                                     <?php
-                                    echo listing_grid_full_details(get_the_ID(), $category['0']['id']);
+                                    echo listing_grid_full_details(get_the_ID(), $category_slug);
                                     ?>
                                 </div>
                             <?php } ?>
