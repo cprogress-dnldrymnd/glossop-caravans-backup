@@ -50,7 +50,7 @@ global $listing_fields;
                                 <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['model'] ?>
+                                <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 26), false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
                                 <?= $listing_fields['price_min'] ?>
