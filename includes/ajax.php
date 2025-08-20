@@ -201,13 +201,14 @@ function filter_options_script($args, $field_id, $filter_active)
 			$css['#make'][] = $maker->slug;
 		}
 	}
-	$html = [];
+	$array = [];
 	foreach ($css as $key => $css_val) {
 		$selector_val_format = selector_val_format($css_val);
-		$html[] = $key . " option:not([value=''])$selector_val_format";
+		$array[] = $key . " option:not([value=''])$selector_val_format";
 	}
 
-	echo json_encode($html);
+
+	echo json_encode($array);
 	return ob_get_clean();
 }
 
