@@ -19,8 +19,6 @@ function listing_search()
 	$width = isset($_POST['width']) ? $_POST['width'] : false;
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
-	$field_id = isset($_POST['field_id']) ? $_POST['field_id'] : false;
-	$filter_active = isset($_POST['filter_active']) ? $_POST['filter_active'] : false;
 
 	$tax_query = [];
 	$meta_query = [];
@@ -147,7 +145,7 @@ function listing_search()
 	}
 	$response_data = array(
 		'status'  => 'success',
-		'filter_options_script' => filter_options_script($args, $field_id, $filter_active),
+		'filter_options_script' => filter_options_script($args),
 		'listing_count' => $count,
 		'html' => $html,
 	);
