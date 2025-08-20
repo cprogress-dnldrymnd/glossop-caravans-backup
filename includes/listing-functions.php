@@ -595,7 +595,18 @@ function listing_grid_full_details($id, $category = 'caravans')
                                 <h3 class="d-block d-lg-none"><?= get_the_title($id) ?></h3>
                                 <div class="listing-inner--key-info d-none d-lg-block">
                                     <?php
-                                    echo listing__key_information($id, $category, ['year', 'width', 'internal_length', 'external_length', 'internal_stock_number', 'berths', 'mileage', 'engine', 'chassis']);
+                                    $key_info_arr =  ['year', 'width', 'internal_length', 'external_length', 'internal_stock_number', 'berths'];
+
+                                    if ($category == 'motorhomes') {
+                                        $key_info_arr[] = 'mileage';
+                                        $key_info_arr[] = 'engine';
+                                        $key_info_arr[] = 'chassis';
+                                    }
+                                    if ($category == 'static-caravans') {
+                                        $key_info_arr[] = 'length';
+                                        $key_info_arr[] = 'new_used';
+                                    }
+                                    echo listing__key_information($id, $category, $key_info_arr);
                                     ?>
                                 </div>
                                 <div class="d-block d-lg-none mt-3">
