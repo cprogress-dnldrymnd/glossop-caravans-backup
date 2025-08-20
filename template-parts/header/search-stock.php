@@ -43,22 +43,22 @@ global $listing_fields;
                             <form action="<?= get_the_permalink(3554) ?>" method="GET">
                                 <input type="hidden" name="filter" value="active">
                                 <div class="col-6 col-md-4 col-lg">
-                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 26), false, false) ?>
+                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg">
-                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 26), false, false) ?>
+                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg">
                                     <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg">
-                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 26), false, false) ?>
+                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg">
-                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 26), false, false) ?>
+                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg">
-                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 26), false, false) ?>
+                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg button">
 
