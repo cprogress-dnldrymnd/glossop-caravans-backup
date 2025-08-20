@@ -196,13 +196,13 @@ function listing_search_trigger() {
         category = jQuery('#category').val();
         price_sort = jQuery('#price_sort').val();
         new_used = jQuery('.listing-filter #new_used').val();
-        berths = jQuery('#berths').val();
+        berths = jQuery('.listing-filter #berths').val();
         make = jQuery('.listing-filter #make').val();
         min_price = jQuery('.listing-filter #min_price').val();
         max_price = jQuery('.listing-filter #max_price').val();
-        width = jQuery('#width').val();
-        year = jQuery('#year').val();
-        axle = jQuery('#axle').val();
+        width = jQuery('.listing-filter #width').val();
+        year = jQuery('.listing-filter #year').val();
+        axle = jQuery('.listing-filter #axle').val();
         field_id = jQuery(this).attr('id');
         data = {
             action: 'listing_search',

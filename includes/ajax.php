@@ -207,7 +207,6 @@ function filter_options_script($args, $field_id, $filter_active)
 		$array[] = $key . " option:not([value=''])$selector_val_format";
 	}
 
-
 	echo json_encode($array);
 	return ob_get_clean();
 }
@@ -272,5 +271,3 @@ function selector_val_format($css_val)
 	}
 	return $html;
 }
-
-
