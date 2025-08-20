@@ -225,9 +225,13 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-    
-    console.log(JSON.parse(response.data.filter_options_script));
-    console.log(JSON.parse(response.data.filter_options_script)[0]);
+
+    $selectors = JSON.parse(response.data.filter_options_script);
+
+    $.each($selectors, function (i, item) {
+        console.log($selectors[i]);
+    });
+
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
