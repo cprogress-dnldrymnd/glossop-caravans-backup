@@ -228,7 +228,7 @@ function listing_search(response) {
 
     $selectors = JSON.parse(response.data.filter_options_script);
 
-    $.each($selectors, function (i, item) {
+    $.each($selectors, function (i) {
         console.log($selectors[i]);
     });
 
