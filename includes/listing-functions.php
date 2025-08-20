@@ -757,11 +757,11 @@ function listing_sidebar_filter($category)
                     <?php
                     echo listing__filter_field('new_used', 'New-Used', 'Any', $_new_used);
                     if ($category == 'static-caravans') {
-                        $_berths = get__search_field_options('_berths', [$category]);
-                        echo listing__filter_field('berths', 'Berths', 'Any', $_berths);
-                    } else {
                         $_bedrooms = get__search_field_options('_bedrooms', [$category]);
                         echo listing__filter_field('bedrooms', 'Bedrooms', 'Any', $_bedrooms);
+                    } else {
+                        $_berths = get__search_field_options('_berths', [$category]);
+                        echo listing__filter_field('berths', 'Berths', 'Any', $_berths);
                     }
                     echo listing__filter_field_terms('make', 'Make', 'manufacturer');
                     echo listing__filter_field('model', 'Model', 'Any', $_model);
