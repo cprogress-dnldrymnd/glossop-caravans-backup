@@ -122,7 +122,7 @@ function price_range() {
 function listing_search_trigger() {
 
     jQuery('body').on('change', '.listing-filter .listing-search--trigger', function (e) {
-        jQuery(this).find('option').each(function () {
+        jQuery(this).find('option:not(.hidden)').each(function () {
             let optionValue = $(this).val(); // Get the value attribute
             let optionText = $(this).text(); // Get the visible text
 
