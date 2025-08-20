@@ -13145,7 +13145,7 @@ h5, .h5 {
     width: 100%;
     border-radius: 5px;
     height: 100%;
-    border: 1px solid var(--lightgray-color-2); }
+    border: 1px solid var(--lightgray-color-2) !important; }
     .listing-inner-holder .listing-inner--tabs .nav-tabs .nav-link svg {
       height: 32px; }
       @media screen and (max-width: 575px) {
@@ -13167,7 +13167,8 @@ h5, .h5 {
     .listing-inner-holder .listing-inner--tabs .nav-tabs .nav-link:hover {
       color: var(--text-color);
       border-color: var(--text-color);
-      background-color: var(--lightgray-color-2); }
+      background-color: var(--lightgray-color-2);
+      border-color: var(--bs-black) !important; }
 .listing-inner-holder .listing-key--info .icon-list-v2 {
   row-gap: 0;
   column-gap: var(--sm-spacing); }

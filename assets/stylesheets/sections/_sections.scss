@@ -334,7 +334,7 @@
                 width: 100%;
                 border-radius: 5px;
                 height: 100%;
-                border: 1px solid var(--lightgray-color-2);
+                border: 1px solid var(--lightgray-color-2) !important;
                 svg {
                     height: 32px;
                     @include responsive(mobile) {
@@ -360,6 +360,7 @@
                     color: var(--text-color);
                     border-color: var(--text-color);
                     background-color: var(--lightgray-color-2);
+                    border-color: var(--bs-black) !important;
                 }
             }
         }
