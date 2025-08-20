@@ -222,21 +222,26 @@ function listing_search_trigger() {
 
 function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
-    $.each($selectors, function (i) {
-        var $selector = $selectors[i] + ":not(.dont-hide)";
-        console.log($selector);
-        jQuery('.listing-filter select option').removeClass('hidden');
-        setTimeout(function () {
+    jQuery('.listing-filter select option').removeClass('hidden');
+    setTimeout(function () {
+        $.each($selectors, function (i) {
+            $selector = $selectors[i] + ":not(.dont-hide)";
+            console.log($selector);
             jQuery($selector).addClass('hidden');
-        }, 100);
-        setTimeout(function () {
-            jQuery('.listing-filter select option').removeClass('dont-hide');
-        }, 200);
-    });
-    console.log(jQuery('.filter-item--active').length);
-    if (jQuery('.filter-item--active').length == 1) {
-        jQuery('.filter-item--active select option').removeClass('hidden');
-    }
+
+        });
+    }, 100);
+
+    setTimeout(function () {
+        jQuery('.listing-filter select option').removeClass('dont-hide');
+    }, 200);
+    setTimeout(function () {
+        if (jQuery('.filter-item--active').length == 1) {
+            jQuery('.filter-item--active select option').removeClass('hidden');
+            console.log(jQuery('.mama mo').length);
+        }
+    }, 300);
+
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
