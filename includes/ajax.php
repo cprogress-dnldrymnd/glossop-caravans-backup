@@ -208,7 +208,7 @@ function filter_options_script($args, $field_id, $filter_active)
 		$html[] = $key . " option:not([value=''])$selector_val_format{display: none !important}";
 	}
 
-	echo $html;
+	echo json_encode($html);
 	return ob_get_clean();
 }
 
