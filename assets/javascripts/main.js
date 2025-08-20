@@ -122,6 +122,7 @@ function price_range() {
 function listing_search_trigger() {
 
     jQuery('body').on('change', '.listing-filter .listing-search--trigger', function (e) {
+        console.log(jQuery(this).find('option:not(.hidden)').attr('value'));
         var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
@@ -230,7 +231,6 @@ function listing_search(response) {
         jQuery('.listing-filter select option').removeClass('hidden');
         jQuery($selectors[i]).addClass('hidden');
     });
-
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
