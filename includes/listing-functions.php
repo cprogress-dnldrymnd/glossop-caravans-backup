@@ -501,8 +501,7 @@ function listing__key_information($id, $category = 'caravans', $show = ['berths'
                 if ($key_info['icon'] == false) {
                     $icon = get__theme_icons($key_info['id'] . '.svg');
                 } else {
-                    $term = get_term_by('slug', $category, 'listing_category');
-                    $icon = get__theme_icons($key_info['icon'][$term->slug]);
+                    $icon = get__theme_icons($key_info['icon'][$category]);
                 }
                 echo '<li class="key--info-' . $key_info['id'] . '">';
                 echo $icon;
