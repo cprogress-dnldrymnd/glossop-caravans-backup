@@ -20,6 +20,11 @@ function listing_search()
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 
+	$bedrooms = isset($_POST['bedrooms']) ? $_POST['bedrooms'] : false;
+	$chassis = isset($_POST['chassis']) ? $_POST['chassis'] : false;
+	$gearbox = isset($_POST['gearbox']) ? $_POST['gearbox'] : false;
+	$mileage = isset($_POST['mileage']) ? $_POST['mileage'] : false;
+
 	$tax_query = [];
 	$meta_query = [];
 
@@ -84,6 +89,35 @@ function listing_search()
 		);
 	}
 
+	if ($bedrooms) {
+		$meta_query[] = 	array(
+			'key'     => '_bedrooms',
+			'value'   => $bedrooms,
+			'compare' => '='
+		);
+	}
+	if ($chassis) {
+		$meta_query[] = 	array(
+			'key'     => '_chassis',
+			'value'   => $chassis,
+			'compare' => '='
+		);
+	}
+	if ($gearbox) {
+		$meta_query[] = 	array(
+			'key'     => '_gearbox',
+			'value'   => $gearbox,
+			'compare' => '='
+		);
+	}
+	if ($mileage) {
+		$meta_query[] = 	array(
+			'key'     => '_mileage',
+			'value'   => $mileage,
+			'compare' => '='
+		);
+	}
+	
 	if ($price_sort) {
 		if ($price_sort == 'price-desc' || $price_sort == 'price-asc') {
 			$args['meta_key'] = '_our_price';

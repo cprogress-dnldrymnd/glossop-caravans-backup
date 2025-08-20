@@ -194,6 +194,12 @@ function listing_search_trigger() {
         width = jQuery('.listing-filter #width').val();
         year = jQuery('.listing-filter #year').val();
         axle = jQuery('.listing-filter #axle').val();
+
+        bedrooms = jQuery('.listing-filter #bedrooms').val();
+        chassis = jQuery('.listing-filter #chassis').val();
+        gearbox = jQuery('.listing-filter #gearbox').val();
+        mileage = jQuery('.listing-filter #mileage').val();
+
         data = {
             action: 'listing_search',
             nonce: nonce,
@@ -208,6 +214,10 @@ function listing_search_trigger() {
             width: width,
             year: year,
             axle: axle,
+            bedrooms: bedrooms,
+            chassis: chassis,
+            gearbox: gearbox,
+            mileage: mileage,
         };
         jQuery('.ajax--section-js').addClass('is--doing-ajax');
         jQuery('.loading').removeClass('hidden');
