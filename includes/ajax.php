@@ -16,7 +16,7 @@ function listing_search()
 	$model = isset($_POST['model']) ? $_POST['model'] : false;
 	$min_price = isset($_POST['min_price']) ? $_POST['min_price'] : false;
 	$max_price = isset($_POST['max_price']) ? $_POST['max_price'] : false;
-	$width = isset($_POST['widthwidth']) ? $_POST['widthwidth'] : false;
+	$width = isset($_POST['width']) ? $_POST['width'] : false;
 	$year = isset($_POST['year']) ? $_POST['year'] : false;
 	$axle = isset($_POST['axle']) ? $_POST['axle'] : false;
 	$field_id = isset($_POST['field_id']) ? $_POST['field_id'] : false;
