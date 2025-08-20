@@ -6,6 +6,8 @@
 <?php get_header() ?>
 <?php
 $category = carbon_get_the_post_meta('select_category');
+$category_slug = get_term_by('term_id', $category[0]['id'], 'listing_category')->slug;
+echo $category_slug;
 $term_ids = [];
 
 $term_ids[] = $category['0']['id'];
