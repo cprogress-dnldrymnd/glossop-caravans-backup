@@ -231,10 +231,13 @@ function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
     $.each($selectors, function (i) {
         var $selector = $selectors[i] + ":not(.dont-hide)";
-        jQuery('.listing-filter select option').removeClass('hidden');
+        jQuery('.listing-filter select option').removeClass('hidden dont-hide');
         setTimeout(function () {
             jQuery($selector).addClass('hidden');
         }, 100);
+        setTimeout(function () {
+            jQuery('.listing-filter select option').removeClass('dont-hide');
+        }, 200);
     });
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
