@@ -10,7 +10,7 @@ function form_control($args)
     if ($args['type'] == 'select') {
         $html .= '<select ' . $args['attribute'] . '  name="' . $args['name'] . '" id="' . $args['id'] . '" class="form-control listing-search--trigger ' . $args['class'] . '">';
         foreach ($args['options'] as $key => $value) {
-            if (isset($_GET[$args['id']]) && $_GET[$args['id']] != '') {
+            if (isset($_GET[$args['id']]) && $_GET[$args['id']] != '' && $_GET[$args['id']] == $key) {
                 $selected = 'selected';
             } else {
                 $selected = '';
