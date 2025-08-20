@@ -51,7 +51,7 @@ $_model = get__search_field_options('_model', 'caravans');
                                 <?= listing__filter_field('new_used', 'New-Used', 'Any', $_new_used, false, false) ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
-
+                                <?php echo listing__filter_field('year', 'Year', 'Any', $_year); ?>
                             </div>
                             <div class="col-6 col-md-4 col-lg">
                                 <?= $listing_fields['make'] ?>
