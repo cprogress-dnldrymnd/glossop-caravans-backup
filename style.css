@@ -11183,7 +11183,7 @@ img {
   font-size: 16px; }
 
 .form-control-lg {
-  padding: 10px 0px 10px 0px !important;
+  padding: 15px 1vw !important;
   --bs-border-radius-lg: 5px; }
   @media screen and (max-width: 991px) {
     .form-control-lg {
