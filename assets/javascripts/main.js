@@ -123,8 +123,7 @@ function listing_search_trigger() {
 
     jQuery('body').on('change', '.listing-filter .listing-search--trigger', function (e) {
         jQuery(this).find('option:not(.hidden)').each(function () {
-            let optionValue = jQuery(this).val(); // Get the value attribute
-            jQuery(this).addClass('hiddensdsds');
+            jQuery(this).addClass('dont-hide');
         });
         var filter_active = '';
         jQuery('html, body').animate({
