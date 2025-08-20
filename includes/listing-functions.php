@@ -723,8 +723,6 @@ function listing_sidebar_filter($category)
     $_berths = get__search_field_options('_berths', [$category]);
     $_our_price = get__search_field_options('_our_price', [$category], 'price');
     $_year = get__search_field_options('_year', [$category]);
-    $_width = get__search_field_options('_width', [$category]);
-    $_axle = get__search_field_options('_axle', [$category]);
     $_model = get__search_field_options('_model', [$category]);
 ?>
 
@@ -810,8 +808,17 @@ function listing_sidebar_filter($category)
                     //echo listing__filter_field(['min_price', 'max_price'], 'Price', ['Min Price (£)', 'Max Price (£)'], $_our_price, true);
                     echo listing__filter_field('year', 'Year', 'Any', $_year);
                     if ($category == 'caravans') {
+                        $_width = get__search_field_options('_width', [$category]);
+                        $_axle = get__search_field_options('_axle', [$category]);
                         echo listing__filter_field('width', 'Width', 'Any', $_width);
                         echo listing__filter_field('axle', 'Axles', 'Any', $_axle);
+                    } else if ($category == 'motorhomes') {
+                        $_chassis = get__search_field_options('_chassis', [$category]);
+                        $_gearbox = get__search_field_options('_gearbox', [$category]);
+                        $_mileage = get__search_field_options('_mileage', [$category]);
+                        echo listing__filter_field('chassis', 'Chassis', 'Any', $_chassis);
+                        echo listing__filter_field('gearbox', 'Gearbox', 'Any', $_gearbox);
+                        echo listing__filter_field('mileage', 'Mileage', 'Any', $_mileage);
                     }
                     ?>
                 </div>
