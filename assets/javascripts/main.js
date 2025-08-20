@@ -233,6 +233,10 @@ function listing_search(response) {
             jQuery('.listing-filter select option').removeClass('dont-hide');
         }, 200);
     });
+
+    if (jQuery('.filter-item--active').length == 1) {
+        jQuery('.listing-filter select option').removeClass('hidden');
+    }
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);

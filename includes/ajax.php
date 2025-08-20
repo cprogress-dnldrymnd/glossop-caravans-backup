@@ -178,11 +178,9 @@ function model_options()
 
 function filter_options_script($args)
 {
-	ob_start();
 	unset($args['posts_per_page']);
 	$args['numberposts'] = -1;
 	$args['fields'] = 'ids';
-
 	$posts = get_posts($args);
 	$css = [];
 
@@ -206,9 +204,7 @@ function filter_options_script($args)
 		$selector_val_format = selector_val_format($css_val);
 		$array[] = $key . " option:not([value=''])$selector_val_format";
 	}
-
-	echo json_encode($array);
-	return ob_get_clean();
+	return json_encode($array);
 }
 
 
