@@ -7,9 +7,7 @@
 <?php
 $category = carbon_get_the_post_meta('select_category');
 $category_slug = get_term_by('term_id', $category[0]['id'], 'listing_category')->slug;
-$term_ids = [];
 
-$term_ids[] = $category_slug;
 
 $args = array(
     'post_type' => 'caravan',
@@ -24,7 +22,7 @@ $args = array(
         array(
             'taxonomy' => 'listing_category',
             'field' => 'slug',
-            'terms' => $term_ids,
+            'terms' => $category_slug,
         ),
     ),
 );
