@@ -235,7 +235,7 @@ function listing_search(response) {
     });
     console.log(jQuery('.filter-item--active').length);
     if (jQuery('.filter-item--active').length == 1) {
-        jQuery('.listing-filter select option').removeClass('hidden');
+        jQuery('.filter-item--active select option').removeClass('hidden');
     }
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
