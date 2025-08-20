@@ -595,7 +595,7 @@ function listing_grid_full_details($id, $category = 'caravans')
                                 <h3 class="d-block d-lg-none"><?= get_the_title($id) ?></h3>
                                 <div class="listing-inner--key-info d-none d-lg-block">
                                     <?php
-                                    echo listing__key_information($id, $category, ['year', 'width', 'internal_length', 'external_length', 'internal_stock_number', 'berths']);
+                                    echo listing__key_information($id, $category, ['year', 'width', 'internal_length', 'external_length', 'internal_stock_number', 'berths', 'mileage', 'engine', 'chassis']);
                                     ?>
                                 </div>
                                 <div class="d-block d-lg-none mt-3">
