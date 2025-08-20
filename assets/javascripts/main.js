@@ -129,7 +129,6 @@ function listing_search_trigger() {
             console.log("Value: " + optionValue + ", Text: " + optionText);
         });
 
-
         var filter_active = '';
         jQuery('html, body').animate({
             scrollTop: jQuery('#listings').offset().top
@@ -235,7 +234,7 @@ function listing_search_trigger() {
 function listing_search(response) {
     $selectors = JSON.parse(response.data.filter_options_script);
     $.each($selectors, function (i) {
-        jQuery('.listing-filter select option').removeClass('hidden');
+        //jQuery('.listing-filter select option').removeClass('hidden');
         jQuery($selectors[i]).addClass('hidden');
     });
     jQuery('#results .listings > div').remove();
