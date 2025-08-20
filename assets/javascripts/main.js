@@ -225,11 +225,10 @@ function listing_search_trigger() {
 
 
 function listing_search(response) {
-    response.data.listing_count
+    console.log(response.data.filter_options_script);
     jQuery('#results .listings > div').remove();
     jQuery('.listing--count').text(response.data.listing_count);
     jQuery('#results .listings').html(response.data.html);
-
 
     jQuery('.ajax--section-js').removeClass('is--doing-ajax');
 
