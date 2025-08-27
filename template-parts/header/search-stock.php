@@ -72,59 +72,64 @@ global $listing_fields;
                 <div class="tab-pane fade" id="Motorhomes-tab-pane" role="tabpanel" aria-labelledby="Motorhomes-tab" tabindex="0">
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['berths'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['make'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['model'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['price_min'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['price_max'] ?>
-                            </div>
-                            <div class="col-sm-12 col-md-12 col-lg button">
-                                <div class="button-box">
-                                    <button type="submit" class="btn btn-primary btn-hover-bordered btn-lg w-100">Search</button>
+                            <form action="<?= get_the_permalink(3558) ?>" method="GET">
+                                <input type="hidden" name="filter" value="active">
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
                                 </div>
-                            </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg button">
+                                    <div class="button-box">
+                                        <button type="submit" class="btn btn-primary btn-hover-bordered btn-lg w-100">Search</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </form>
                 </div>
                 <div class="tab-pane fade" id="Statics-tab-pane" role="tabpanel" aria-labelledby="Statics-tab" tabindex="0">
                     <form action="" class="form-holder">
                         <div class="row align-items-end search-stock-row">
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['type'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['berths'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['make'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['model'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['price_min'] ?>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg">
-                                <?= $listing_fields['price_max'] ?>
-                            </div>
-                            <div class="col-sm-12 col-md-12 col-lg button">
-                                <div class="button-box">
-                                    <button type="submit" class="btn btn-primary btn-hover-bordered btn-lg w-100">Search</button>
+                            <form action="<?= get_the_permalink(3562) ?>" method="GET">
+                                <input type="hidden" name="filter" value="active">
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
                                 </div>
-                            </div>
-
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-6 col-md-4 col-lg header--filter">
+                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg button">
+                                    <div class="button-box">
+                                        <button type="submit" class="btn btn-primary btn-hover-bordered btn-lg w-100">Search</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </form>
                 </div>
