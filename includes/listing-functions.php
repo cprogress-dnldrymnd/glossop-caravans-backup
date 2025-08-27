@@ -787,7 +787,22 @@ function listing_sidebar_filter($category)
                                             </svg>
                                         </span>
                                         Price </span>
-                                    <span class="selected selected--option fs-14 fw-bold">Any</span>
+                                    <span class="selected selected--option fs-14 fw-bold">
+                                        <?php
+                                        if (isset($_GET['min_price']) ||  isset($_GET['max_price'])) {
+                                            $placeholder_val = '';
+                                            if (isset($_GET['min_price'])) {
+                                                $placeholder_val .= $_GET['min_price'];
+                                            }
+                                            if (isset($_GET['max_price'])) {
+                                                $placeholder_val .= $_GET['max_price'];
+                                            }
+                                        } else {
+                                            $placeholder_val = 'Any';
+                                        }
+                                        echo $placeholder_val;
+                                        ?>
+                                    </span>
                                 </span>
                             </button>
                         </h2>
@@ -854,24 +869,10 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         $icon = $id;
     }
 
-    if ($is_price == true) {
-        if (isset($_GET['min_price']) || isset($_GET['max_price'])) {
-            $placeholder_val = '';
-            if (isset($_GET['min_price'])) {
-                $placeholder_val .= $_GET['min_price'];
-            }
-            if (isset($_GET['max_price'])) {
-                $placeholder_val .= $_GET['max_price'];
-            }
-        } else {
-            $placeholder_val = 'Any';
-        }
+    if (isset($_GET[$id])) {
+        $placeholder_val = $_GET[$id];
     } else {
-        if (isset($_GET[$id])) {
-            $placeholder_val = $_GET[$id];
-        } else {
-            $placeholder_val = $placeholder;
-        }
+        $placeholder_val = $placeholder;
     }
 ?>
     <?php if ($is_accordion) { ?>
