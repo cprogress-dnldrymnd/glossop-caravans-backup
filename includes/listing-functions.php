@@ -864,13 +864,13 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                 $placeholder_val .= $_GET['max_price'];
             }
         } else {
-            $placeholder_val = 'Any x';
+            $placeholder_val = 'Any';
         }
     } else {
         if (isset($_GET[$id])) {
             $placeholder_val = $_GET[$id];
         } else {
-            $placeholder_val = $placeholder.'xx';
+            $placeholder_val = $placeholder;
         }
     }
 ?>
