@@ -857,7 +857,11 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
     if ($is_price == true) {
         $placeholder_val = 'Any';
     } else {
-        $placeholder_val = $placeholder;
+        if (isset($_GET[$id])) {
+            $placeholder_val = 'xxx';
+        } else {
+            $placeholder_val = $placeholder;
+        }
     }
 ?>
     <?php if ($is_accordion) { ?>

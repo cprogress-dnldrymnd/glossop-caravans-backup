@@ -91,3 +91,11 @@ $listings = new WP_Query($args);
 get_template_part('template-parts/modals/enquire-form');
 ?>
 <?php get_footer() ?>
+
+<?php if (isset($_GET['filter']) && $_GET['filter'] == 'active') { ?>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('#price_sort').trigger('change');
+        });
+    </script>
+<?php } ?>
