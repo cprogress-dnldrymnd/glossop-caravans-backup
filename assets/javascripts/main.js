@@ -234,9 +234,8 @@ function listing_search(response) {
     jQuery('.listing-filter select option').removeClass('hidden');
     setTimeout(function () {
         $.each($selectors, function (i) {
-            $selector = $selectors[i] + ":not(.dont-hide)";
+            $selector = '.listing-filter '+ $selectors[i] + ":not(.dont-hide)";
             jQuery($selector).addClass('hidden');
-
         });
     }, 100);
 
