@@ -96,6 +96,8 @@ get_template_part('template-parts/modals/enquire-form');
     <script>
         jQuery(document).ready(function() {
             jQuery('#price_sort').trigger('change');
+            price_range();
+
         });
     </script>
 <?php } ?>
