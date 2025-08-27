@@ -855,7 +855,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
     }
 
     if ($is_price == true) {
-        $placeholder_val = 'Any x';
+        $placeholder_val = 'Any';
     } else {
         $placeholder_val = $placeholder;
     }
