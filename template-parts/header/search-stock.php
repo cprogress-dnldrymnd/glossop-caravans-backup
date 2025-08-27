@@ -75,22 +75,22 @@ global $listing_fields;
                             <form action="<?= get_the_permalink(3558) ?>" method="GET">
                                 <input type="hidden" name="filter" value="active">
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'motorhomes'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'motorhomes'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
                                     <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'motorhomes'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'motorhomes'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'motorhomes'), false, false) ?>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg button">
                                     <div class="button-box">
@@ -107,22 +107,22 @@ global $listing_fields;
                             <form action="<?= get_the_permalink(3562) ?>" method="GET">
                                 <input type="hidden" name="filter" value="active">
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('new_used', 'New-Used', 'Any', get__search_field_options('_new_used', 'static-caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('berths', 'Berths', 'Any', get__search_field_options('_berths', 'static-caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
                                     <?= listing__filter_field_terms('make', 'Make', 'manufacturer', false); ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('model', 'Model', 'Any', get__search_field_options('_model', 'static-caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('min_price', 'Price(min.)', 'Any', get__search_field_options('_our_price', 'static-caravans'), false, false) ?>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg header--filter">
-                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'caravans'), false, false) ?>
+                                    <?= listing__filter_field('max_price', 'Price(max.)', 'Any', get__search_field_options('_our_price', 'static-caravans'), false, false) ?>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg button">
                                     <div class="button-box">
