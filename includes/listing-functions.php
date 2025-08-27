@@ -855,7 +855,17 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
     }
 
     if ($is_price == true) {
-        $placeholder_val = 'Any';
+        if (isset($_GET['min_price']) ||  isset($_GET['max_price'])) {
+            $placeholder_val = '';
+            if (isset($_GET['min_price'])) {
+                $placeholder_val .= $_GET['min_price'];
+            }
+            if (isset($_GET['max_price'])) {
+                $placeholder_val .= $_GET['max_price'];
+            }
+        } else {
+            $placeholder_val = 'Any';
+        }
     } else {
         if (isset($_GET[$id])) {
             $placeholder_val = $_GET[$id];
