@@ -864,7 +864,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
                 $placeholder_val .= $_GET['max_price'];
             }
         } else {
-            $placeholder_val = 'Any';
+            $placeholder_val = 'Any x';
         }
     } else {
         if (isset($_GET[$id])) {
