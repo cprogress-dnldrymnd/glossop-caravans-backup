@@ -870,7 +870,7 @@ function listing__filter_field($id, $label, $placeholder = '', $available_option
         if (isset($_GET[$id])) {
             $placeholder_val = $_GET[$id];
         } else {
-            $placeholder_val = $placeholder;
+            $placeholder_val = $placeholder.'xx';
         }
     }
 ?>
