@@ -809,6 +809,18 @@ function listing_sidebar_filter($category)
                                 </span>
                             </button>
                         </h2>
+                        <?php
+                        if (isset($_GET['min_price'])) {
+                            $min_price_val = $_GET['min_price'];
+                        } else {
+                            $min_price_val = reset($_our_price);
+                        }
+                        if (isset($_GET['max_price'])) {
+                            $max_price_val = $_GET['max_price'];
+                        } else {
+                            $max_price_val = end($_our_price);
+                        }
+                        ?>
                         <div id="collapse-Array" class="accordion-collapse collapse" data-bs-parent="#accordionFilter">
                             <div class="accordion-body accordion-body--search-field">
                                 <?php
@@ -816,8 +828,8 @@ function listing_sidebar_filter($category)
                                 ?>
 
                                 <div class="price-input d-none">
-                                    <input type="number" class="min-input form-control" value="<?= reset($_our_price) ?>" readonly>
-                                    <input type="number" class="max-input form-control" value="<?= end($_our_price) ?>" readonly>
+                                    <input type="number" class="min-input form-control" value="<?= $min_price_val ?>" readonly>
+                                    <input type="number" class="max-input form-control" value="<?= $max_price_val ?>" readonly>
                                 </div>
                                 <div class="d-flex justify-content-between min-max--holder mb-3">
                                     <div class="min-max--inner">£ <span class="min-input-html"><?= reset($_our_price) ?></span></div>
@@ -829,8 +841,8 @@ function listing_sidebar_filter($category)
                                     </div>
                                     <!-- Slider -->
                                     <div class="range-input">
-                                        <input type="range" name="min_price" id="min_price" class="min-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= reset($_our_price) ?>" step="100">
-                                        <input type="range" name="max_price" id="max_price" class="max-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= end($_our_price) ?>" step="100">
+                                        <input type="range" name="min_price" id="min_price" class="min-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= $min_price_val ?>" step="100">
+                                        <input type="range" name="max_price" id="max_price" class="max-range listing-search--trigger" min="<?= reset($_our_price) ?>" max="<?= end($_our_price) ?>" value="<?= $max_price_val ?>" step="100">
                                     </div>
 
                                 </div>
