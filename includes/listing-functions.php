@@ -792,10 +792,13 @@ function listing_sidebar_filter($category)
                                         if (isset($_GET['min_price']) ||  isset($_GET['max_price'])) {
                                             $placeholder_val = '';
                                             if (isset($_GET['min_price'])) {
-                                                $placeholder_val .= $_GET['min_price'];
+                                                $placeholder_val .= '£' . $_GET['min_price'];
+                                            }
+                                            if (isset($_GET['min_price']) && isset($_GET['max_price'])) {
+                                                $placeholder_val .= '-';
                                             }
                                             if (isset($_GET['max_price'])) {
-                                                $placeholder_val .= $_GET['max_price'];
+                                                $placeholder_val .= '£' . $_GET['max_price'];
                                             }
                                         } else {
                                             $placeholder_val = 'Any';
